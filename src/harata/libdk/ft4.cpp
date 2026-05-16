@@ -1,0 +1,30 @@
+#include "types.h"
+
+namespace dk {
+class Ft4Base {
+public:
+    void setRot(f32 v);
+    void setCenterXY(s32 x, s32 y);
+    void setGsTex0(u64 v);
+    void setGsTest(u64 v);
+    void setGsPrim(u64 v);
+};
+
+struct Ft4BaseLayout {
+    char _pad0[96];
+    u64 gs_tex0;
+    char _pad1[24];
+    u64 gs_test;
+    char _pad2[56];
+    u64 gs_prim;
+};
+
+void Ft4Base::setRot(f32 v) { *(f32*)((u32)this + 272) = v; }
+void Ft4Base::setCenterXY(s32 x, s32 y) {
+    *(s32*)((u32)this + 276) = x;
+    *(s32*)((u32)this + 280) = y;
+}
+void Ft4Base::setGsTex0(u64 v) { reinterpret_cast<Ft4BaseLayout*>(this)->gs_tex0 = v; }
+void Ft4Base::setGsTest(u64 v) { reinterpret_cast<Ft4BaseLayout*>(this)->gs_test = v; }
+void Ft4Base::setGsPrim(u64 v) { reinterpret_cast<Ft4BaseLayout*>(this)->gs_prim = v; }
+}  // namespace dk

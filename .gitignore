@@ -1,0 +1,11 @@
+# game binary
+/SLPM_666.75
+
+/build/
+/out/
+/kh2.elf
+__pycache__/
+*.pyc
+*.tmp
+*.log
+objdiff.json

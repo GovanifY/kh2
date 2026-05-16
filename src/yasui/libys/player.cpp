@@ -1,0 +1,10 @@
+#include "types.h"
+
+namespace YS {
+class PLAYER {
+public:
+    void lockon_end();
+};
+
+void PLAYER::lockon_end() {}
+}  // namespace YS

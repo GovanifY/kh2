@@ -1,0 +1,15 @@
+#include "types.h"
+
+
+namespace sa {
+
+} // namespace sa
+
+
+class EVENT_ALLOC {
+public:
+ u64 is_index_ok(void);
+ s32 dump_index(void);
+ void init(void* a0, s32 a1);
+ void free(void* a0);
+};
