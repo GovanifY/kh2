@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class ALLOCATOR;
 class CollisionParam;
@@ -10,7 +11,6 @@ class MapFile;
 class ObjDrawList;
 class ObjOcc;
 class OnPolygonInfo;
-struct TASK;
 class ViewFrustum;
 class uchar;
 

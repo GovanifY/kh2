@@ -4,6 +4,15 @@
 
 namespace dk {
 
+struct Ft4BaseLayout {
+    char _pad0[96];
+    u64 gs_tex0;
+    char _pad1[24];
+    u64 gs_test;
+    char _pad2[56];
+    u64 gs_prim;
+};
+
 class Ft4Base {
 public:
     void setRot(f32 v);
@@ -14,4 +23,3 @@ public:
 };
 
 }  // namespace dk
-

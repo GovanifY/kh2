@@ -1,11 +1,11 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class FVector;
 class MG_EHSidecar;
 class OBJ;
-struct TASK;
 
 namespace Ti {
 

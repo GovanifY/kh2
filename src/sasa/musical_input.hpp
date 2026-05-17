@@ -1,11 +1,11 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class FVector;
 class MUSICAL_INPUT;
 class Sprite;
-struct TASK;
 
 namespace sa {
 

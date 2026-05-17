@@ -4,14 +4,6 @@ extern u32 YI_SEQUENCE_GetActiveXY(void*, s32*, s32*) asm("_ZN2YI8SEQUENCE11GetA
 
 namespace dk {
 
-struct SpriteLayout {
-    char _pad0[368];
-    s32 posX;
-    s32 posY;
-    s32 offsetX;
-    s32 offsetY;
-};
-
 u32 Sprite::getSeqActiveXY(s32& x, s32& y) {
     return YI_SEQUENCE_GetActiveXY(reinterpret_cast<u8*>(this) + 24u, &x, &y);
 }

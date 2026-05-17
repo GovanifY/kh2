@@ -9,6 +9,19 @@ class OBJ;
 class PLAYER;
 class TARGET;
 
+struct COMMAND_SLOT_Layout {
+    char _pad0[2];
+    u16 value;
+};
+
+struct COMMAND_MENU_Layout {
+    char _pad0[8];
+    s32 value;
+    char _pad1[96];
+    s32 cursor0;
+    s32 cursor1;
+};
+
 class COMMAND_SLOT {
 public:
     u64 CanDrive(COMMAND_ELEM* a0, PLAYER* a1);

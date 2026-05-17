@@ -4,6 +4,11 @@
 
 namespace YS {
 
+struct SORALayout {
+    char _pad0[2928];
+    s32 skateboard_mode;
+};
+
     class SORA {
     public:
         static u32 Get();

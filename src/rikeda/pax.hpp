@@ -1,11 +1,11 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class ALLOCATOR;
 class EFFECT;
 class PAX;
-struct TASK;
 class USER_BIND_ARGS;
 
 namespace ryj {

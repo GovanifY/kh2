@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class ATTACK;
 class ATTACKPARAM;
@@ -15,7 +16,6 @@ class OBJ;
 class PARTY;
 class PAX;
 class PLAYER;
-struct TASK;
 
 namespace YS {
 

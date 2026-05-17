@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class ATTACK;
 class ATTACKPARAM;
@@ -8,7 +9,6 @@ class BTLOBJ;
 class FVector;
 class OBJ;
 class STDOBJ;
-struct TASK;
 
 namespace YS {
 

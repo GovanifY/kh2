@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class ALLOCATOR;
 class COLOR;
@@ -9,7 +10,6 @@ class FMatrix;
 class FVector;
 class PAX;
 class Projection;
-struct TASK;
 class uchar;
 
 namespace ryj {

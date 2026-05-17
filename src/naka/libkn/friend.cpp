@@ -11,15 +11,6 @@ typedef int (*FriendCallback)(Friend*, int);
 extern u32 D_00341708 asm("D_00341708");
 
 
-
-struct FriendLayout {
-    char _pad0[2912];
-    s32 personality;
-    char _pad1[404];
-    s32 toScript;
-    FriendCallback callFromScript;
-};
-
 u32 Friend::getObjObserver() {
     u32 r2 = *(volatile u32*)((u32)this + 2904);
     if (r2 == 0u) {

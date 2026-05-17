@@ -126,15 +126,6 @@ s32 CmTop::GetSelectPos(s32 index) {
     return (s32)(GetCurPos(index) + GetCurTopPos(index));
 }
 
-struct VtblCmTopWarningWin {
-    u32 _pad0[5];
-    void (*fn20)(void*);
-};
-
-struct ObjCmTopWarningWin {
-    VtblCmTopWarningWin* vtbl;
-};
-
 void CmTop::LeaveWarningWin() {
     if (func_00139d78(D_0035f034) != 0) {
         ObjCmTopWarningWin* obj = (ObjCmTopWarningWin*)D_0035f034;

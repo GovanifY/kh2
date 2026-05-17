@@ -1,10 +1,10 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class ITEM_EFFECT;
 class OBJ;
-struct TASK;
 
 namespace YS {
 

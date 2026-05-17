@@ -1,10 +1,10 @@
 #include "gumimenu.hpp"
+#include "task.hpp"
 
 
 class CAMERA;
 class FuncDef11;
 class FuncDef12;
-struct TASK;
 
 
 

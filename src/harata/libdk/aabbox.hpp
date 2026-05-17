@@ -10,6 +10,14 @@ namespace dk {
 
 class Line;
 
+struct AabboxLayout {
+    f32 v0, v1, v2, v3, v4, v5;
+};
+
+struct FVectorLayout {
+    f32 x, y, z;
+};
+
     class Aabbox {
     public:
         Aabbox(f32, f32, f32, f32, f32, f32);
@@ -20,4 +28,3 @@ class Line;
     };
 
 }  // namespace dk
-

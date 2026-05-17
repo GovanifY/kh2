@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class ADVICE;
 class ELEM;
@@ -10,7 +11,6 @@ class FuncDef74;
 class FuncDef75;
 class MENU;
 class MemoryAllocator;
-struct TASK;
 
 class MENU {
 public:

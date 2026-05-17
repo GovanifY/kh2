@@ -3,11 +3,6 @@
 namespace YS {
 
 
-struct SORALayout {
-    char _pad0[2928];
-    s32 skateboard_mode;
-};
-
 extern "C" u32 func_001a8b28();
 extern "C" u32 func_001a8bd0(s32);
 extern "C" u32 func_001a8bf8(u32, u32);

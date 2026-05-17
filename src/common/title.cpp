@@ -1,9 +1,9 @@
 #include "./types.h"
+#include "task.hpp"
 
 
 class EventViewInfo;
 class FuncDef16;
-struct TASK;
 
 void Init(void);
 void BootInit(void);

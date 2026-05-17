@@ -1,8 +1,8 @@
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 
 class FuncDef15;
-struct TASK;
 
 namespace SHOP {
 

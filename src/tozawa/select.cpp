@@ -1,20 +1,6 @@
 #include "select.hpp"
 
 namespace Tz {
-struct SelectLayout {
-    s16 current;
-    char _pad0[2];
-    s16 itemMax;
-    char _pad1[12];
-    s16 selectTop;
-    char _pad2[12];
-    u32 selectDisable;
-    char _pad3[4];
-    void** itemPtr;
-    char _pad4[8];
-    s32 enableButton;
-};
-
 s16 Select::GetCurrent() { return reinterpret_cast<SelectLayout*>(this)->current; }
 s32 Select::GetLast() {
     u32 r2 = (u32)(s32)(*(s16*)((u32)this + (s32)(4)));

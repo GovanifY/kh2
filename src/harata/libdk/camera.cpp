@@ -1,6 +1,6 @@
 #include "camera.hpp"
+#include "../../common/task.hpp"
 
-struct TASK;
 
 namespace dk {
 

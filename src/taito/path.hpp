@@ -1,10 +1,7 @@
 #pragma once
 
 #include "../common/types.h"
-
-namespace YS {
-struct UNIT_DATA_PATH;
-}
+#include "../yasui/libys/unit_data_path.hpp"
 
 namespace Ti {
 
@@ -14,4 +11,3 @@ namespace Ti {
     };
 
 }  // namespace Ti
-

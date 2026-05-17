@@ -1,15 +1,6 @@
 #include "ft4.hpp"
 
 namespace dk {
-struct Ft4BaseLayout {
-    char _pad0[96];
-    u64 gs_tex0;
-    char _pad1[24];
-    u64 gs_test;
-    char _pad2[56];
-    u64 gs_prim;
-};
-
 void Ft4Base::setRot(f32 v) { *(f32*)((u32)this + 272) = v; }
 void Ft4Base::setCenterXY(s32 x, s32 y) {
     *(s32*)((u32)this + 276) = x;

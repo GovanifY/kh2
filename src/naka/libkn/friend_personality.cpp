@@ -4,12 +4,6 @@ namespace kn {
 class Friend;
 
 
-
-struct FriendPersonalityLayout {
-    char _pad0[4];
-    Friend* obj;
-};
-
 f32 FriendPersonality::getBattleCancelDistance() const {
     u32 p = *(u32*)((u32)this + 8);
     return *(f32*)((u32)p + 128);

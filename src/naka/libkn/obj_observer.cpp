@@ -2,18 +2,6 @@
 
 namespace kn {
 
-
-struct ObjObserverClearLayout {
-    char _pad0[12];
-    u32 entryNum;
-    u32 array[32];
-};
-
-struct ObjObserverLayout {
-    char _pad0[12];
-    s32 entryNum;
-};
-
 void ObjObserver::clear() {
     ObjObserverClearLayout* l = reinterpret_cast<ObjObserverClearLayout*>(this);
     l->entryNum = 0;

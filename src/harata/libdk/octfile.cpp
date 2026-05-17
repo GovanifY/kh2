@@ -3,11 +3,6 @@
 namespace dk {
 
 
-struct OctCollFileLayout {
-    char _pad0[60];
-    u16* hitCollPolygonTableAddress;
-};
-
 u32 OctCollFile::getAttr(u16 idx) {
     u32 r14 = *(u32*)((u32)this + 12);
     u32 r5 = ((u32)idx & 0xffffu) << 4;

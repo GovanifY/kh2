@@ -3,11 +3,6 @@
 namespace kn {
 
 
-struct ProjectionLayout {
-    char _pad0[64];
-    f32 screenZ;
-};
-
 Projection::~Projection() {}
 u32 Projection::getViewClipGsMatrix() { return (u32)((s32)this + (192)); }
 f32 Projection::getFOV(WorH a1) const {

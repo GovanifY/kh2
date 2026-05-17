@@ -1,7 +1,7 @@
 #include "./types.h"
+#include "task.hpp"
 
 
-struct TASK;
 class TASK_MANAGER;
 
 namespace SINGLETON_TASK {

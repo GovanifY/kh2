@@ -4,6 +4,19 @@
 
 namespace kn {
 
+struct CameraLayout {
+    char _pad0[80];
+    f32 positionX;
+    f32 positionY;
+    f32 positionZ;
+    char _pad1[4];
+    f32 referenceX;
+    f32 referenceY;
+    f32 referenceZ;
+    char _pad2[20];
+    f32 roll;
+};
+
 class Camera {
 public:
     ~Camera();
@@ -18,4 +31,3 @@ void setCameraMulti(bool);
 void setCameraNumber(s32);
 
 }  // namespace kn
-

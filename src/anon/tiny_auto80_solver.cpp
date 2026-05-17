@@ -1,4 +1,5 @@
 #include "../common/types.h"
+#include "tiny_auto80_solver_structs.hpp"
 
 u32 func_00102080(u32, u32, u32, u32, u32, u32, u32, u32);
 u32 func_00102210(u32, u32, u32, u32, u32, u32, u32, u32);
@@ -4315,19 +4316,6 @@ u32 duplicate_unplaced_0014ad20(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5, 
 }
 
 void func_0014b150(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5, u32 a6, u32 a7) {
-    struct Obj_0014b150 {
-        u32 p;
-        u16 h4;
-        u16 h6;
-        u16 h8;
-        u16 h10;
-        u32 w12;
-        s8 b16;
-        s8 b17;
-        s8 b18;
-        s8 b19;
-    };
-
     Obj_0014b150* s = (Obj_0014b150*)a0;
     s->h8 = 0;
     s->h10 = 0;
@@ -7270,10 +7258,7 @@ u32 duplicate_unplaced_0019ec20(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5, 
 }
 
 void func_0019ec88(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5, u32 a6, u32 a7) {
-    struct Init {
-        u32 a, b, c, d, e, f, g;
-    };
-    Init* p = (Init*)a0;
+    Init_0019ec88* p = (Init_0019ec88*)a0;
     u32 one = 1;
     u32 sev = 112;
     p->a = 0;

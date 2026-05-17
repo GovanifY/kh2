@@ -16,7 +16,7 @@ u32 OBJ::GetPlayer() {
 extern "C" void func_0016c460(u32, u32);
 
 void OBJ::get_jump_height() {
-    struct S {
+    struct {
         u32 w0;
         u32 w1;
         u32 w2;

@@ -1,5 +1,6 @@
 #include "../common/types.h"
 #include "auto80_199_queue_decls.hpp"
+#include "auto80_199_queue_structs.hpp"
 #include "../harata/libdk/ft4.hpp"
 #include "../harata/libdk/sprite.hpp"
 #include "../harata/libdk/treasure_info.hpp"
@@ -3555,10 +3556,7 @@ void func_0017bfa0(u32 a0, u32 a1, u32 a2, u32 a3) {
         return;
     }
 
-    struct Copy {
-        u32 a, b, c, d, e;
-    };
-    *(Copy*)(s0 + 8) = *(Copy*)s1;
+    *(Auto80_199QueueCopy*)(s0 + 8) = *(Auto80_199QueueCopy*)s1;
 }
 
 u32 func_0017dee8(u32 a0) {

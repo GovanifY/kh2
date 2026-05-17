@@ -1,12 +1,12 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 namespace dk {
 class Sprite;
 }
 
-struct TASK;
 
 namespace YI {
 class SEQUENCE;

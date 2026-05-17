@@ -1,11 +1,11 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class GAUGE_PLAYER;
 class IMAGE;
 class OBJ;
-struct TASK;
 
 namespace dk {
 

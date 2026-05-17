@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class DrawParam;
 class FILTER;
@@ -8,7 +9,6 @@ class FMatrix;
 class GUMISHIP;
 class MODEL_GUMI;
 class MemoryAllocator;
-struct TASK;
 
 namespace gm {
 

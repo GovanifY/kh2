@@ -1,7 +1,7 @@
 #include "../harata/libdk/field.hpp"
+#include "task.hpp"
 
 
-struct TASK;
 
 void CacheBuffDestroyEnable(void);
 void Init(void);

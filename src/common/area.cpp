@@ -1,7 +1,7 @@
 #include "../harata/libdk/area.hpp"
+#include "task.hpp"
 
 
-struct TASK;
 
 void change(AREA* a0);
 void Init(AREA* a0);

@@ -4,19 +4,6 @@ namespace kn {
 extern u32 D_0033cc44 asm("D_0033cc44");
 extern u32 D_0033cc50 asm("D_0033cc50");
 
-struct CameraLayout {
-    char _pad0[80];
-    f32 positionX;
-    f32 positionY;
-    f32 positionZ;
-    char _pad1[4];
-    f32 referenceX;
-    f32 referenceY;
-    f32 referenceZ;
-    char _pad2[20];
-    f32 roll;
-};
-
 f32 Camera::getRoll() const { return reinterpret_cast<const CameraLayout*>(this)->roll; }
 Camera::~Camera() { *(u32*)((u32)this + 0) = (u32)&D_0033cc50; }
 void Camera::setRoll(f32 roll) { *(volatile f32*)((u32)this + (s32)(128)) = roll; }

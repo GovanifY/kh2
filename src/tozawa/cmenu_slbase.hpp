@@ -1,13 +1,13 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class ALLOCATOR;
 class FuncDef45;
 class FuncDef46;
 class FuncDef47;
 class PAD;
-struct TASK;
 
 namespace Tz {
 

@@ -8,6 +8,15 @@ class Sprite;
 
 namespace Tz {
 
+struct VtblCmTopWarningWin {
+    u32 _pad0[5];
+    void (*fn20)(void*);
+};
+
+struct ObjCmTopWarningWin {
+    VtblCmTopWarningWin* vtbl;
+};
+
 class CmTop {
 public:
     static u32 ExitParty();
@@ -41,4 +50,3 @@ public:
 };
 
 }  // namespace Tz
-

@@ -4,6 +4,14 @@
 
 namespace dk {
 
+struct SpriteLayout {
+    char _pad0[368];
+    s32 posX;
+    s32 posY;
+    s32 offsetX;
+    s32 offsetY;
+};
+
 class Sprite {
 public:
     u32 getSeqActiveXY(s32&, s32&);
@@ -15,4 +23,3 @@ public:
 };
 
 }  // namespace dk
-

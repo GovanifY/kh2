@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class BOX;
 class COST;
@@ -11,7 +12,6 @@ class FuncDef37;
 class GUMI;
 class PAD;
 class STATUSWINDOW;
-struct TASK;
 class WINDOW;
 class WORKAREACAMERA;
 class WORKBLOCK;

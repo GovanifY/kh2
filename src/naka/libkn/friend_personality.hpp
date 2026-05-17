@@ -6,6 +6,11 @@ namespace kn {
 
 class Friend;
 
+struct FriendPersonalityLayout {
+    char _pad0[4];
+    Friend* obj;
+};
+
     class FriendPersonality {
     public:
         f32 getBattleCancelDistance() const;
@@ -14,4 +19,3 @@ class Friend;
     };
 
 }  // namespace kn
-

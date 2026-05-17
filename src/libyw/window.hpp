@@ -1,11 +1,11 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class COLOR;
 class EVENT;
 class RECT;
-struct TASK;
 class TYPE;
 
 class WINDOW {

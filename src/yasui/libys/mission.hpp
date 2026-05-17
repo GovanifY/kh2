@@ -1,13 +1,13 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class CODE;
 class COMMAND_ELEM;
 class MISSION;
 class PARTYATTACK;
 class TABLE;
-struct TASK;
 
 namespace YS {
 

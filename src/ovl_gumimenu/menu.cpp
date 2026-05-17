@@ -1,4 +1,5 @@
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 // Namespace inferred from existing PS2 symbol/file clusters.
 
@@ -9,7 +10,6 @@ namespace GUMIMENU {
 class FuncDef13;
 class FuncDef14;
 class MemoryAllocator;
-struct TASK;
 
 u64 isRunning(void);
 void setType(s32 a0);

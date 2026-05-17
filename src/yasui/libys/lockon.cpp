@@ -3,14 +3,6 @@
 namespace YS {
 
 
-struct LOCKONLayout {
-    s32 mode;
-    char _pad_mode[24];
-    f32 lock_value;
-    char _pad0[8];
-    s32 player;
-};
-
 void LOCKON::auto_lock() {
     if (reinterpret_cast<LOCKONLayout*>(this)->mode != 1) {
         return;

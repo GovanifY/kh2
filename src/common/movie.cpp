@@ -1,7 +1,7 @@
 #include "movie.hpp"
+#include "task.hpp"
 
 
-struct TASK;
 
 void init(void);
 s32 ensure(void);

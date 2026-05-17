@@ -1,13 +1,13 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class Aabbox;
 class CollisionParam;
 class FMatrix;
 class FVector;
 class MODEL;
-struct TASK;
 
 namespace YS {
 

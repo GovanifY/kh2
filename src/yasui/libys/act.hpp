@@ -1,13 +1,13 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class ATTACK;
 union BD_VALUE;
 class DAMAGE;
 class ELEM;
 class SHOUT;
-struct TASK;
 class VMOBJ;
 
 namespace YS {

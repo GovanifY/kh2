@@ -1,5 +1,6 @@
 #include "../common/types.h"
 #include "../kn/fvector.hpp"
+#include "./tiny_auto80_queue_structs.hpp"
 #include "../yasui/libys/areadata.hpp"
 #include "../yasui/libys/progress.hpp"
 extern "C" void dk_Timer_start_exact_0014c9b8(void) asm("_ZN2dk5Timer5startEv");
@@ -9,110 +10,6 @@ extern "C" void dk_Timer_start_exact_0014c9b8(void) asm("_ZN2dk5Timer5startEv");
 // ============================================================
 
 #include <stdarg.h>
-
-// ---- Struct / vtable declarations ----
-
-// Obj0015de58: vtbl at offset 0, flag4 (u8) at offset 4
-struct Obj0015de58 {
-    struct Vt0015de58 {
-        void (*fn0)(Obj0015de58*);
-        void (*fn4)(Obj0015de58*);
-    } *vtbl;
-    u8 flag4;
-};
-
-// Obj001537f8: vtbl at offset 0, fn4 takes (object, u32)
-struct Obj001537f8 {
-    struct Vt001537f8 {
-        void (*fn0)(Obj001537f8*, u32);
-        void (*fn4)(Obj001537f8*, u32);
-    } *vtbl;
-};
-
-// ObjCommon_001050c8: common struct returned by func_001050c8()
-// Obj0015a810 uses fn0 and fn4; Obj0015a850 and Obj0015b4c0 use only fn4.
-// All three are aliases of the same struct so func_001050c8(void) can return one type.
-struct ObjCommon_001050c8 {
-    struct VtCommon_001050c8 {
-        u32 (*fn0)(ObjCommon_001050c8*, u32, u32);
-        void (*fn4)(ObjCommon_001050c8*, u32);
-    } *vtbl;
-};
-typedef ObjCommon_001050c8 Obj0015a810;
-typedef ObjCommon_001050c8 Obj0015a850;
-typedef ObjCommon_001050c8 Obj0015b4c0;
-
-// Obj001502e8: vtbl at offset 0, fn10 at vtbl+16 takes (obj)
-struct Obj001502e8 {
-    struct Vt001502e8 {
-        void (*fn0)(Obj001502e8*);
-        void (*fn4)(Obj001502e8*);
-        void (*fn8)(Obj001502e8*);
-        void (*fn12)(Obj001502e8*);
-        void (*fn10)(Obj001502e8*);
-    } *vtbl;
-};
-
-// Obj00152498: has field_b4c (u32) at offset 0xb4c = 2892
-struct Obj00152498 {
-    u8 _pad[2892];
-    u32 field_b4c;
-};
-
-// Vt_001a07b0: vtable with fn(u32, u32, u32)
-struct Vt_001a07b0 {
-    void (*fn)(u32, u32, u32);
-};
-
-// V4_222a00: 16-byte local variable
-struct V4_222a00 { u32 _[4]; };
-
-// C7F0 state/object pair
-struct C7F0_Obj {
-    struct Vt_C7F0_Obj {
-        void (*fn0)(C7F0_Obj*);
-        void (*fn1)(C7F0_Obj*);
-        void (*fn2)(C7F0_Obj*);
-        void (*fn3)(C7F0_Obj*);
-        void (*fn4)(C7F0_Obj*);
-        void (*fn5)(C7F0_Obj*);
-    } *vtbl;
-};
-struct C7F0_State { C7F0_Obj* obj; };
-
-// C828 state/object pair
-struct C828_Obj {
-    struct Vt_C828_Obj {
-        void (*fn0)(C828_Obj*);
-        void (*fn1)(C828_Obj*);
-        void (*fn2)(C828_Obj*);
-        void (*fn3)(C828_Obj*);
-        void (*fn4)(C828_Obj*);
-        void (*fn5)(C828_Obj*);
-        void (*fn6)(C828_Obj*);
-    } *vtbl;
-};
-struct C828_State { C828_Obj* obj; };
-
-// C4B0 state/object pair
-struct C4B0_State;
-struct C4B0_Obj {
-    struct Vt_C4B0_Obj {
-        void (*fn0)(C4B0_Obj*);
-        void (*fn1)(C4B0_Obj*);
-        void (*fn2)(C4B0_Obj*);
-        void (*fn3)(C4B0_Obj*);
-        void (*fn4)(C4B0_Obj*);
-        void (*fn5)(C4B0_Obj*);
-        void (*fn6)(C4B0_Obj*);
-        void (*fn7)(C4B0_Obj*);
-        void (*fn8)(C4B0_Obj*);
-        void (*fn9)(C4B0_Obj*);
-        void (*fn10)(C4B0_Obj*);
-        void (*fn11)(C4B0_Obj*, C4B0_State*);
-    } *vtbl;
-};
-struct C4B0_State { C4B0_Obj* obj; };
 
 // ---- Function pointer typedefs ----
 
@@ -5867,7 +5764,7 @@ u32 duplicate_unplaced_00104da0(u32 a0) {
 extern "C" u32 func_00104da0(...);
 
 u32 func_00104de0(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5, u32 a6, u32 a7) {
-    struct S {
+    struct {
         u8 a;
         u8 b;
         u8 c;
@@ -10569,14 +10466,13 @@ extern "C" u32 func_003056a0(...);
 extern u8 D_00349e28;
 
 void func_0014d4e8() {
-    struct Local {
+    struct {
         u32 w0;
         u32 w1;
         u32 w2;
         u32 w3;
         u32 pad;
-    };
-    Local sp;
+    } sp;
     u32 s0 = (u32)&D_00349e28;
     func_003056a0(*(u32*)((u32)s0 + (s32)(24)), (u32)&sp);
     if (sp.w3 != 0u) {
@@ -10939,7 +10835,7 @@ extern "C" u32 func_0013f9e0(...);
 extern "C" u32 func_00159ce0(...);
 
 void func_0015a4e0(u32 a0) {
-    struct Local {
+    struct {
         u32 w0;
         u32 w1;
         u32 w2;
@@ -11027,7 +10923,7 @@ extern "C" u32 func_0014e140(...);
 extern "C" u32 func_0015cb48(...);
 
 void func_0015c4b8(void) {
-    struct B {
+    struct {
         u8 b0;
         u8 b1;
         u8 b2;
@@ -11441,7 +11337,7 @@ extern "C" u32 func_0016af58(...);
 f32 func_002f8ad0(f32, f32);
 
 void func_0016afe0(u32 a0) {
-    struct S {
+    struct {
         f32 f0;
         u32 pad;
         f32 f1;
@@ -11453,7 +11349,7 @@ void func_0016afe0(u32 a0) {
 extern "C" u32 func_0016cce8(...);
 
 void func_0016bae8(u32 a0, u32 a1, u32 a2, u32 a3) {
-    struct S {
+    struct {
         u32 x;
         u32 y;
         u32 z;
@@ -11485,7 +11381,7 @@ extern "C" u32 func_0016c460(...);
 extern "C" u32 func_0016cce8(...);
 
 void func_0016c698(u32 a0, u32 a1, u32 a2) {
-    struct S {
+    struct {
         u32 x;
         u32 y;
         u32 z;
@@ -11715,7 +11611,7 @@ extern "C" u32 func_0016bda8(...);
 extern "C" u32 func_001c7d90(...);
 
 void func_00171f20(u32 a0) {
-    struct S {
+    struct {
         u32 w0;
         u32 w1;
         u32 w2;
@@ -11733,7 +11629,7 @@ extern "C" u32 func_0016bda8(...);
 extern "C" u32 func_001d2930(...);
 
 void func_00171f68(u32 a0) {
-    struct S {
+    struct {
         u32 w0;
         u32 w1;
         u32 w2;
@@ -11776,7 +11672,7 @@ extern "C" u32 func_0016ace0(...);
 extern "C" u32 func_0019afd8(...);
 
 void func_001728e0(u32 a0) {
-    struct S {
+    struct {
         u32 w0;
         u32 w1;
         u32 w2;
@@ -11839,9 +11735,8 @@ void func_001730b0(u32 a0) {
 }
 
 void duplicate_unplaced_00173270(u32 a0) {
-    struct VObj { u32* vtbl; };
-    typedef void (*M)(VObj*);
-    VObj* self = *(VObj**)(u32)a0;
+    typedef void (*M)(VObj_00173270*);
+    VObj_00173270* self = *(VObj_00173270**)(u32)a0;
     M m = (M)(u32)(((u32*)(u32)self->vtbl)[8]);
     m(self);
 }
@@ -11956,7 +11851,7 @@ extern "C" u32 func_00190128(...);
 extern "C" u32 func_00190878(...);
 
 void func_00174be8(u32 a0) {
-    struct S { u32 w0,w1,w2,w3,w4,w5,w6,w7; } spv;
+    struct { u32 w0,w1,w2,w3,w4,w5,w6,w7; } spv;
     u32 s0 = a0;
     func_00190128((u32)&spv);
     u32 t7 = *(u32*)((u32)s0 + (s32)(0));
@@ -12449,7 +12344,7 @@ extern "C" u32 func_0016ad38(...);
 extern "C" u32 func_00185138(...);
 
 void func_00185278(u32 a0, u32 a1) {
-    struct S {
+    struct {
         u32 w0;
         u32 w1;
         u32 w2;
@@ -12535,7 +12430,7 @@ void func_00186fd8(u32 a0, u32 a1) {
     u32 t6 = a1;
     u32 t7 = *(u32*)((u32)a0 + (s32)(1156));
     if (t7 != 0u) {
-        struct S { u32 w0; u32 w1; } sp;
+        struct { u32 w0; u32 w1; } sp;
         sp.w0 = t6;
         sp.w1 = 0u;
         func_0016cce8(t7, (u32)19, (u32)&sp, (u32)2, 0u);
@@ -12757,11 +12652,10 @@ void func_0018a958(u32 a0, u32 a1, f32 f12, f32 f13) {
 }
 
 void func_0018acd8(u32 a0, u32 a1) {
-    struct Pair { u64 x; u64 y; } __attribute__((packed));
     a0 = (u32)((s32)a0 + (2832));
     u32 end = (u32)((s32)a1 + (32));
     do {
-        *(Pair*)((u32)a0 + (s32)(0)) = *(Pair*)((u32)a1 + (s32)(0));
+        *(Pair_0018acd8*)((u32)a0 + (s32)(0)) = *(Pair_0018acd8*)((u32)a1 + (s32)(0));
         a1 = (u32)((s32)a1 + (16));
         a0 = (u32)((s32)a0 + (16));
     } while (a1 != end);
@@ -13290,7 +13184,7 @@ u32 func_00198cb8(void) {
 extern "C" u32 func_00199890(...);
 
 void func_00199938(u32 a0, u32 a1) {
-    struct V4 { f32 x, y, z, w; } v;
+    V4_00199938 v;
     *(u32*)((u32)&v + (s32)(12)) = 0u;
     f32 f2 = *(volatile f32*)((u32)a0 + (s32)(12));
     f32 f0 = *(volatile f32*)((u32)a0 + (s32)(4));

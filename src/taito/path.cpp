@@ -1,9 +1,5 @@
 #include "path.hpp"
 
-namespace YS {
-struct UNIT_DATA_PATH;
-}
-
 namespace Ti {
 
 

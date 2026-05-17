@@ -1,4 +1,5 @@
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 
 namespace kn {
@@ -6,7 +7,6 @@ namespace kn {
 } // namespace kn
 
 class AREA;
-struct TASK;
 
 void change(AREA* a0);
 void Init(AREA* a0);

@@ -1,8 +1,4 @@
-#include "../common/types.h"
-
-struct IntSlot {
-    s32 value;
-};
+#include "./misc.hpp"
 
 void printf(void* self) { reinterpret_cast<IntSlot*>(self)->value = 0; }
 

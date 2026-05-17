@@ -2,19 +2,6 @@
 
 namespace YS {
 
-struct COMMAND_SLOT_Layout {
-    char _pad0[2];
-    u16 value;
-};
-
-struct COMMAND_MENU_Layout {
-    char _pad0[8];
-    s32 value;
-    char _pad1[96];
-    s32 cursor0;
-    s32 cursor1;
-};
-
 void COMMAND_SLOT::clear() {
     u32 r4 = (u32)this, r15;
     r15 = (u32)((s32)0u + 5);

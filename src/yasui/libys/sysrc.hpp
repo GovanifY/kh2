@@ -1,13 +1,13 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class CODE;
 class LIBRETTO;
 class PLAYER;
 class SYSRC;
 class TARGET;
-struct TASK;
 
 namespace YS {
 

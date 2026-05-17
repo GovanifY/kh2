@@ -1,10 +1,10 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class COMMAND_ELEM;
 class FRIEND;
-struct TASK;
 
 namespace YS {
 

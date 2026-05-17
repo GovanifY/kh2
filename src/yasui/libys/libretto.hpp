@@ -1,11 +1,11 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class CODE;
 class FuncDef54;
 class LIBRETTO;
-struct TASK;
 
 namespace YS {
 

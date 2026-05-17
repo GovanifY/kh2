@@ -1,9 +1,9 @@
 #include "gumiblockdata.hpp"
+#include "../common/task.hpp"
 
 
 class FMatrix;
 class MemoryAllocator;
-struct TASK;
 
 namespace gm {
 

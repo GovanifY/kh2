@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 class MUSICAL_COMBO;
-struct TASK;
 
 namespace sa {
 

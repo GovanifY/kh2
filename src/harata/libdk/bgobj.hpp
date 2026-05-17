@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../common/types.h"
+#include "../../common/task.hpp"
 
 class ALLOCATOR;
 class BgObj;
@@ -8,7 +9,6 @@ class BgObjPos;
 class FMatrix;
 class FVector;
 class MapFile;
-struct TASK;
 class TYPE;
 class uchar;
 

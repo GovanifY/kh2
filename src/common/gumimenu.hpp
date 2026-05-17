@@ -1,11 +1,11 @@
 #pragma once
 
 #include "./types.h"
+#include "task.hpp"
 
 class CAMERA;
 class FuncDef11;
 class FuncDef12;
-struct TASK;
 
 namespace gm {
 

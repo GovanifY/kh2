@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../common/types.h"
+#include "../common/task.hpp"
 
-struct TASK;
 
 namespace Ts {
 

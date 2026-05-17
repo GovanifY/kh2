@@ -1,8 +1,8 @@
 #pragma once
 
 #include "./types.h"
+#include "task.hpp"
 
-struct TASK;
 
 class Movie {
 public:

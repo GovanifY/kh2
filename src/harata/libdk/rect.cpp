@@ -1,48 +1,6 @@
 #include "rect.hpp"
 
 namespace dk {
-struct RectParamBaseLayout {
-    char _pad0[8];
-    s16 x;
-    s16 y;
-    u32 z;
-};
-
-struct RectBaseGsPrimLayout {
-    char _pad0[192];
-    u64 gs_prim;
-};
-
-struct RectBaseGsFrameLayout {
-    char _pad0[64];
-    u64 gs_frame;
-};
-
-struct RectBaseGsZbufLayout {
-    char _pad0[80];
-    u64 gs_zbuf;
-};
-
-struct RectBaseGsTestLayout {
-    char _pad0[128];
-    u64 gs_test;
-};
-
-struct RectBaseGsAlphaLayout {
-    char _pad0[144];
-    u64 gs_alpha;
-};
-
-struct RectBaseGsTex0Layout {
-    char _pad0[96];
-    u64 gs_tex0;
-};
-
-struct RectBaseGsTex1Layout {
-    char _pad0[112];
-    u64 gs_tex1;
-};
-
 void RectParamBase::setXY(s16 x, s16 y) {
     reinterpret_cast<RectParamBaseLayout*>(this)->x = x;
     reinterpret_cast<RectParamBaseLayout*>(this)->y = y;

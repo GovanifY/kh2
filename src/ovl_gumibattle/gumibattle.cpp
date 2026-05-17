@@ -1,4 +1,5 @@
 #include "../common/types.h"
+#include "../common/task.hpp"
 
 // Namespace inferred from existing PS2 symbol/file clusters.
 
@@ -7,7 +8,6 @@ namespace GUMIBATTLE {
 } // namespace GUMIBATTLE
 
 class FuncDef10;
-struct TASK;
 
 void Init(void);
 void SetPauseParam(char a0, char a1, char a2, FuncDef10* a3);

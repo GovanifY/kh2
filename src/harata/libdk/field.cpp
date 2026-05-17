@@ -1,7 +1,7 @@
 #include "field.hpp"
+#include "../../common/task.hpp"
 
 
-struct TASK;
 
 void CacheBuffDestroyEnable(void);
 void Init(void);

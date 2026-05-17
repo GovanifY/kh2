@@ -1,8 +1,8 @@
 #include "./types.h"
+#include "task.hpp"
 
 
 class GAME_MODE;
-struct TASK;
 
 namespace GAME_MODE {
 
