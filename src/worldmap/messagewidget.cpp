@@ -1,11 +1,6 @@
-#include "types.h"
+#include "messagewidget.hpp"
 
 namespace worldmap {
-
-class MessageWidget {
-public:
-    u32 isEnd();
-};
 
 u32 MessageWidget::isEnd() {
     u32 p = *(u32*)((u32)this + 36);

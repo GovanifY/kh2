@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_HARATA_LIBDK_SPRITE_HPP
 #define KH2_SRC_HARATA_LIBDK_SPRITE_HPP
 
-#include "types.h"
+#include "../../common/types.h"
 
 namespace dk {
 

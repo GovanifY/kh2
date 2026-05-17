@@ -1,11 +1,8 @@
-#include "types.h"
+#include "flare.hpp"
 
 namespace Ts {
 
-class FLARE {
-public:
-    static u32 IsEmpty();
-};
+
 
 u32 FLARE::IsEmpty() {
     u32 r15 = (0x01e3u << 16);

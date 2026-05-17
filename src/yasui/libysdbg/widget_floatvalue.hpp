@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_YASUI_LIBYSDBG_WIDGET_FLOATVALUE_HPP
 #define KH2_SRC_YASUI_LIBYSDBG_WIDGET_FLOATVALUE_HPP
 
-#include "types.h"
+#include "../../common/types.h"
 
 namespace YS {
 

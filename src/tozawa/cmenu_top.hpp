@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_CMENU_TOP_HPP
 #define KH2_SRC_TOZAWA_CMENU_TOP_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace dk {
 class Sprite;

@@ -1,11 +1,7 @@
-#include "types.h"
+#include "jumper.hpp"
 
 namespace YS {
-class JUMPER {
-public:
-    void clear();
-    u32 is_jump();
-};
+
 
 void JUMPER::clear() {
     char* p = reinterpret_cast<char*>(this);

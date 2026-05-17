@@ -2,7 +2,7 @@
 #define KH2_SRC_TOZAWA_SEL_HIST_HPP
 
 #include "layout.hpp"
-#include "types.h"
+#include "../common/types.h"
 
 class MESSAGE;
 

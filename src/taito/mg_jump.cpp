@@ -1,10 +1,7 @@
-#include "types.h"
+#include "mg_jump.hpp"
 
 namespace Ti {
-class MGJump {
-public:
-    s32 config();
-};
+
 
 struct MGJumpLayout {
     char _pad0[112];

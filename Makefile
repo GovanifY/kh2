@@ -20,7 +20,7 @@ KH2_PS2_IMAGE ?= kh2-local/ps2-compiler:3.2-ee-040921-objdiff
 
 PS2_PREP := $(ROOT)/docker/ps2/prepare.sh
 
-CXXFLAGS := -O2 -g0 -x c++ -I include -fno-exceptions -fno-rtti -fpermissive -ffunction-sections
+CXXFLAGS := -O2 -g0 -x c++ -fno-exceptions -fno-rtti -fpermissive -ffunction-sections
 ASFLAGS := -G0
 VERIFY_AUTODIFF_COUNT ?= 3
 VERIFY_SMALL_DIFF_MAX ?= 32

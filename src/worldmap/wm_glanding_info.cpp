@@ -1,12 +1,8 @@
-#include "types.h"
+#include "wm_glanding_info.hpp"
 
 namespace dk {
 extern u32 D_00361e00 asm("D_00361e00");
-class WM_GLANDING_INFO {
-public:
-    void fadeout();
-    void exit();
-};
+
 
 void WM_GLANDING_INFO::exit() {
     u32 ptr = D_00361e00;

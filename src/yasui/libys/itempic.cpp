@@ -1,11 +1,8 @@
-#include "types.h"
+#include "itempic.hpp"
 
 namespace YS {
 
-class ITEMPIC {
-public:
-    static u32 GetSequenceData();
-};
+
 
 u32 ITEMPIC::GetSequenceData() {
     u32 b = (0x01d5u << 16);

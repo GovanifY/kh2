@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TAITO_MG_HACHIMITSU_PO_HPP
 #define KH2_SRC_TAITO_MG_HACHIMITSU_PO_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace Ti {
 

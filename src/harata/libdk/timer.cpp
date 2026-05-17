@@ -1,13 +1,10 @@
-#include "types.h"
+#include "timer.hpp"
 
 extern u32 D_00349e00 asm("D_00349e00");
 
 namespace dk {
 
-class Timer {
-public:
-    static u32 isDown();
-};
+
 
 u32 Timer::isDown() {
     u32 v = *(u8*)&D_00349e00;

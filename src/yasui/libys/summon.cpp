@@ -1,11 +1,8 @@
-#include "types.h"
+#include "summon.hpp"
 
 namespace YS {
 
-class SUMMON {
-public:
-    static void LeaveTink();
-};
+
 
 void SUMMON::LeaveTink() {
     u32 b = (0x0033u << 16);

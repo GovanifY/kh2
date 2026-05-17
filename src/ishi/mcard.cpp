@@ -1,18 +1,11 @@
-#include "types.h"
+#include "mcard.hpp"
 
 namespace YI {
 
 extern u32 D_0035e370 asm("D_0035e370");
 extern u8 D_01dae480[] asm("D_01dae480");
 
-class MCARD {
-public:
-    static u32 isIdle();
-    static u32 GetResultInfoRoot();
-    static u32 GetResultChangeDir();
-    static u32 GetConnectionStatus(s32, s32);
-    static u32 GetFileTableMax(s32, s32);
-};
+
 
 u32 MCARD::isIdle() {
     u32 v = D_0035e370;

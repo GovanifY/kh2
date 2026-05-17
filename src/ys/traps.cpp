@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 #include "../yasui/libys/progress.hpp"
 
 namespace {

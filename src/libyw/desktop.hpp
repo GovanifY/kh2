@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_LIBYW_DESKTOP_HPP
 #define KH2_SRC_LIBYW_DESKTOP_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace YW {
 

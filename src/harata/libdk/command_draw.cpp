@@ -1,16 +1,8 @@
-#include "types.h"
+#include "command_draw.hpp"
 
 namespace dk {
 
 extern u8 D_003484a0 asm("D_003484a0");
-
-class COMMAND_DRAW {
-public:
-    u32 isInsertSkipCommand();
-    static u32 getSqd();
-    u32 getShortCutType();
-    u32 isSpecialCommand();
-};
 
 extern "C" u32 func_0013cb08(...);
 extern "C" u32 func_001bcf38(...);

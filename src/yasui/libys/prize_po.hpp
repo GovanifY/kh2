@@ -1,0 +1,21 @@
+#ifndef KH2_SRC_YASUI_LIBYS_PRIZE_PO_HPP
+#define KH2_SRC_YASUI_LIBYS_PRIZE_PO_HPP
+
+#include "../../common/types.h"
+
+class FVector;
+class OBJENTRY;
+class PRIZE_PO;
+
+namespace YS {
+
+    class PRIZE_PO {
+    public:
+     PRIZE_PO(PRIZE_PO* a0, OBJENTRY* a1);
+     s32 Appear(FVector* a0, FVector* a1, s32 a2);
+     s32 AppearForPO06(FVector* a0, s32 a1, s32 a2);
+    };
+
+}  // namespace YS
+
+#endif

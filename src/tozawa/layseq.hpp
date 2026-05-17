@@ -2,7 +2,7 @@
 #define KH2_SRC_TOZAWA_LAYSEQ_HPP
 
 #include "layout.hpp"
-#include "types.h"
+#include "../common/types.h"
 
 namespace Tz {
 

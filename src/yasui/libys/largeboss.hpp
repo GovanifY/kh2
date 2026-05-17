@@ -1,0 +1,19 @@
+#ifndef KH2_SRC_YASUI_LIBYS_LARGEBOSS_HPP
+#define KH2_SRC_YASUI_LIBYS_LARGEBOSS_HPP
+
+#include "../../common/types.h"
+
+class FVector;
+class LARGEBOSS;
+class OBJENTRY;
+
+namespace YS {
+
+    class LARGEBOSS {
+    public:
+     LARGEBOSS(LARGEBOSS* a0, OBJENTRY* a1, FVector* a2, f32 a3);
+    };
+
+}  // namespace YS
+
+#endif

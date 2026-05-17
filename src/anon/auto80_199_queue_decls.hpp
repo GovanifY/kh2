@@ -1,5 +1,5 @@
 #pragma once
-#include "types.h"
+#include "../common/types.h"
 #include "../kn/fvector.hpp"
 
 // Auto-collected declarations for auto80_199_queue.cpp.

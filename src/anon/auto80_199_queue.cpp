@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 #include "auto80_199_queue_decls.hpp"
 #include "../harata/libdk/ft4.hpp"
 #include "../harata/libdk/sprite.hpp"

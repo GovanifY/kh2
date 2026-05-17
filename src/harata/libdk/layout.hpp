@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_HARATA_LIBDK_LAYOUT_HPP
 #define KH2_SRC_HARATA_LIBDK_LAYOUT_HPP
 
-#include "types.h"
+#include "../../common/types.h"
 
 namespace dk {
 

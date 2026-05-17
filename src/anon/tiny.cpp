@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 #include "../tozawa/cmenu_top.hpp"
 
 // merged from: jtraps_wrappers.cpp

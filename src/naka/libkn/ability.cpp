@@ -1,14 +1,7 @@
-#include "types.h"
+#include "ability_info.hpp"
 
 extern u8 D_00345d40;
-
 namespace kn {
-
-class AbilityInfo {
-public:
-    static u32 ability2item(s32);
-    static s32 item2index(s32);
-};
 
 u32 AbilityInfo::ability2item(s32 a0) {
     u32 t6 = 0;

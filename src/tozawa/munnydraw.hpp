@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_MUNNYDRAW_HPP
 #define KH2_SRC_TOZAWA_MUNNYDRAW_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 class IMAGE;
 

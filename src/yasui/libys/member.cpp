@@ -1,15 +1,11 @@
-#include "types.h"
+#include "member.hpp"
 
 namespace YS {
 
 extern u8 D_0032bae0 asm("D_0032bae0");
 extern u8 D_0032f064 asm("D_0032f064");
 
-class MEMBER {
-public:
-    static u32 Get(s32);
-    u32 is_exist(s32) const;
-};
+
 
 u32 MEMBER::Get(s32 index) {
     if (index < 0) {

@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TI_MINIGAME_ACCESSORS_HPP
 #define KH2_SRC_TI_MINIGAME_ACCESSORS_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace Ti {
 

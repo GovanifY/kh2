@@ -1,4 +1,4 @@
-#include "types.h"
+#include "cmenu_slbase.hpp"
 
 namespace Tz {
 
@@ -24,26 +24,6 @@ extern u8* D_0035f658 asm("D_0035f658");
 extern u32 D_0035f678 asm("D_0035f678");
 extern u8* D_0035f6cc asm("D_0035f6cc");
 extern u8 D_0035f6d0 asm("D_0035f6d0");
-class MenuBase {
-public:
-    static u32 IsExit();
-    static u32 IsChgMode();
-    static u32 isSavePad();
-    static void SetExit();
-    static u32 NextMode2Mode();
-    static void SetSignal(s32);
-    static void SetModeMax(s32, s32);
-    static s32 GetMode();
-    static void SetNextMode(s32);
-    static s32 GetNextMode();
-    static void IncSMode(s32);
-    static void SetSMode(s32);
-    static s32 GetSMode();
-    static void SetPhase(s32);
-    static s32 GetPhase();
-    static void* GetMenuObj();
-};
-
 u32 MenuBase::IsExit() {
     (void)D_0035f314;
     u32 b = (0x0036u << 16);
@@ -68,28 +48,6 @@ u32 MenuBase::NextMode2Mode() {
     u32 r4 = *(u32*)((u32)r15 + (s32)(-3328));
     return func_00287bd0(r4, r5);
 }
-
-class MenuBasic {
-public:
-    static void Setup();
-    static void SetNextMenu(s32, s32);
-    static void EndFade(void (*)());
-    static u32 isExistFade();
-    static u32 CheckFade();
-    static s32 GetMenuId();
-};
-
-class CmSLBase {
-public:
-    static void FadeOutWarningWin();
-    static u32 isLoopWarningWin();
-    static u32 isLoopList();
-    static void LoopList();
-    static void FadeOutList();
-    static void isExistList();
-    static void LeaveListItem();
-    static void SetLeadData();
-};
 
 void MenuBase::SetSignal(s32 v) { D_0035f2e8 = (u32)v; }
 

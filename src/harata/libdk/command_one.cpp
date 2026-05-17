@@ -1,14 +1,11 @@
-#include "types.h"
+#include "command_one.hpp"
 
 namespace dk {
 
 extern u8 D_00348000 asm("D_00348000");
 extern u8 D_0034805c asm("D_0034805c");
 
-class COMMAND_ONE {
-public:
-    void update();
-};
+
 
 extern "C" u32 func_00138840(...);
 extern "C" u32 func_0023acd8(...);

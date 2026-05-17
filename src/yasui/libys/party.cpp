@@ -1,12 +1,8 @@
-#include "types.h"
+#include "party.hpp"
 
 namespace YS {
 
-class PARTY {
-public:
-    u32 get_ability();
-    u32 get_partram();
-};
+
 
 u32 PARTY::get_ability() {
     u32 v = *(u32*)((u32)this + 1164);

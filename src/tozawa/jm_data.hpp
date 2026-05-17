@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_JM_DATA_HPP
 #define KH2_SRC_TOZAWA_JM_DATA_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace Tz {
 

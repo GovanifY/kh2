@@ -1,11 +1,7 @@
-#include "types.h"
+#include "obj_observer.hpp"
 
 namespace kn {
-class ObjObserver {
-public:
-    void clear();
-    s32 getEntryNum();
-};
+
 
 struct ObjObserverClearLayout {
     char _pad0[12];

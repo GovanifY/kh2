@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 #include "auto200_999_queue_decls.hpp"
 
 void func_00101d68(void) {

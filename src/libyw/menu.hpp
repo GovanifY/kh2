@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_LIBYW_MENU_HPP
 #define KH2_SRC_LIBYW_MENU_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 class ADVICE;
 class ELEM;

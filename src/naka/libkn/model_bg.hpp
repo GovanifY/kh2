@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_NAKA_LIBKN_MODEL_BG_HPP
 #define KH2_SRC_NAKA_LIBKN_MODEL_BG_HPP
 
-#include "types.h"
+#include "../../common/types.h"
 
 namespace kn {
 

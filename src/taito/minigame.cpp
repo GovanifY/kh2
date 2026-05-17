@@ -1,16 +1,10 @@
-#include "types.h"
+#include "minigame.hpp"
 
 extern "C" void func_002cf280(u32, u32, u32);
 
 namespace Ti {
 
-class LFlag {
-public:
-    LFlag(u32);
-    bool check(u32);
-    void reset(u32);
-    void zero();
-};
+
 
 LFlag::LFlag(u32 bits) { *reinterpret_cast<u32*>(this) = bits; }
 

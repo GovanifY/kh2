@@ -1,12 +1,8 @@
-#include "types.h"
+#include "sheet.hpp"
 
 namespace YS {
 
-class SHEET {
-public:
-    void start_drive(s32, s32);
-    void mpdrive(f32);
-};
+
 
 extern u32 D_00352130 asm("D_00352130");
 

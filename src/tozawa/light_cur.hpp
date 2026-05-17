@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_LIGHT_CUR_HPP
 #define KH2_SRC_TOZAWA_LIGHT_CUR_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace Tz {
 

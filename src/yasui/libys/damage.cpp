@@ -1,11 +1,8 @@
-#include "types.h"
+#include "damage.hpp"
 
 namespace YS {
 
-class DAMAGE {
-public:
-    u32 is_count_combo() const;
-};
+
 
 u32 DAMAGE::is_count_combo() const {
     u32 v0 = 0u;

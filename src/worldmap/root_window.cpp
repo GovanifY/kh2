@@ -1,11 +1,6 @@
-#include "types.h"
+#include "rootwindow.hpp"
 
 namespace worldmap {
-
-class RootWindow {
-public:
-    static void* get();
-};
 
 void* RootWindow::get() {
     u32 b = (0x0036u << 16);

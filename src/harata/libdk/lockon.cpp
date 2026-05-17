@@ -1,14 +1,10 @@
-#include "types.h"
+#include "lockon.hpp"
 
 namespace dk {
 
 extern void Obj2D_showGroup(s32) asm("_ZN2dk5Obj2D9showGroupEi");
 
-class LockOn {
-public:
-    static void* getYIImage();
-    void show();
-};
+
 
 extern u32 D_003486a0 asm("D_003486a0");
 

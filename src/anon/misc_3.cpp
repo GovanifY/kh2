@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 
 typedef s64 (*Func4)(s64, s64, s64, s64);
 

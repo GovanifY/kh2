@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../../common/types.h"
 
 // Namespace inferred from existing PS2 symbol/file clusters.
 

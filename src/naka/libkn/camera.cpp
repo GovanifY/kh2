@@ -1,21 +1,8 @@
-#include "types.h"
+#include "camera.hpp"
 
 namespace kn {
 extern u32 D_0033cc44 asm("D_0033cc44");
 extern u32 D_0033cc50 asm("D_0033cc50");
-
-void setCameraMulti(bool value);
-void setCameraNumber(s32 value);
-
-class Camera {
-public:
-    ~Camera();
-    f32 getRoll() const;
-    void setRoll(f32);
-    void setUpVector(f32, f32, f32);
-    void setPosition(f32, f32, f32);
-    void setReference(f32, f32, f32);
-};
 
 struct CameraLayout {
     char _pad0[80];

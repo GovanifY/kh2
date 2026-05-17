@@ -1,5 +1,5 @@
 #pragma once
-#include "types.h"
+#include "../common/types.h"
 
 // Auto-collected declarations for auto200_999_queue.cpp.
 // Keep this file generated-only.

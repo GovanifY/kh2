@@ -1,0 +1,26 @@
+#ifndef KH2_SRC_YASUI_LIBYS_SPECIALCOMMAND_HPP
+#define KH2_SRC_YASUI_LIBYS_SPECIALCOMMAND_HPP
+
+#include "../../common/types.h"
+
+class OBJ;
+class PLAYER;
+class SORA;
+class STDOBJ;
+
+namespace YS {
+
+    class SPECIAL_COMMAND {
+    public:
+     void set(s32 a0, void* a1, void* a2, STDOBJ* a3);
+     void reset(void);
+     u64 make_sidecar_menu(PLAYER* a0, COMMAND_MENU* a1);
+     u64 make_skateboard_menu(SORA* a0, COMMAND_MENU* a1);
+     u64 _check(OBJ* a0, COMMAND_MENU* a1);
+     u64 check(OBJ* a0, COMMAND_MENU* a1);
+     void LimitTrinityComboStart(s32 a0);
+    };
+
+}  // namespace YS
+
+#endif

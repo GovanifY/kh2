@@ -1,11 +1,8 @@
-#include "types.h"
+#include "clock.hpp"
 
 namespace dk {
 
-class Clock {
-public:
-    static u32 getPlayTimeToHMSMS(u32&, u32&, u32&, u32&);
-};
+
 
 extern "C" u32 func_001058e8(...);
 extern "C" u32 func_0014ca80(...);

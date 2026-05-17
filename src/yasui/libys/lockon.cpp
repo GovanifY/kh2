@@ -1,11 +1,7 @@
-#include "types.h"
+#include "lockon.hpp"
 
 namespace YS {
-class LOCKON {
-public:
-    void auto_lock();
-    void reset_player();
-};
+
 
 struct LOCKONLayout {
     s32 mode;

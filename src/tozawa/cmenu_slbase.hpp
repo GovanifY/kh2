@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_CMENU_SLBASE_HPP
 #define KH2_SRC_TOZAWA_CMENU_SLBASE_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 class ALLOCATOR;
 class FuncDef45;

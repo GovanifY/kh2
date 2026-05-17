@@ -1,11 +1,8 @@
-#include "types.h"
+#include "target.hpp"
 
 namespace YS {
 
-class TARGET {
-public:
-    u32 is_valid() const;
-};
+
 
 extern "C" u32 func_0019ba60(u32);
 

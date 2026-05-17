@@ -1,0 +1,29 @@
+#ifndef KH2_SRC_HARATA_LIBDK_EXP_HPP
+#define KH2_SRC_HARATA_LIBDK_EXP_HPP
+
+#include "../../common/types.h"
+
+class Exp;
+class FVector;
+class IMAGE;
+
+namespace dk {
+
+    class Exp {
+    public:
+     s32 getSeqNumber(int* a0, s32 a1, int* a2);
+     void create(s32 a0, IMAGE* a1, s32 a2);
+     void destroy(void);
+     void update(void);
+     void draw(void);
+     void print(FVector* a0, s32 a1, s32 a2);
+     void init(void);
+     void exit(void);
+     void on(void);
+     void off(void);
+     ~Exp();
+    };
+
+}  // namespace dk
+
+#endif

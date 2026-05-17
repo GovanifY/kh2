@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 
 
 class FuncDef15;

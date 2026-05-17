@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_LIBYW_MEMORY_HPP
 #define KH2_SRC_LIBYW_MEMORY_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 class Space;
 class anonymous_namespace;

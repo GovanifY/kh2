@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_JM_TREASURE_HPP
 #define KH2_SRC_TOZAWA_JM_TREASURE_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace YS { namespace TREASURE { struct TABLE; } }
 

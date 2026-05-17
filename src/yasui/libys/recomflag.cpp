@@ -1,10 +1,7 @@
-#include "types.h"
+#include "recomflag.hpp"
 
 namespace YS {
-class RECOM_FLAG {
-public:
-    void clear();
-};
+
 
 void RECOM_FLAG::clear() {
     u32 a0 = (u32)this;

@@ -1,4 +1,4 @@
-#include "types.h"
+#include "musical_target.hpp"
 
 namespace sa {
 
@@ -10,12 +10,7 @@ extern "C" void func_002361a0(u32);
 extern "C" u32 func_0022b9b8();
 extern "C" u32 func_00138650(u32, u32, u32, u32);
 
-class MUSICAL_TARGET {
-public:
-    static void* getImage();
-    static u32 init();
-    static void free();
-};
+
 
 void* MUSICAL_TARGET::getImage() {
     u32 p = D_0035e298;

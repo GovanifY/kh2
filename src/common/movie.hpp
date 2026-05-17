@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_COMMON_MOVIE_HPP
 #define KH2_SRC_COMMON_MOVIE_HPP
 
-#include "types.h"
+#include "./types.h"
 
 struct TASK;
 

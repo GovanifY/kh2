@@ -1,18 +1,11 @@
-#include "types.h"
+#include "field2dd.hpp"
 
 namespace dk {
 
 extern u32 D_00347fb0 asm("D_00347fb0");
 extern u32 D_00347fe4 asm("D_00347fe4");
 
-class Field2DD {
-public:
-    static void readConfigCommand();
-    static void ensureMonochrome();
-    static u32 getImd(s32);
-    static u32 getSqd(s32);
-    static u32 getSqdCommand();
-};
+
 
 extern "C" u32 func_0013a4c8(...);
 extern "C" u32 func_0013d498(...);

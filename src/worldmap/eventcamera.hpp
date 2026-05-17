@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_WORLDMAP_EVENTCAMERA_HPP
 #define KH2_SRC_WORLDMAP_EVENTCAMERA_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace worldmap {
 

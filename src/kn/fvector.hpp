@@ -1,7 +1,7 @@
 #ifndef KH2_KN_FVECTOR_HPP
 #define KH2_KN_FVECTOR_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace kn {
 

@@ -1,10 +1,7 @@
-#include "types.h"
+#include "effect_data.hpp"
 
 namespace ryj {
-class EFFECT_DATA {
-public:
-    void set(void* v);
-};
+
 
 struct EFFECT_DATA_Layout {
     void* value;

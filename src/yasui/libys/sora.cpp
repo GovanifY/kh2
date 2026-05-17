@@ -1,12 +1,7 @@
-#include "types.h"
+#include "sora.hpp"
 
 namespace YS {
-class SORA {
-public:
-    static u32 Get();
-    static u32 GetEntryId(s32);
-    void set_skateboard_mode(s32 v);
-};
+
 
 struct SORALayout {
     char _pad0[2928];

@@ -1,4 +1,4 @@
-#include "types.h"
+#include "./types.h"
 
 
 class GAME_MODE;

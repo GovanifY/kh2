@@ -1,0 +1,26 @@
+#ifndef KH2_SRC_TAITO_MG_PLAYER_HPP
+#define KH2_SRC_TAITO_MG_PLAYER_HPP
+
+#include "../common/types.h"
+
+class FVector;
+class MGPlayer;
+class OBJENTRY;
+class PAD;
+
+namespace Ti {
+
+    class MGPlayer {
+    public:
+     s32 _OVR_get_prize_pick_center_matrix(void);
+     s32 _OVR_get_prize_pick_center_inverse_matrix(void);
+     void _OVR_pre_exec(void);
+     void _OVR_post_exec(void);
+     MGPlayer(MGPlayer* a0, OBJENTRY* a1, PAD* a2, FVector* a3, f32 a4);
+     ~MGPlayer();
+     u32 current(void);
+    };
+
+}  // namespace Ti
+
+#endif

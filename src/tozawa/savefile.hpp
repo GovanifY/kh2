@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_SAVEFILE_HPP
 #define KH2_SRC_TOZAWA_SAVEFILE_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace Tz {
 

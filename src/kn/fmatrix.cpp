@@ -1,15 +1,10 @@
-#include "types.h"
+#include "fmatrix.hpp"
 
 namespace kn {
 
 class FVector;
 
-class FMatrix {
-   public:
-    u32 rotateX(f32);
-    u32 rotateY(f32);
-    u32 rotateZ(f32);
-};
+
 
 extern "C" f32 func_0011c050(...);
 extern "C" u32 func_002f4148(...);

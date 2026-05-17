@@ -1,14 +1,7 @@
-#include "types.h"
+#include "projection.hpp"
 
 namespace kn {
-class Projection {
-public:
-    enum WorH { WOR_H0 = 0 };
-    ~Projection();
-    u32 getViewClipGsMatrix();
-    f32 getFOV(WorH) const;
-    f32 getScreenZ() const;
-};
+
 
 struct ProjectionLayout {
     char _pad0[64];

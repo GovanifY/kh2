@@ -1,4 +1,4 @@
-#include "types.h"
+#include "friend.hpp"
 
 extern u32 Friend_getPartner_raw(u32) asm("_Z16wtarget_00111d98jjjj");
 extern void Friend_followMove(void*, void const*) asm("_ZN2kn6Friend10followMoveEPKNS_6VecSetE");
@@ -10,16 +10,7 @@ class VecSet;
 typedef int (*FriendCallback)(Friend*, int);
 extern u32 D_00341708 asm("D_00341708");
 
-class Friend {
-public:
-    u32 getObjObserver();
-    s32 getPersonality();
-    s32 getToScript();
-    void followEnemy();
-    u32 getPartner();
-    static u32 getPartyChara(s32);
-    void setCallFromScript(FriendCallback v);
-};
+
 
 struct FriendLayout {
     char _pad0[2912];

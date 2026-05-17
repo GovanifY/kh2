@@ -1,0 +1,25 @@
+#ifndef KH2_SRC_HARATA_LIBDK_BLUR_HPP
+#define KH2_SRC_HARATA_LIBDK_BLUR_HPP
+
+#include "../../common/types.h"
+
+struct TASK;
+class uchar;
+
+namespace dk {
+
+    class Blur {
+    public:
+     void update(void);
+     void init(void);
+     void blur_task(TASK* a0);
+     void setBlurAlpha(uchar a0);
+     void setBlurXYSize(u16 a0, u16 a1);
+     void setBlurRot(f32 a0, s32 a1);
+     void setBlurFlag(bool a0);
+     void setBlurType(bool a0);
+    };
+
+}  // namespace dk
+
+#endif

@@ -1,14 +1,11 @@
-#include "types.h"
+#include "planinfo.hpp"
 
 
 class BINARC;
 
 namespace gm {
 
-class PLANINFO {
-public:
- void Setup(BINARC* a0);
-};
+
 
 
 } // namespace gm

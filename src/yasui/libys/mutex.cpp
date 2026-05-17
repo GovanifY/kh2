@@ -1,12 +1,8 @@
-#include "types.h"
+#include "mutex.hpp"
 
 namespace YS {
 
-class MUTEX {
-public:
-    void lock(s32);
-    u32 is_lock(s32);
-};
+
 
 void MUTEX::lock(s32 index) {
     u32* bits = reinterpret_cast<u32*>(this);

@@ -1,15 +1,11 @@
-#include "types.h"
+#include "map.hpp"
 
 namespace dk {
 
 extern u32 D_0034c6f0 asm("D_0034c6f0");
 extern u8 D_0034c70c asm("D_0034c70c");
 
-class Map {
-public:
-    static u32 isPaxExist();
-    static void* getPax();
-};
+
 
 u32 Map::isPaxExist() {
     (void)D_0034c70c;

@@ -1,4 +1,4 @@
-#include "types.h"
+#include "camera.hpp"
 
 struct TASK;
 
@@ -6,13 +6,6 @@ namespace dk {
 
 extern void storeImage() asm("_ZN2dk10storeImageEv");
 extern s32 Camera_draw2Camera(void*) asm("_ZN2dk6Camera11draw2CameraEv");
-
-class Camera {
-public:
-    void setNoKick();
-    void after1CameraTask(TASK*);
-    void multiAfter2CameraTask(TASK*);
-};
 
 void Camera::setNoKick() {
     u32 b = (0x0035u << 16);

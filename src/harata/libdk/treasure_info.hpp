@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_HARATA_LIBDK_TREASURE_INFO_HPP
 #define KH2_SRC_HARATA_LIBDK_TREASURE_INFO_HPP
 
-#include "types.h"
+#include "../../common/types.h"
 
 namespace dk {
 

@@ -1,11 +1,8 @@
-#include "types.h"
+#include "scopecamera.hpp"
 
 namespace dk {
 
-class ScopeCamera {
-public:
-    static void destroy();
-};
+
 
 extern "C" u32 func_00140dc0(...);
 extern "C" u32 func_00140dd0(...);

@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TAITO_TIM2_HPP
 #define KH2_SRC_TAITO_TIM2_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace Ti {
 

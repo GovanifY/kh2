@@ -1,11 +1,8 @@
-#include "types.h"
+#include "wm_glanding.hpp"
 
 namespace dk {
 
-class WM_GLANDING {
-public:
-    u32 get_jump_flag();
-};
+
 
 u32 WM_GLANDING::get_jump_flag() {
     u32 v = *(u32*)((u32)this + 24);

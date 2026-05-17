@@ -1,12 +1,9 @@
-#include "types.h"
+#include "debug_mem.hpp"
 
 
 namespace dk {
 
-class DEBUG_MEM {
-public:
- void init(void);
-};
+
 
 
 } // namespace dk

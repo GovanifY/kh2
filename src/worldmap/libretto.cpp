@@ -1,4 +1,4 @@
-#include "types.h"
+#include "libretto.hpp"
 
 extern "C" void func_00170dd0(...);
 extern "C" void func_002be0b0(...);
@@ -8,13 +8,7 @@ namespace worldmap {
 
 extern u32 D_003617fc asm("D_003617fc");
 
-class Libretto {
-public:
-    static bool isExec();
-    void leaveAllObj();
-    void waitFlush();
-    static u32 isExistObj();
-};
+
 
 bool Libretto::isExec() { return D_003617fc != 0; }
 

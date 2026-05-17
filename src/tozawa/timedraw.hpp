@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_TIMEDRAW_HPP
 #define KH2_SRC_TOZAWA_TIMEDRAW_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 class IMAGE;
 

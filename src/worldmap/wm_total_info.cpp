@@ -1,14 +1,9 @@
-#include "types.h"
+#include "wm_total_info.hpp"
 
 namespace dk {
 extern u32 D_00375540 asm("D_00375540");
 extern u32 D_00361a90 asm("D_00361a90");
-class WM_TOTAL_INFO {
-public:
-    s32 getBaseNum(s32);
-    void fadeout();
-    void exit();
-};
+
 
 s32 WM_TOTAL_INFO::getBaseNum(s32 index) {
     return (s32)(*(s16*)((u32)&D_00375540 + ((u32)index << 1)));

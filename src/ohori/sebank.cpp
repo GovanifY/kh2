@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 
 class SE_BANK {
 public:

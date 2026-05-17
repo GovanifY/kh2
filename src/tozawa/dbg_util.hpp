@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_DBG_UTIL_HPP
 #define KH2_SRC_TOZAWA_DBG_UTIL_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 namespace Tz {
 

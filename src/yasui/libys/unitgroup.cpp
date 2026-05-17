@@ -1,12 +1,8 @@
-#include "types.h"
+#include "unitgroup.hpp"
 
 namespace YS {
 
-class UNIT_GROUP {
-public:
-    static u32 Disable(s32);
-    u32 get_rtn_param();
-};
+
 
 extern "C" u32 func_0019b260(u32);
 

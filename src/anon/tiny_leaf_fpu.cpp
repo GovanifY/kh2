@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 
 static inline u32 bits_from_f(f32 x) { union { f32 f; u32 u; } v; v.f = x; return v.u; }
 static inline f32 f_from_bits(u32 x) { union { u32 u; f32 f; } v; v.u = x; return v.f; }

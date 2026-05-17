@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 
 void func_00105860(void* self, s32 v) { *(s32*)((char*)self + 9368) = v; }
 

@@ -21,7 +21,7 @@ _Z16wtarget_00102250jjjj	00102250
 func_00102278	00102278
 func_001022c0	001022c0
 func_001022e8	001022e8
-_ZN4TASK5sleepEi	00102448
+Tz::TaskYield(...)	00102448
 printf(void*)	001024a8
 _ZN12TASK_MANAGER6CreateEPvj	00102508
 func_001025f8(void*)	001025f8
@@ -52,12 +52,12 @@ _Z12getTitleModev	00103070
 _Z16wtarget_00103080jjjj	00103080
 func_001030e0	001030e0
 _ZN4MENU17CreateTaskManagerEv	001031b0
-func_00103398	00103398
+Tz::MenuBasic::GetMenuNameId(unsigned int)	00103398
 _ZN2Tz8MenuBase5ResetEv	001033b0
 func_001033d8(void*)	001033d8
 _ZN4MENU7getTypeEv	00103550
 func_00103560	00103560
-_ZN4MENU12GetAllocatorEv	00103570
+Tz::LoadDataGetSystem()	00103570
 _ZN4MENU15GetObjAllocatorEv	00103580
 _ZN4MENU16DestoryAllocatorEv	00103748
 _ZN4MENU8finalizeEv	00103a40
@@ -137,9 +137,9 @@ func_00106108	00106108
 func_00106158	00106158
 _ZN2kn15MemoryAllocator21createMemoryAllocatorEPvj	00106178
 func_00106358	00106358
-_Znwj	001063c0
+Tz::LoadDataAlloc(unsigned int, unsigned int)	001063c0
 _Znaj	001063f0
-_Z16wtarget_00106420jjjj	00106420
+Tz::LoadDataFree(...)	00106420
 _ZdaPv	00106450
 func_00106490	00106490
 func_001064a8(void*)	001064a8
@@ -675,7 +675,7 @@ _ZN2dk5Obj2D16getSeqPraramXYOnEv	00139638
 _ZN2dk5Obj2D20getParentSeqColorOffEv	00139648
 _ZN2dk5Obj2D19getParentSeqColorOnEv	00139660
 _ZN2dk5Obj2D21getParentSeqAlphaOnlyEv	00139688
-_ZN2dk5Obj2D15DoubleSuicideOnEv	001396b0
+Tz::Select::BeginLeave(...)	001396b0
 _ZN2dk5Obj2D6isHideEv	001396c0
 func_001396d0	001396d0
 func_001396e0	001396e0
@@ -1415,10 +1415,11 @@ func_00167bf0	00167bf0
 func_00167c90	00167c90
 func_00167e00	00167e00
 func_00167e28	00167e28
-_ZN2YS7SOFTPAD3GetEi	00167f18
+Tz::MenuCursor::GetInputState(...)	00167f18
 _Z16wtarget_00168068jjjj	00168068
 func_001681d8	001681d8
 func_001682f0	001682f0
+Tz::JmInfo::GetCharaData(unsigned int)	0016e920
 _ZN2YS4FILE7ReadBarEPKcPv	00168328
 func_00168370	00168370
 func_001688a0	001688a0
@@ -1976,7 +1977,7 @@ func_00188fc0	00188fc0
 _Z16ctarget_00188fe0jjjj	00188fe0
 func_00189028	00189028
 _Z16ctarget_00189068jjjj	00189068
-func_00189108	00189108
+Tz::JmInfo::FindDefeatCount(unsigned int, unsigned int)	00189108
 func_00189170	00189170
 _ZN2YS7FORMRAM11set_abilityEi	001891b8
 _Z16ctarget_00189200jjjj	00189200
@@ -2382,7 +2383,7 @@ func_001a28f8	001a28f8
 _Z16ctarget_001a3018jjjj	001a3018
 _ZN2YS4ITEM6CanGetEiii	001a3168
 _ZN2YS4ITEM6ReduceEii	001a3458
-_Z16u_call4_001a3570jjjj	001a3570
+Tz::JmInfo::HasAnsemEntry(unsigned int)	001a3570
 _ZN2YS4ITEM10FormToItemEi	001a36e0
 func_001a36f8	001a36f8
 _ZN2YS4ITEM8RechargeEv	001a3710
@@ -3041,8 +3042,9 @@ _ZNK2YS11LIMIT_TABLE15is_read_requestEv	001d3de0
 _ZN2YS7MISSION12GetLimitCostEi	001d3f80
 func_001d3f98	001d3f98
 _Z16wtarget_001d42d0jjjj	001d42d0
+Tz::JmInfo::GetLimitEntry(...)	001d44d8
 func_001d4528	001d4528
-_ZNK2YS11LIMIT_TABLE9get_scoreEv	001d4550
+Tz::JmInfo::IsLimitEnabled(...)	001d4550
 func_001d4570	001d4570
 func_001d4808	001d4808
 _Z16u_call4_001d48b0jjjj	001d48b0
@@ -3733,7 +3735,7 @@ func_002369c8	002369c8
 func_002369f0	002369f0
 func_00236a18	00236a18
 _Z13func_00236a50Pv	00236a50
-func_00236a58	00236a58
+Tz::MenuBasic::SetGraRes(...)	00236a58
 _Z16u_call4_00236c38jjjj	00236c38
 _ZN2YI12IMAGE_FREEZE8GetImageEi	00236ca8
 func_00236cc0	00236cc0
@@ -3779,7 +3781,7 @@ func_0023c070	0023c070
 func_0023c098	0023c098
 func_0023c0c0	0023c0c0
 _Z13func_0023c0f8Pv	0023c0f8
-func_0023c100	0023c100
+Tz::MenuBasic::SetMesRes(...)	0023c100
 _Z16u_call4_0023c300jjjj	0023c300
 _ZN2YI6LAYOUT15GetSequenceUnitEi	0023c4b8
 func_0023c4d8	0023c4d8
@@ -3856,11 +3858,11 @@ func_0023f870	0023f870
 func_0023f8a8	0023f8a8
 _Z16u_call4_0023f8c8jjjj	0023f8c8
 _ZNK2Tz7LayFile14getFileAddressEv	0023f900
-_ZNK2Tz7LayFile13getImzAddressEi	0023f908
-_ZNK2Tz7LayFile13getLadAddressEi	0023f948
+Tz::MenuBasic::GetMesRes(...)	0023f908
+Tz::MenuBasic::GetGraRes(...)	0023f948
 _ZNK2Tz7LayFile13getImdAddressEi	0023f988
 _ZNK2Tz7LayFile13getSqdAddressEi	0023f9c8
-func_0023fa08	0023fa08
+Tz::LeadDataSetText(void*, unsigned int)	0023fa08
 _ZN2Tz7LayFile11readRequestEPKci	0023fa70
 _ZN2Tz7LayFile5allocEPKc	0023fa90
 func_0023fad0	0023fad0
@@ -3938,7 +3940,7 @@ _ZN2Tz9MenuSound6PlaySEEib	00242618
 _ZN2Tz9MenuSound12PlaySEDirectEi	00242660
 _ZN2Tz9MenuSound8PlayBgSEEi	00242678
 _ZN2Tz9MenuSound8StopBgSEEj	002426a0
-_Z16u_call4_00242708jjjj	00242708
+Tz::MenuSound::GetSeId(int)	00242708
 _ZN2Tz9MenuSound10ResetPauseEv	00242790
 _ZN2Tz9MenuSound7AllStopEv	002427c0
 func_002427d8	002427d8
@@ -4046,7 +4048,7 @@ func_00253578	00253578
 func_00253598	00253598
 _ZN2Tz8CampMenu14SetJmStartMenuEi	002535b0
 _ZN2Tz6CMData4ExitEv	00253768
-func_002537c8	002537c8
+Tz::CmSLBase::GetLeadMesId(unsigned int)	002537c8
 func_002537e0	002537e0
 func_00253818	00253818
 func_002538f8	002538f8
@@ -4057,7 +4059,7 @@ func_002539d0	002539d0
 func_00253b00	00253b00
 func_00253b18	00253b18
 _ZN2Tz5CmTop4InitEv	00253b30
-_Z16wtarget_00254020jjjj	00254020
+Tz::CmTop::ExitPartyImpl(...)	00254020
 _ZN2Tz5CmTop9ExitPartyEv	00254550
 func_00254f08	00254f08
 func_002550e8	002550e8
@@ -4086,7 +4088,7 @@ _ZN2Tz5CmTop17FadeOutWarningWinEi	00257530
 _ZN2Tz5CmTop15LeaveWarningWinEv	002575a8
 func_00257610	00257610
 _ZN2Tz5CmTop14LoopWarningWinEi	00257670
-func_002576d0	002576d0
+Tz::CmTop::IsWarningEnabled(...)	002576d0
 _ZN2Tz5CmTop13SetHideCursorEb	00257708
 _ZN2Tz5CmTop12SetDelCursorEb	00257718
 _ZN2Tz5CmTop9DelCursorEv	00257728
@@ -4145,19 +4147,21 @@ _Z13func_0025f6b0Pv	0025f6b0
 _ZN2Tz6CmItem10FadeOutAllEv	0025f6b8
 _ZN2Tz6CmItem8LeaveAllEv	0025f750
 _ZN2Tz11ItemPicDraw5ResetEv	0025f7d8
-func_002620a0	002620a0
-func_00262118	00262118
+Tz::CmItem::FadeOutTop()	002620a0
+Tz::CmItem::LeaveTop()	00262118
 func_00262160	00262160
-func_002621a0	002621a0
-func_00262208	00262208
+Tz::CmItem::FadeOutCategory()	002621a0
+Tz::CmItem::LeaveCategory()	00262208
 func_00262300	00262300
 func_00262360	00262360
 _ZN2Tz9ScrollBar7FadeOutEv	00262538
-func_00262588	00262588
+Tz::CmItem::LeaveStock()	00262588
 _ZN2Tz6CmItem11ChgCategoryEi	00262768
-func_00262c40	00262c40
+Tz::CmItem::FadeOutWarn()	00262c40
+Tz::CmItem::LeaveWarn()	00262cb8
 func_00262f18	00262f18
-func_00262fa0	00262fa0
+Tz::CmItem::FadeOutStock()	00262fa0
+Tz::CmItem::LeaveHelp()	00262ff8
 func_00263160	00263160
 func_00263188	00263188
 func_002631b0	002631b0
@@ -4231,16 +4235,18 @@ func_0026d560	0026d560
 func_0026d5c0	0026d5c0
 _ZN2Tz7CmParty12SetOldMemberEPKN2YS6MEMBERE	0026d808
 func_0026d828	0026d828
-_Z16wtarget_0026db60jjjj	0026db60
+Tz::Selector::SelExitImpl(...)	0026db60
 func_0026dcb8	0026dcb8
 _ZN2Tz8Selector7SelExitEv	0026dd00
 func_0026dd18	0026dd18
 _ZN2Tz8Selector11PauseThreadEP4TASK	0026dd40
+Tz::PauseTaskBegin()	0026dda0
 func_0026e340	0026e340
-func_0026e5b8	0026e5b8
+Tz::PauseTaskIsDone(...)	0026e5b8
 _ZN2Tz8Selector12SetupHelpGraEv	0026e840
 _ZN2Tz8Selector7ControlEP4TASK	0026e8a0
-func_0026ec70	0026ec70
+Tz::PauseTaskUpdate()	0026e940
+Tz::PauseTaskSetup(...)	0026ec70
 func_0026ed20	0026ed20
 func_0026ed48	0026ed48
 _Z16ctarget_0026eda8jjjj	0026eda8
@@ -4294,7 +4300,7 @@ _ZN2Tz6Jiminy9GetSeqTblEv	002766d0
 func_00276a18	00276a18
 _ZN2Tz6Jiminy10isFullOpenEv	00276c18
 _ZN2Tz6Jiminy18GetFontColorSeqNumEi	00276c38
-_Z16wtarget_00276c50jjjj	00276c50
+Tz::JmReport::DrawMessage(unsigned int, unsigned int)	00276c50
 func_00276dc0	00276dc0
 func_00276df8	00276df8
 func_00276e28	00276e28
@@ -4337,7 +4343,7 @@ func_0027db28	0027db28
 func_0027db58	0027db58
 func_0027dbd8	0027dbd8
 func_0027dc08	0027dc08
-func_0027dc20	0027dc20
+Tz::Selector::GetHelpGraPos(...)	0027dc20
 _ZN2Tz10SimpleStat7FadeOutEv	0027e6e0
 func_0027ea78	0027ea78
 _ZN2Tz9GumiPause11PauseThreadEP4TASK	0027f2f8
@@ -4386,10 +4392,10 @@ _ZN2Tz9PartyInfo13SetFormWeaponEii	002814f0
 _ZN2Tz9PartyInfo9isLoadObjEi	00281538
 _ZN2Tz9PartyInfo10GetNowFormEv	002815b8
 func_002817b8	002817b8
-func_00281b30	00281b30
+Tz::CmItem::FadeOutHelp()	00281b30
 func_00281be0	00281be0
 _ZN2Tz11ItemPicDraw10isExistGraEv	00281c30
-func_00281c50	00281c50
+Tz::CmItem::LeavePopup()	00281c50
 _ZN2Tz11ItemPicDraw9ChkCreateEv	00281e20
 func_00281e70	00281e70
 func_00281e88	00281e88
@@ -4450,7 +4456,7 @@ _ZN2Tz8MenuBase10SetModeMaxEii	00287b18
 func_00287b30	00287b30
 func_00287b98	00287b98
 _ZN2Tz8MenuBase7GetModeEv	00287bc0
-func_00287bd0	00287bd0
+Tz::MenuBase::NextModeToMode(...)	00287bd0
 _ZN2Tz8MenuBase11SetNextModeEi	00287c00
 _ZN2Tz8MenuBase11GetNextModeEv	00287c10
 func_00287c20	00287c20
@@ -4458,13 +4464,13 @@ _ZN2Tz8MenuBase13NextMode2ModeEv	00287c30
 _ZN2Tz8MenuBase9IsChgModeEv	00287c50
 func_00287c78	00287c78
 _ZN2Tz8MenuBase8IncSModeEi	00287c90
-_ZN2Tz8MenuBase8SetSModeEi	00287cc0
-_ZN2Tz8MenuBase8GetSModeEv	00287cd0
+Tz::Selector::SetState(...)	00287cc0
+Tz::Selector::GetState(...)	00287cd0
 func_00287d08	00287d08
 _ZN2Tz8MenuBase8SetPhaseEi	00287d20
 _ZN2Tz8MenuBase8GetPhaseEv	00287d30
 _ZN2Tz8MenuBase7SetExitEv	00287da0
-_ZN2Tz8MenuBase6IsExitEv	00287db0
+Tz::CmItem::isPadHelpVisible()	00287db0
 _ZN2Tz8MenuBase10GetMenuObjEv	00287dc0
 func_00287eb8	00287eb8
 func_00287ec8	00287ec8
@@ -4498,8 +4504,12 @@ _ZN2Tz6Select10GetItemMaxEv	002892f8
 _ZN2Tz6Select7GetLastEv	00289300
 _ZN2Tz6Select12isCursorMoveEv	00289310
 _ZN2Tz6Select15isSelectTopMoveEv	00289358
+Tz::Select::Start(...)	0028aa40
+Tz::Select::Leave(...)	0028ab20
+Tz::Select::Destroy(...)	0028abe0
 _ZN2Tz6Select9isFadeOutEv	0028acb8
-func_0028acc8	0028acc8
+Tz::Select::isCreated(...)	0028acc8
+Tz::Select::IsSeqDone(...)	0028ae28
 _ZN2Tz6Select15SetEnableButtonEj	0028af18
 _ZN2Tz6Select16SetDisableButtonEj	0028af28
 _ZN2Tz6Select17SetEnableShortCutEj	0028af40
@@ -4508,6 +4518,7 @@ _ZN2Tz6Select15GetEnableButtonEv	0028af88
 func_0028af90	0028af90
 _ZN2Tz6Select12GetSelectMaxEv	0028afa8
 _ZN2Tz6Select12GetSelectTopEv	0028b038
+Tz::JmReport::GetData(unsigned int)	0028b040
 _ZN2Tz6Select11Reset2DModeEv	0028b0e0
 _ZN2Tz6Select16SetSelectDisableEj	0028b1b0
 _Z13func_0028b1b8Pv	0028b1b8
@@ -4520,20 +4531,20 @@ func_0028b4f0	0028b4f0
 func_0028b6f0	0028b6f0
 func_0028b720	0028b720
 func_0028b750	0028b750
-func_0028b788	0028b788
+Tz::LeadDataInit(void*)	0028b788
 func_0028b7f8	0028b7f8
 func_0028b830	0028b830
 func_0028b870	0028b870
 func_0028b8a0	0028b8a0
 _Z13func_0028b8d0Pv	0028b8d0
 _Z13func_0028b8d8Pv	0028b8d8
-_ZN2Tz8SaveFile9buildDataEPv	0028b8e0
+Tz::LeadDataSetMesId(void*, unsigned int)	0028b8e0
 func_0028ba20	0028ba20
 func_0028ba80	0028ba80
-func_0028bd60	0028bd60
-func_0028bdb8	0028bdb8
+Tz::LeadDataStart(unsigned int)	0028bd60
+Tz::LeadDataLeave(unsigned int)	0028bdb8
 _ZN2Tz9ScrollBar5LeaveEv	0028be18
-func_0028be58	0028be58
+Tz::LeadDataIsActive(unsigned int)	0028be58
 func_0028c170	0028c170
 _ZN2Tz8MenuItem6updateEv	0028c4f8
 _Z16wtarget_0028c7c0jjjj	0028c7c0
@@ -4541,7 +4552,7 @@ func_0028c838	0028c838
 _ZN2Tz10MenuCursor4ExitEv	0028ca78
 _ZN2Tz10MenuCursor6isInitEv	0028cbf8
 func_0028cc40	0028cc40
-func_0028ce38	0028ce38
+Tz::MenuCursor::DeleteAll(...)	0028ce38
 func_0028cf10	0028cf10
 func_0028cf28	0028cf28
 _ZN2Tz10MenuCursor12SetParentSeqEiPN2YI8SEQUENCEE	0028cf98
@@ -4555,15 +4566,16 @@ _ZN2Tz8LightCur7FadeOutEv	0028d5d0
 _ZN2Tz8LightCur5LeaveEv	0028d620
 func_0028d660	0028d660
 _ZN2Tz8LightCur7isExistEv	0028d6e8
+Tz::MenuCursor::Create(...)	0028d980
 func_0028d708	0028d708
 func_0028d730	0028d730
-func_0028d8c0	0028d8c0
-func_0028da70(void*)	0028da70
-func_0028dac8	0028dac8
+Tz::Pause::CreateFadeObject(...)	0028d8c0
+Tz::Select::SetSequence(...)	0028da70
+Tz::Select::FadeOut(...)	0028dac8
 _ZN2Tz8MenuUtil10LayFadeOutEPNS_6LayoutEi	0028dae0
 func_0028db48	0028db48
 func_0028dba0	0028dba0
-func_0028dcc0	0028dcc0
+Tz::MenuCursor::AttachSprite(...)	0028dcc0
 _ZN2Tz8MenuUtil16SetSprtParentSeqEPN2dk6SpriteEPN2YI8SEQUENCEE	0028dd28
 _ZN2Tz8MenuUtil11GetFontTypeEi	0028ddd8
 func_0028e000	0028e000
@@ -4592,6 +4604,7 @@ func_0028eb00	0028eb00
 func_0028eb38	0028eb38
 _ZN2Tz8MultiSeq9setExModeEi	0028ebf0
 _ZN2Tz7SelHist10FadeOutAllEv	0028f7a0
+Tz::JmStory::LeaveAllPost(...)	0028f7e8
 func_0028f878(void*)	0028f878
 _ZN2Tz5CmTop12LeaveListAllEv	0028fa98
 _ZN2Tz7SelHist8SetMsgIdEii	0028fb28
@@ -4611,18 +4624,19 @@ func_00290508	00290508
 func_00290580	00290580
 func_002905b8	002905b8
 func_00290610	00290610
-_Z16wtarget_00290668jjjj	00290668
+Tz::Selector::CreateHelpGra(...)	00290668
 func_00290708	00290708
-_ZN2Tz7HelpGra6SetPriEi	00290738
-_ZN2Tz7HelpGra7isExistEv	00290740
+Tz::Selector::SetHelpGraMsg(...)	00290738
+Tz::Selector::HelpGraDone(...)	00290740
 func_00290760	00290760
 _ZN2Tz8MenuFileC1EP9ALLOCATORi	002907c0
 func_00290820	00290820
 func_00290848	00290848
 func_00290870	00290870
 _Z16u_call4_002908f0jjjj	002908f0
-_ZNK2Tz8MenuFile14getFileAddressEv	00290940
-_ZNK2Tz8MenuFile10getAddressEi	00290948
+Tz::JmInfo::IsLoaded(...)	00290940
+Tz::JmInfo::GetDataImpl(...)	00290948
+Tz::JmInfo::Unload(...)	00290a60
 func_002909f0	002909f0
 func_00290a10	00290a10
 func_00290a90	00290a90
@@ -4638,9 +4652,9 @@ _ZN2Tz8ItemStat10GetFontSeqEi	00291370
 func_00292520	00292520
 func_00292550	00292550
 _ZN2Tz8LoadData7RequestEPKcib	00292568
-func_002925c0	002925c0
+Tz::LoadDataFlush()	002925c0
 _ZN2Tz8LoadData9FlushTaskEP4TASK	00292608
-func_00292630	00292630
+Tz::LoadDataIsFlushing()	00292630
 _ZN2Tz8LoadData5ClearEi	00292690
 _ZN2Tz8LoadData10CacheAllocEPKc	002926a8
 func_00292a90	00292a90
@@ -4657,12 +4671,12 @@ _ZN2Tz9ChgMember18isExecChangeMemberEv	00293b70
 func_00293ba0	00293ba0
 func_00293bb0	00293bb0
 _ZN2Tz9ChgMember9GetMemberEv	00293bc0
-_Z16u_call4_00293bd0jjjj	00293bd0
+Tz::JmAlbum::RequestLoad(unsigned int, void*, unsigned int)	00293bd0
 _ZN2Tz6JMData14LoadObjRequestEib	00293c40
 _ZN2Tz6JMData5ClearEi	00293d80
 _ZN2Tz6JMData7DestroyEi	00293da0
 _ZN2Tz6JMData10CacheAllocEiPKc	00293db8
-_ZN2Tz6JMData11GetWorldStrEi	00293de8
+Tz::JmAlbum::GetImageName(unsigned int)	00293de8
 _ZN2Tz6JmInfo4ExitEv	00293eb0
 func_00293f40	00293f40
 func_00293f78	00293f78
@@ -4688,6 +4702,7 @@ _ZN2Tz10JmWorldSel8SelCheckEi	002956c0
 _Z13func_00295860Pv	00295860
 func_00295868	00295868
 func_00296ab0	00296ab0
+Tz::JmReport::GetIndex(unsigned int)	00296da8
 _ZN2Tz6Jiminy12DrawSelectorEPNS_6SelectEii	00296ea8
 _ZN2Tz8JmReport10DrawUpdateEPNS_6SelectEii	00296ed0
 func_00296f80	00296f80
@@ -4700,8 +4715,8 @@ func_002978d0	002978d0
 func_00297d78	00297d78
 _Z13func_00297df8Pv	00297df8
 func_00297e00	00297e00
-func_002983d8	002983d8
-func_00298f90	00298f90
+Tz::JmAlbum::GetAlbumData(unsigned int)	002983d8
+Tz::LayFileReset()	00298f90
 _ZN2Tz7JmAlbum14RequestGraLoadEi	00298fe8
 func_00299238	00299238
 func_00299260	00299260
@@ -4755,6 +4770,7 @@ _Z13func_002a4df0Pv	002a4df0
 _ZN2Tz8JmBattle8LeaveAllEv	002a4df8
 func_002a6368	002a6368
 func_002a65a0	002a65a0
+Tz::JmBattle::LeaveAllInner()	002a67a8
 _Z13func_002a6a10Pv	002a6a10
 func_002a6a18	002a6a18
 func_002a7470	002a7470
@@ -4803,10 +4819,10 @@ _ZN2Tz8CmSLBase8LoopListEv	002b54f8
 _ZN2Tz8CmSLBase11FadeOutListEv	002b5558
 _ZN2Tz8CmSLBase11isExistListEv	002b55e0
 func_002b5658	002b5658
-_Z17ttarget0_002b5768v	002b5768
+Tz::CmSLBase::LeaveListItemImpl()	002b5768
 func_002b5978	002b5978
-func_002b5a20	002b5a20
-_Z17ctarget0_002b5a50v	002b5a50
+Tz::CmSLBase::ResetListItem()	002b5a20
+Tz::CmSLBase::GetCurrentListItem()	002b5a50
 _ZN2Tz8CmSLBase13LeaveListItemEv	002b5af0
 func_002b5b10	002b5b10
 func_002b60e8	002b60e8
@@ -4872,6 +4888,7 @@ func_002ba8a8	002ba8a8
 _ZN5SOUND14seVoicePcmStopEv	002ba8e8
 func_002ba948	002ba948
 func_002ba978	002ba978
+Tz::MenuSound::ResetVoiceState()	002ba9c0
 func_002baa08	002baa08
 _ZN5SOUND11isVoicePlayEi	002baa20
 _ZN5SOUND9voiceStopEi	002baa48
@@ -4902,13 +4919,13 @@ func_002bbe38	002bbe38
 func_002bbed0	002bbed0
 func_002bbf68	002bbf68
 func_002bc188	002bc188
-_Z16wtarget_002bc1e8jjjj	002bc1e8
+Tz::MenuSound::GetBgSeHandle()	002bc1e8
 _ZN5SOUND13createEventSeEi	002bc238
 func_002bc288	002bc288
-_Z16wtarget_002bc358jjjj	002bc358
+Tz::MenuSound::StopBgSeHandle(...)	002bc358
 func_002bc398	002bc398
 func_002bc3f0	002bc3f0
-func_002bc420	002bc420
+Tz::MenuSound::isBgSePlaying(...)	002bc420
 _ZN5SOUND9setReverbEi	002bc458
 _Z16wtarget_002bc588jjjj	002bc588
 _ZN5SOUND11SE3DDisableEv	002bc788
@@ -4946,7 +4963,7 @@ func_002bd570	002bd570
 func_002bd588	002bd588
 func_002bd5c8	002bd5c8
 func_002bd680	002bd680
-func_002bd6d0	002bd6d0
+Tz::MenuSound::ResetPauseImpl()	002bd6d0
 func_002bd730	002bd730
 func_002bd760	002bd760
 func_002bd788	002bd788
@@ -5538,7 +5555,7 @@ func_002ef6b0	002ef6b0
 func_002ef750	002ef750
 func_002ef778	002ef778
 _ZN5MOVIE12functionCallEiPv	002ef7a0
-_ZN5MOVIE7isMovieEv	002ef7b8
+Tz::MenuSound::isPauseActive()	002ef7b8
 func_002ef7c8	002ef7c8
 _Z16wtarget_002ef890jjjj	002ef890
 func_002ef8b0	002ef8b0
@@ -5649,8 +5666,10 @@ func_002fed30	002fed30
 func_002fed58	002fed58
 func_002fed98	002fed98
 _Z16wtarget_002fee78jjjj	002fee78
+Tz::LayFileSetImdData(unsigned int, unsigned int)	002feee8
 func_002ff014(void*)	002ff014
 func_002ff1a4	002ff1a4
+Tz::LayFileBuildData(void*, unsigned int)	002ff2e8
 func_002ff3fc	002ff3fc
 _Z16wtarget_002ff970jjjj	002ff970
 func_002ffbb0	002ffbb0
@@ -5825,7 +5844,7 @@ func_00319f88	00319f88
 func_0031a030	0031a030
 func_0031a048	0031a048
 _Z13func_0031a060Pv	0031a060
-func_0031a260	0031a260
+Tz::Select::SetFlag(...)	0031a260
 func_0031a2b0	0031a2b0
 func_0031a508	0031a508
 _Z13func_0031a830Pv	0031a830
@@ -5833,7 +5852,7 @@ ErrorRaise(void*)	0031a838
 func_0031a840	0031a840
 func_0031ab38	0031ab38
 func_0031abd8	0031abd8
-func_0031ac78	0031ac78
+Tz::MenuCursor::SetFlag(...)	0031ac78
 func_0031acc0	0031acc0
 func_0031ad60	0031ad60
 func_0031ae00	0031ae00

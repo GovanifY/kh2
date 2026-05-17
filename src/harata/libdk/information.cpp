@@ -1,11 +1,7 @@
-#include "types.h"
+#include "information.hpp"
 
 namespace dk {
-class INFORMATION_WINDOW {
-public:
-    void close();
-    s32 getMessage();
-};
+
 
 struct INFORMATION_WINDOW_Layout {
     char _pad0[456];

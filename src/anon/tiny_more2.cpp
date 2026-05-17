@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 
 extern u32 D_0032bad0;
 extern u32 D_0033cbb8;

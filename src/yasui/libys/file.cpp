@@ -1,11 +1,8 @@
-#include "types.h"
+#include "file.hpp"
 
 namespace YS {
 
-class FILE {
-public:
-    static u32 ReadBar(const char*, void*);
-};
+
 
 u32 FILE::ReadBar(const char*, void*) asm("_ZN2YS4FILE7ReadBarEPKcPv");
 

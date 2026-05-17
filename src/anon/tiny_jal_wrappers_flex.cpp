@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 
 extern "C" u32 getSaveRam(u32, u32, u32, u32) asm("_Z10getSaveRamv");
 u32 func_001064a8(u32, u32, u32, u32);

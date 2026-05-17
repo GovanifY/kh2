@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 
 u32 func_001041a0(u32, u32, u32, u32);
 u32 func_00113628(u32, u32, u32, u32);

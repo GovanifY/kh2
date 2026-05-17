@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_SMENU_TTPT_HPP
 #define KH2_SRC_TOZAWA_SMENU_TTPT_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 struct TASK;
 

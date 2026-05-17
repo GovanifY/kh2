@@ -55,8 +55,8 @@ UNITS_CACHE_PATH = OBJDIFF_DIR / "units_cache.json"
 DEFAULT_IMAGE = "kh2-local/ps2-compiler:3.2-ee-040921-objdiff"
 SCRATCH_PLATFORM = "ps2"
 SCRATCH_COMPILER = "ee-gcc3.2-040921"
-SCRATCH_CFLAGS = "-O2 -g0 -x c++ -I include -fno-exceptions -fno-rtti -fpermissive -ffunction-sections"
-SCRATCH_PREPROCESS_FLAGS = "-E -P -dD -O2 -g0 -x c++ -I include -fno-exceptions -fno-rtti -fpermissive -ffunction-sections"
+SCRATCH_CFLAGS = "-O2 -g0 -x c++ -fno-exceptions -fno-rtti -fpermissive -ffunction-sections"
+SCRATCH_PREPROCESS_FLAGS = "-E -P -dD -O2 -g0 -x c++ -fno-exceptions -fno-rtti -fpermissive -ffunction-sections"
 UNITS_CACHE_VERSION = 3
 @dataclass(frozen=True)
 class LayoutRow:

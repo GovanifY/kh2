@@ -1,14 +1,6 @@
-#include "types.h"
+#include "objcamera.hpp"
 
 namespace dk {
-
-class ObjCamera {
-public:
-    static ObjCamera* getInstance();
-    static s32 getMode();
-    void initRadius();
-    void initLockRadius();
-};
 
 extern ObjCamera D_00348710 asm("D_00348710");
 extern u32 D_00348750 asm("D_00348750");

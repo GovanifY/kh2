@@ -1,10 +1,7 @@
-#include "types.h"
+#include "npc.hpp"
 
 namespace YS {
-class NPC {
-public:
-    u8 is_rtn_change_dir();
-};
+
 
 struct NPCLayout {
     char _pad0[2660];

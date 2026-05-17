@@ -1,4 +1,4 @@
-#include "types.h"
+#include "menu.hpp"
 
 namespace MENU {
 void DestoryAllocator();
@@ -30,12 +30,6 @@ void FixFree(void*);
 
 namespace worldmap {
 extern "C" u32 func_002764b0(u32);
-
-class Menu {
-public:
-    static void toJiminy(s32);
-    void exit();
-};
 
 void Menu::toJiminy(s32 index) {
     if (index == -1) {

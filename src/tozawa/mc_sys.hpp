@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_TOZAWA_MC_SYS_HPP
 #define KH2_SRC_TOZAWA_MC_SYS_HPP
 
-#include "types.h"
+#include "../common/types.h"
 
 class ALLOCATOR;
 

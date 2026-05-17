@@ -1,10 +1,7 @@
-#include "types.h"
+#include "mg_oarashi.hpp"
 
 namespace Ti {
-class MGOarashi {
-public:
-    s32 config();
-};
+
 
 struct MGOarashiLayout {
     char _pad0[100];

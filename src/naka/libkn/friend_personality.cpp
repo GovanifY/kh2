@@ -1,14 +1,9 @@
-#include "types.h"
+#include "friend_personality.hpp"
 
 namespace kn {
 class Friend;
 
-class FriendPersonality {
-public:
-    f32 getBattleCancelDistance() const;
-    void start_limit();
-    void setObj(Friend* v);
-};
+
 
 struct FriendPersonalityLayout {
     char _pad0[4];

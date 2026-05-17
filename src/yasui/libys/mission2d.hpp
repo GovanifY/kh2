@@ -1,7 +1,7 @@
 #ifndef KH2_SRC_YASUI_LIBYS_MISSION2D_HPP
 #define KH2_SRC_YASUI_LIBYS_MISSION2D_HPP
 
-#include "types.h"
+#include "../../common/types.h"
 
 class ALIGN;
 

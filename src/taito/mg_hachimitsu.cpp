@@ -1,10 +1,7 @@
-#include "types.h"
+#include "mg_hachimitsu.hpp"
 
 namespace Ti {
-class MGHachimitsu {
-public:
-    s32 get_gopher();
-};
+
 
 struct MGHachimitsuLayout {
     char _pad0[476];

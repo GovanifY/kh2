@@ -1,10 +1,7 @@
-#include "types.h"
+#include "afp.hpp"
 
 namespace Ti {
-class Afp {
-public:
-    s32 getCount(void* p);
-};
+
 
 struct AfpLayout {
     char _pad0[12];

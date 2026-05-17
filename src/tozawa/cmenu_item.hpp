@@ -2,7 +2,7 @@
 #define KH2_SRC_TOZAWA_CMENU_ITEM_HPP
 
 #include "scroll_bar.hpp"
-#include "types.h"
+#include "../common/types.h"
 
 namespace Tz {
 

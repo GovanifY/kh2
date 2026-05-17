@@ -1,4 +1,4 @@
-#include "types.h"
+#include "../common/types.h"
 #include "../kn/fvector.hpp"
 #include "../yasui/libys/areadata.hpp"
 #include "../yasui/libys/progress.hpp"

@@ -1,12 +1,9 @@
-#include "types.h"
+#include "decogumiparam.hpp"
 
 
 namespace gb {
 
-class DECOGUMIPARAM {
-public:
- void Load(void);
-};
+
 
 
 } // namespace gb
