@@ -107,5 +107,4 @@ u32 HelpGra::isExist() {
     u32 (*fp_call0_00139d78)() = (u32(*)())func_00139d78;
     return fp_call0_00139d78();
 }
-void HelpGra::SetPri(s32 v) { reinterpret_cast<HelpGraLayout*>(this)->pri = v; }
 }  // namespace Tz

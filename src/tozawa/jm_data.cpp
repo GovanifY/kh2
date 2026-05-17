@@ -42,6 +42,4 @@ u32 JMData::CacheAlloc(s32 a0, const char* a1) {
     return func_002926a8(tmp);
 }
 
-char* JMData::GetWorldStr(s32 index) { return *(char**)((u32)&D_0035f520 + ((u32)index << 2)); }
-
 }  // namespace Tz

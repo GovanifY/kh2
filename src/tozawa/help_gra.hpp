@@ -10,10 +10,8 @@ public:
     void draw(void);
     u32 isExist();
     void create(void* a0, void* a1, s32 a2);
-    void SetPri(s32 a0);
     HelpGra();
     ~HelpGra();
 };
 
 }  // namespace Tz
-

@@ -19,7 +19,6 @@ public:
     static void SavePadExit();
     static void Exit();
     static void Reset();
-    static u32 IsExit();
     static u32 IsChgMode();
     static u32 isSavePad();
     static void SetExit();
@@ -31,8 +30,6 @@ public:
     static void SetNextMode(s32);
     static s32 GetNextMode();
     static void IncSMode(s32);
-    static void SetSMode(s32);
-    static s32 GetSMode();
     static void SetPhase(s32);
     static s32 GetPhase();
     static void SaveMode();
@@ -89,4 +86,3 @@ public:
 };
 
 }  // namespace Tz
-

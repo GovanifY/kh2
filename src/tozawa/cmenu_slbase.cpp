@@ -24,11 +24,6 @@ extern u8* D_0035f658 asm("D_0035f658");
 extern u32 D_0035f678 asm("D_0035f678");
 extern u8* D_0035f6cc asm("D_0035f6cc");
 extern u8 D_0035f6d0 asm("D_0035f6d0");
-u32 MenuBase::IsExit() {
-    (void)D_0035f314;
-    u32 b = (0x0036u << 16);
-    return (u32)(*(u8*)((u32)b + (-3308)));
-}
 
 void MenuBase::SetExit() {
     u32 v = (u32)((s32)1);
@@ -63,10 +58,6 @@ void MenuBase::SetNextMode(s32 v) { D_0035f300 = (u32)v; }
 s32 MenuBase::GetNextMode() { return (s32)D_0035f300; }
 
 void MenuBase::IncSMode(s32 delta) { D_0035f304 = D_0035f304 + (u32)delta; }
-
-void MenuBase::SetSMode(s32 v) { D_0035f304 = (u32)v; }
-
-s32 MenuBase::GetSMode() { return (s32)D_0035f304; }
 
 void MenuBase::SetPhase(s32 v) { D_0035f30c = (u32)v; }
 

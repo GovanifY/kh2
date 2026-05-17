@@ -1,6 +1,7 @@
 #include "cmenu_selector.hpp"
 #include "cmenu_slbase.hpp"
 #include "menu_sound.hpp"
+#include "../tz/ui_accessors.hpp"
 
 namespace Tz {
 
@@ -8,6 +9,7 @@ extern u32 D_0035f3fc asm("D_0035f3fc");
 extern u32 D_0035f3f8 asm("D_0035f3f8");
 extern u32 D_0035f40c asm("D_0035f40c");
 extern u32 D_0035f124 asm("D_0035f124");
+extern u32 D_0035f304 asm("D_0035f304");
 extern "C" void func_001396b0(...);
 extern "C" void func_0028dac8(...);
 u32 MenuCursor::GetPri(s32 index) {
@@ -35,6 +37,14 @@ void MenuCursor::SetParentSeq(s32 index, YI::SEQUENCE* seq) {
 }
 
 u32 Selector::SelExit() { return SelExitImpl(); }
+
+void Selector::SetState(s32 v) { D_0035f304 = (u32)v; }
+
+u32 Selector::GetState() { return D_0035f304; }
+
+void Selector::SetHelpGraMsg(u32 a0, s32 v) {
+    reinterpret_cast<HelpGraLayout*>(a0)->pri = v;
+}
 
 void Selector::SetupHelpGra() {
     u32 a;

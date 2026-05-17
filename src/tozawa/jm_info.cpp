@@ -1,4 +1,5 @@
 #include "jm_info.hpp"
+#include "file_address_layout.hpp"
 #include "../yasui/libys/progress.hpp"
 
 namespace YS {
@@ -83,6 +84,10 @@ extern u32 D_0035f570 asm("D_0035f570");
 extern u32 D_0035f574 asm("D_0035f574");
 extern u32 D_0035f578 asm("D_0035f578");
 void LoadDataFree(...);
+
+u32 JmInfo::IsLoaded(u32 data) {
+    return reinterpret_cast<const FileAddressLayout*>(data)->fileAddress;
+}
 
 void JmInfo::Exit() {
     if (D_0035f574 != 0) {

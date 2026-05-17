@@ -4464,8 +4464,8 @@ _ZN2Tz8MenuBase13NextMode2ModeEv	00287c30
 _ZN2Tz8MenuBase9IsChgModeEv	00287c50
 func_00287c78	00287c78
 _ZN2Tz8MenuBase8IncSModeEi	00287c90
-Tz::Selector::SetState(...)	00287cc0
-Tz::Selector::GetState(...)	00287cd0
+Tz::Selector::SetState(int)	00287cc0
+Tz::Selector::GetState()	00287cd0
 func_00287d08	00287d08
 _ZN2Tz8MenuBase8SetPhaseEi	00287d20
 _ZN2Tz8MenuBase8GetPhaseEv	00287d30
@@ -4626,7 +4626,7 @@ func_002905b8	002905b8
 func_00290610	00290610
 Tz::Selector::CreateHelpGra(...)	00290668
 func_00290708	00290708
-Tz::Selector::SetHelpGraMsg(...)	00290738
+Tz::Selector::SetHelpGraMsg(unsigned int, int)	00290738
 Tz::Selector::HelpGraDone(...)	00290740
 func_00290760	00290760
 _ZN2Tz8MenuFileC1EP9ALLOCATORi	002907c0
@@ -4634,7 +4634,7 @@ func_00290820	00290820
 func_00290848	00290848
 func_00290870	00290870
 _Z16u_call4_002908f0jjjj	002908f0
-Tz::JmInfo::IsLoaded(...)	00290940
+Tz::JmInfo::IsLoaded(unsigned int)	00290940
 Tz::JmInfo::GetDataImpl(...)	00290948
 Tz::JmInfo::Unload(...)	00290a60
 func_002909f0	002909f0

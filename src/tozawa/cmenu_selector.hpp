@@ -42,12 +42,11 @@ public:
     static void PauseThread(TASK*);
     static u32 SelExitImpl(...);
     static void GetHelpGraPos(...);
-    static void SetHelpGraMsg(...);
+    static void SetHelpGraMsg(u32, s32);
     static void CreateHelpGra(...);
-    static void SetState(...);
-    static u32 GetState(...);
+    static void SetState(s32);
+    static u32 GetState();
     static u32 HelpGraDone(...);
 };
 
 }  // namespace Tz
-

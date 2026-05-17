@@ -3,6 +3,7 @@
 namespace Tz {
 
 extern u32 D_0035f598 asm("D_0035f598");
+extern u32 D_0035f520 asm("D_0035f520");
 extern s8 D_0035f5a1 asm("D_0035f5a1");
 extern u8 D_0035f5a3 asm("D_0035f5a3");
 u32 LoadDataIsFlushing();
@@ -30,6 +31,10 @@ void JmAlbum::RequestGraLoad(s32 a0) {
     RequestLoad(3, buf, 0);
     LoadDataFlush();
     D_0035f5a3 = 1;
+}
+
+u32 JmAlbum::GetImageName(u32 index) {
+    return *(u32*)((u32)&D_0035f520 + (index << 2));
 }
 
 }  // namespace Tz

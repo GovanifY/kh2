@@ -4,6 +4,14 @@
 
 namespace Tz {
 
+extern u8 D_0035f314 asm("D_0035f314");
+
+u32 CmItem::isPadHelpVisible() {
+    (void)D_0035f314;
+    u32 b = (0x0036u << 16);
+    return (u32)(*(u8*)((u32)b + (-3308)));
+}
+
 void CmItem::FadeOutAll() {
     u32 v0 = (u32)MenuBase::GetMode();
     if (v0 != 1 && v0 != 10 && v0 != 11 && v0 != 12 && v0 != 13 && v0 != 14) {

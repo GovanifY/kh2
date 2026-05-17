@@ -31,9 +31,8 @@ public:
     static u32 HasAnsemEntry(u32);
     static u32 GetLimitEntry(...);
     static u32 IsLimitEnabled(...);
-    static u32 IsLoaded(...);
+    static u32 IsLoaded(u32);
     static void Unload(...);
 };
 
 }  // namespace Tz
-

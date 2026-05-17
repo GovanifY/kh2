@@ -4,10 +4,6 @@
 
 namespace Tz {
 
-class MenuFile {
-public:
-    s32 getFileAddress() const;
-};
+class MenuFile {};
 
 }  // namespace Tz
-
