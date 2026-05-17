@@ -1,0 +1,32 @@
+name: ELF Matching check
+
+on:
+  push:
+  pull_request_target:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    environment: kh2-verify
+
+    steps:
+      - name: Cloning
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.sha }}
+          token: ${{ github.token || '' }}
+          lfs: true
+
+      - name: Download KH2FM's elf
+        env:
+          KH2FM_ELF_URL: ${{ secrets.KH2FM_ELF_URL }}
+        run: |
+          curl -L --fail --output SLPM_666.75 "$KH2FM_ELF_URL"
+
+      - name: Compiles and verify whether the build is matching
+        run: make verify

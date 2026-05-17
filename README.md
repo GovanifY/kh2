@@ -11,12 +11,12 @@ It builds the current executable:
 
 In order to work on this project, you will need to put SLPM\_666.75 at the root
 of this repo. It can be found readily available in the ISO of the game as a
-reguler file.
+regular file.
 
 You will also need some dependencies although not many, namely: python3, docker
 and git lfs. This repository was also made in mind with a UNIX shell and has
 been tested and known to work on Linux and macOS. Hopefully, it should work on
-WSL(Windows) with minimal tinkering.
+WSL (Windows) with minimal tinkering.
 
 You need to run `git lfs pull` in order to retrieve the compiler's archive from
 the repo before running `make`.
