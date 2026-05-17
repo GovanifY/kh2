@@ -24,7 +24,6 @@ extern u8* D_0035f658 asm("D_0035f658");
 extern u32 D_0035f678 asm("D_0035f678");
 extern u8* D_0035f6cc asm("D_0035f6cc");
 extern u8 D_0035f6d0 asm("D_0035f6d0");
-
 class MenuBase {
 public:
     static u32 IsExit();

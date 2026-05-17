@@ -1,25 +1,8 @@
-#include "types.h"
+#include "item_stat.hpp"
+#include "../harata/libdk/obj2d.hpp"
+#include "../harata/libdk/sprite.hpp"
 
 namespace Tz {
-namespace dk {
-class Obj2D;
-class Sprite {
-public:
-    void setNum(s32) asm("_ZN2dk6Sprite6setNumEi");
-};
-class Obj2D {
-public:
-    static s32 isExist(Obj2D*) asm("_ZN2dk5Obj2D7isExistEPS0_");
-};
-}  // namespace dk
-
-class ItemStat {
-public:
-    s32 GetFontSeq(s32);
-    void UpdateNowStat(s32, s32, s32, s32, s32);
-    void* ClearSeq();
-    void Clear();
-};
 
 extern "C" u32 u_call4_00139d78(u32) asm("_Z16u_call4_00139d78jjjj");
 extern "C" void dk_Sprite_setNum_raw(u32, u32) asm("_ZN2dk6Sprite6setNumEi");

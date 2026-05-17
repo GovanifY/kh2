@@ -1,11 +1,10 @@
+#include "commandmenu.hpp"
 #include "types.h"
 
 
 namespace YS {
 
 } // namespace YS
-
-class COMMAND_SLOT;
 
 class RECOM {
 public:

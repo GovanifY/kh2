@@ -1,19 +1,8 @@
-#include "types.h"
+#include "config.hpp"
 
 namespace Tz {
 
 extern u32 D_0035ecd8 asm("D_0035ecd8");
-
-class Config {
-public:
-    static u32 isEventViewer();
-    static u32 isChapterAll();
-    static u32 isVibration();
-    static u32 isNaviOn();
-    static u32 isCameraAuto();
-    static u32 isCommandKH2();
-    static u32 isRightStickCamera();
-};
 
 u32 Config::isEventViewer() {
     u32 v = D_0035ecd8;

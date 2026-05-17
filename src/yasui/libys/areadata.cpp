@@ -1,10 +1,5 @@
-#include "types.h"
+#include "areadata.hpp"
 
 namespace YS {
-class AREADATA {
-public:
-    void Destroy();
-};
-
 void AREADATA::Destroy() {}
 }  // namespace YS

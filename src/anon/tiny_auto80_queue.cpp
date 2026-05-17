@@ -1,5 +1,7 @@
 #include "types.h"
 #include "../kn/fvector.hpp"
+#include "../yasui/libys/areadata.hpp"
+#include "../yasui/libys/progress.hpp"
 extern "C" void dk_Timer_start_exact_0014c9b8(void) asm("_ZN2dk5Timer5startEv");
 
 // ============================================================
@@ -20044,15 +20046,7 @@ u32 ctarget_0013cb08(u32 a0, u32 a1, u32 a2, u32 a3) {
 }
 
 namespace YS {
-class PROGRESS {
-public:
-    static u32 CheckFlag(s32 flag);
-};
 
-class AREADATA {
-public:
-    f32 GetCostRest();
-};
 f32 AREADATA::GetCostRest() {
     return *(f32*)&D_01c6053c - *(f32*)&D_01c60540;
 }

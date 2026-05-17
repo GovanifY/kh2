@@ -1,17 +1,7 @@
-#include "types.h"
+#include "../harata/libdk/field.hpp"
 
 
-class FuncDef8;
-class FuncDef9;
 struct TASK;
-
-class Field {
-public:
- void WorldMapStart(s32 a0, u32 a1);
- void TitleStart(bool a0);
- void init(void);
- void execTitle_task(TASK* a0);
-};
 
 void CacheBuffDestroyEnable(void);
 void Init(void);

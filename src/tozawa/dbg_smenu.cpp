@@ -1,10 +1,5 @@
-#include "types.h"
+#include "dbg_smenu.hpp"
 
 namespace Tz {
-class DbgSMenu {
-public:
-    void SignalCall();
-};
-
 void DbgSMenu::SignalCall() {}
 }  // namespace Tz

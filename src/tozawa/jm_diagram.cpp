@@ -1,4 +1,4 @@
-#include "types.h"
+#include "jm_diagram.hpp"
 
 namespace Tz {
 
@@ -13,16 +13,6 @@ extern "C" u32 func_00292630();
 extern "C" u32 func_00293de8(u32);
 extern "C" u32 func_00293db8(u32, u32);
 extern "C" void func_0023fa08(u32, u32);
-
-class JmDiagram {
-public:
-    static void LeaveSeq();
-    static void FileAlloc();
-    static void FadeOutAll();
-};
-
-
-
 
 void JmDiagram::FileAlloc() {
     u32* s0 = &D_0035f5dc;

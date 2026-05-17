@@ -1,6 +1,4 @@
-#include "types.h"
-
-struct TASK;
+#include "smenu_cana.hpp"
 
 namespace Tz {
 
@@ -12,11 +10,6 @@ extern "C" void func_00242678(u32);
 extern "C" void func_00236d60();
 extern "C" u32 func_00251318();
 extern "C" void func_00251a70();
-
-class CANA {
-public:
-    static void PauseThread(TASK*);
-};
 
 void CANA::PauseThread(TASK* a0) {
     u32 s0 = (u32)a0;

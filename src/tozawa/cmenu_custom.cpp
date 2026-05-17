@@ -1,14 +1,8 @@
-#include "types.h"
+#include "cmenu_custom.hpp"
 
 namespace Tz {
 
 extern u32 D_0035f12c asm("D_0035f12c");
-
-class CmCustom {
-public:
-    static u32 GetItemTbl(s32);
-    static void LeaveAll();
-};
 
 extern "C" u32 func_001a80c8(...);
 

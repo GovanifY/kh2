@@ -1,4 +1,5 @@
 #include "types.h"
+#include "../tozawa/cmenu_top.hpp"
 
 // merged from: jtraps_wrappers.cpp
 void func_001007c0(void*);
@@ -89,12 +90,7 @@ void func_00306698(s32);
 void func_002f2508(s32);
 void func_001397d8(s32);
 void func_002634c8(s32);
-namespace Tz {
-class CmTop {
-public:
-    static void LeaveWarningWin();
-};
-}
+namespace Tz {}
 void func_00257530(s32);
 void func_00258df0(s32);
 void func_00258eb8(s32);

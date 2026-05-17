@@ -1,6 +1,4 @@
-#include "types.h"
-
-struct TASK;
+#include "smenu_he.hpp"
 
 namespace Tz {
 
@@ -11,11 +9,6 @@ extern "C" void func_00243740();
 extern "C" void func_00236d60();
 extern "C" u32 func_00244068();
 extern "C" void func_002444b8();
-
-class HEFT {
-public:
-    static void PauseThread(TASK*);
-};
 
 void HEFT::PauseThread(TASK* a0) {
     u32 s16 = (u32)a0;

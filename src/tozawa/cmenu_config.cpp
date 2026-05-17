@@ -1,17 +1,9 @@
-#include "types.h"
+#include "cmenu_config.hpp"
 
 namespace Tz {
 
-class Select;
-
 extern s8* D_0035f234 asm("D_0035f234");
 extern u32 D_0035f254 asm("D_0035f254");
-
-class CmConfig {
-public:
-    static void DrawUpdate(Select*, s32, s32);
-    static u32 GetSelSeq(s32, s32);
-};
 
 extern "C" u32 func_00257770(...);
 extern "C" u32 func_0028af88(...);

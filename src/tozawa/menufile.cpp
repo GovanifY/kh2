@@ -1,11 +1,6 @@
-#include "types.h"
+#include "menufile.hpp"
 
 namespace Tz {
-class MenuFile {
-public:
-    s32 getFileAddress() const;
-};
-
 struct FileAddressLayout {
     char _pad0[4];
     s32 fileAddress;

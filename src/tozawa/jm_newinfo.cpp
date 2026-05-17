@@ -1,15 +1,8 @@
-#include "types.h"
+#include "jm_newinfo.hpp"
 
 namespace Tz {
 
 extern "C" u32 getSaveRam() asm("_Z10getSaveRamv");
-
-class JmNewInfo {
-public:
-    static void Exit();
-    static u32 GetSram();
-    static void CheckAll();
-};
 
 extern "C" void func_00106420(u32);
 extern "C" void func_002a9df0(...);

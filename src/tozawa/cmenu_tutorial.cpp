@@ -1,11 +1,6 @@
-#include "types.h"
+#include "cmenu_tutorial.hpp"
 
 namespace Tz {
-
-class CmTutorial {
-public:
-    static u32 LeaveAll();
-};
 
 extern "C" u32 func_0027d350(...);
 extern "C" u32 func_00287bc0(...);

@@ -1,24 +1,7 @@
-#include "types.h"
+#include "area.hpp"
 
 
-namespace dk {
-
-} // namespace dk
-
-class AREA;
 struct TASK;
-
-class Area {
-public:
- void setMapFile(char* a0);
- void readData(void);
- void initMap(u64 a0);
- void init(void);
- void start(void);
- void exit(void);
- void cacheBuffDestroy(AREA* a0);
- void finalizer(AREA* a0);
-};
 
 void change(AREA* a0);
 void Init(AREA* a0);

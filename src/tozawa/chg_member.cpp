@@ -1,18 +1,10 @@
-#include "types.h"
+#include "chg_member.hpp"
 
 namespace Tz {
 
 extern u8 D_0035f4f9 asm("D_0035f4f9");
 extern u32 D_0035f4f4 asm("D_0035f4f4");
 extern u32 D_0035f2b0 asm("D_0035f2b0");
-
-class ChgMember {
-public:
-    static u32 isLoadExec();
-    static u32 isLoadFinish();
-    static u32 Load();
-    static void* GetMember();
-};
 
 u32 ChgMember::isLoadExec() {
     (void)D_0035f4f9;

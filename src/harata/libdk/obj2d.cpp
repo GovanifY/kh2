@@ -1,37 +1,10 @@
-#include "types.h"
+#include "obj2d.hpp"
 
 namespace dk {
 extern u32 D_00347f80 asm("D_00347f80");
 extern "C" u32 TASK_MANAGER_create_task_raw(u32, u32, u32, u32)
     asm("_ZN12TASK_MANAGER11create_taskEiiPFvP4TASKE");
 extern u8 dk_Obj2D_ExecTask asm("_ZN2dk5Obj2D8ExecTaskEP4TASK");
-
-class Obj2D {
-public:
-    static u32 GetAllocator();
-    void create(s32, s32);
-    void link(s32);
-    static u32 isExist(Obj2D*);
-    void leave();
-    void resetLeave();
-    u32 isLeave();
-    void setNoKick();
-    void hide();
-    void show();
-    void localHide();
-    void localShow();
-    void getSeqColorOff();
-    void getSeqColorOn();
-    void resetSeqAlphaOnly();
-    void getSeqAlphaOnly();
-    void getSeqPraramXYOff();
-    void getSeqPraramXYOn();
-    void getParentSeqColorOff();
-    void getParentSeqColorOn();
-    void getParentSeqAlphaOnly();
-    void DoubleSuicideOn();
-    u32 isHide();
-};
 
 u32 Obj2D::GetAllocator() {
     u32 p = D_00347f80;

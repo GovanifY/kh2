@@ -1,11 +1,6 @@
-#include "types.h"
+#include "menu_util.hpp"
 
 namespace Tz {
-
-class MenuUtil {
-public:
-    static u32 GetFontType(s32);
-};
 
 u32 MenuUtil::GetFontType(s32 a0) {
     s32 t6 = 100;

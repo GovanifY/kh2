@@ -1,11 +1,10 @@
+#include "commandmenu.hpp"
 #include "types.h"
 
 
 namespace YS {
 
 } // namespace YS
-
-class COMMAND_MENU;
 
 class LIMIT_TABLE {
 public:

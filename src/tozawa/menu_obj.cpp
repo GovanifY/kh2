@@ -1,25 +1,10 @@
-#include "types.h"
+#include "menu_obj.hpp"
 
-namespace dk {
-class Sprite;
-}
 namespace kn {
 class Motion;
 }
 
 namespace Tz {
-
-class LayMsg;
-
-class MenuObj {
-public:
-    void SetAction(s32, s32, s32);
-    void SetTransZ(s32, f32);
-    void SetRotX(s32, f32);
-    void SetRotY(s32, f32);
-    void SetSyncLayMsg(s32, LayMsg*);
-    void SetSyncSprite(s32, dk::Sprite*);
-};
 
 extern "C" u32 func_001a9458(...);
 

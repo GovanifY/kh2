@@ -1,25 +1,6 @@
-#include "types.h"
+#include "select.hpp"
 
 namespace Tz {
-class Select {
-public:
-    s16 GetCurrent();
-    s32 GetLast();
-    void* GetItemPtr(s32);
-    void* GetCurrentItemPtr();
-    s16 GetItemMax();
-    s16 GetSelectMax();
-    u32 isFadeOut();
-    u32 isCursorMove();
-    s32 GetEnableButton();
-    s16 GetSelectTop();
-    s32 SetEnableButton(u32);
-    s32 SetDisableButton(u32);
-    void SetSelectorLoop(bool);
-    s32 SetEnableShortCut(u32 v);
-    void SetSelectDisable(u32 v);
-};
-
 struct SelectLayout {
     s16 current;
     char _pad0[2];
@@ -49,6 +30,7 @@ u32 Select::isFadeOut() {
     return (u32)(0u < v0);
 }
 extern "C" u32 func_0028acb8(u32) __attribute__((alias("_ZN2Tz6Select9isFadeOutEv")));
+
 extern "C" u32 func_0028b040(...);
 u32 Select::isCursorMove() {
     u32 s0 = (u32)this;

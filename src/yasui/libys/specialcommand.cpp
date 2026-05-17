@@ -1,3 +1,4 @@
+#include "commandmenu.hpp"
 #include "types.h"
 
 
@@ -5,7 +6,6 @@ namespace YS {
 
 } // namespace YS
 
-class COMMAND_MENU;
 class OBJ;
 class PLAYER;
 class SORA;

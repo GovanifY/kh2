@@ -1,11 +1,6 @@
-#include "types.h"
+#include "laymsg.hpp"
 
 namespace Tz {
-class LayMsg {
-public:
-    s32 getSequence();
-};
-
 struct LayMsgLayout {
     char _pad0[28];
     s32 sequence;

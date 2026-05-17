@@ -1,4 +1,4 @@
-#include "types.h"
+#include "mcard.hpp"
 
 namespace Tz {
 
@@ -11,20 +11,6 @@ extern "C" u32 func_00234630(...);
 extern "C" u32 func_00234650(...);
 extern "C" u32 func_00181500(...);
 extern "C" u32 wtarget_002fde18(u32, u32, u32) asm("_Z16wtarget_002fde18jjjj");
-
-class MCard {
-public:
-    static bool isFindSystem();
-    static void* GetMCInfo();
-    static u32 ClearFileInfo();
-    static u32 ChgWorldName(s32);
-    static void SetSystemMode(s32);
-    static u32 ChgDir(s32);
-    static u32 MakeDir();
-    static void SetSlot(s32);
-    static s32 GetSlot();
-    static void SetPos(s32);
-};
 
 bool MCard::isFindSystem() {
     u32 p = D_0035ec94;

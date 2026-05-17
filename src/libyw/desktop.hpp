@@ -1,0 +1,18 @@
+#ifndef KH2_SRC_LIBYW_DESKTOP_HPP
+#define KH2_SRC_LIBYW_DESKTOP_HPP
+
+#include "types.h"
+
+namespace YW {
+
+class DESKTOP {
+public:
+    DESKTOP(DESKTOP* a0, s32 a1, s32 a2, s32 a3, s32 a4, u32 a5);
+    void send_font();
+    void exec(f32 a0, f32 a1, u32 a2);
+    ~DESKTOP();
+};
+
+}  // namespace YW
+
+#endif

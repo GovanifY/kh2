@@ -1,46 +1,10 @@
-#include "types.h"
+#include "ui_accessors.hpp"
+#include "../tozawa/item_info.hpp"
+#include "../tozawa/help_gra.hpp"
+#include "../tozawa/multi_seq.hpp"
+#include "../tozawa/party_info.hpp"
 
 namespace Tz {
-class CmComm {
-public:
-    s64 GetIconMsgSize();
-};
-
-class PartyInfo {
-public:
-    s32 GetPartyMax();
-    s32 GetParty(s32 index);
-    u32 GetName(s32 index);
-    u32 GetSheet(s32 index);
-    u32 GetEntryId(s32 index);
-    u32 isLoadObj(s32 index);
-    u32 GetNowForm();
-    u32 isSora(s32 index);
-    static u32 isDoubleWeaponForm(s32 index);
-    static u32 GetAllHaveForm();
-    static u32 GetAllDoubleWeaponForm();
-};
-
-class ItemInfo {
-public:
-    s32 GetInfoMax();
-    void* GetInfo();
-    void* GetMsgTbl();
-    void SetPartyInfo(PartyInfo* v);
-    s64 GetItemNoneMsgId();
-};
-
-class MultiSeq {
-public:
-    void setExMode(s32 v);
-};
-
-class HelpGra {
-public:
-    void SetPri(s32 v);
-    u32 isExist();
-};
-
 struct PartyInfoLayout {
     s32 partyMax;
 };

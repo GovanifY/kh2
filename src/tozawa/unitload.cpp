@@ -1,11 +1,6 @@
-#include "types.h"
+#include "unitload.hpp"
 
 namespace Tz {
-
-class UnitLoad {
-public:
-    static u32 isReading();
-};
 
 extern "C" u32 func_001688b8();
 

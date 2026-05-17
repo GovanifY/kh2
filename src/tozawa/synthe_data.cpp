@@ -1,8 +1,6 @@
-#include "types.h"
+#include "synthe_data.hpp"
 
 namespace Tz {
-
-class MenuFile;
 
 extern "C" u32 func_00103570();
 extern "C" void* func_001063c0(u32, u32);
@@ -18,12 +16,6 @@ extern void* D_0035f674 asm("D_0035f674");
 extern u8 D_0035f3a8 asm("D_0035f3a8");
 extern void* D_0035f6dc asm("D_0035f6dc");
 extern u8* D_0035f6d8 asm("D_0035f6d8");
-
-class SyntheData {
-public:
-    static void LeadData(MenuFile*);
-    static u32 GetMixDataFname();
-};
 
 void SyntheData::LeadData(MenuFile* a0) {
     u8 buf[256];

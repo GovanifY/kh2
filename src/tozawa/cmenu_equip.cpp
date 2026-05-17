@@ -1,22 +1,10 @@
-#include "types.h"
+#include "cmenu_equip.hpp"
+#include "cmenu_top.hpp"
 
 namespace Tz {
 
 extern u32 D_00373788 asm("D_00373788");
 extern void* D_0035f010 asm("D_0035f010");
-
-class CmEquip {
-public:
-    static void* GetFormMsgTbl();
-    static void FadeOutAll();
-    static void LeaveAll();
-};
-
-class CmTop {
-public:
-    static void LeaveShortCutInfo();
-    static void FadeOutPadHelp();
-};
 
 void* CmEquip::GetFormMsgTbl() { return &D_00373788; }
 

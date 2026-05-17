@@ -1,19 +1,10 @@
-#include "types.h"
-
-struct TASK;
+#include "load_data.hpp"
 
 extern void YS_CACHE_BUFF_Clear(s32) asm("_ZN2YS10CACHE_BUFF5ClearEi");
 extern void YS_CACHE_BUFF_Flush(TASK*) asm("_ZN2YS10CACHE_BUFF5FlushEP4TASK");
 extern void* YS_CACHE_BUFF_Alloc(char const*, s32) asm("_ZN2YS10CACHE_BUFF5AllocEPKci");
 
 namespace Tz {
-class LoadData {
-public:
-    static void Request(const char*, s32, bool);
-    static void FlushTask(TASK*);
-    static void Clear(s32);
-    static void* CacheAlloc(const char*);
-};
 
 extern "C" u32 func_00170cd0(...);
 extern "C" void func_00170518(...);

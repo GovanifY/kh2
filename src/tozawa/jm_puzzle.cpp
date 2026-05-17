@@ -1,16 +1,10 @@
-#include "types.h"
+#include "jm_puzzle.hpp"
 
 namespace Tz {
 
 extern volatile u8* volatile D_0035f638 asm("D_0035f638");
 extern s8 D_00374cd0[] asm("D_00374cd0");
 extern "C" void func_002fde18(void*, u32, u32);
-
-class JmPuzzle {
-public:
-    static void InitInfo();
-    static u32 CalcMaxPiece(s32);
-};
 
 void JmPuzzle::InitInfo() {
     u32 s0 = 0x00360000;

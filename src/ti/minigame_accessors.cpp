@@ -1,17 +1,7 @@
-#include "types.h"
+#include "minigame_accessors.hpp"
+#include "../taito/mg_hachimitsu_po.hpp"
 
 namespace Ti {
-class MGObj;
-
-class MGHachimitsuGopher {
-public:
-    void set_balloon(MGObj* v);
-};
-
-class MGHachimitsuPo {
-public:
-    u8 is_separate_blow();
-};
 
 struct MGHachimitsuGopherLayout {
     char _pad0[2836];

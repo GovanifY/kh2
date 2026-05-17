@@ -1,15 +1,8 @@
-#include "types.h"
+#include "cmenu_ability.hpp"
 
 namespace Tz {
 
 extern "C" u32 getSaveRam() asm("_Z10getSaveRamv");
-
-class CmAbility {
-public:
-    static u32 GetItemTbl(s32);
-    static u32 isWorldLK();
-    static void LeaveAll();
-};
 
 extern "C" u32 func_0027bba0(u32);
 

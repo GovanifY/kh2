@@ -1,6 +1,4 @@
-#include "types.h"
-
-struct TASK;
+#include "smenu_ttmy.hpp"
 
 namespace Tz {
 
@@ -10,11 +8,6 @@ extern "C" void func_00102448(u32, u32);
 extern "C" void func_0024e850();
 extern "C" u32 func_0024ebc0();
 extern "C" void func_0024edd8();
-
-class TTMY {
-public:
-    static void PauseThread(TASK*);
-};
 
 void TTMY::PauseThread(TASK* a0) {
     u32 s0 = (u32)a0;

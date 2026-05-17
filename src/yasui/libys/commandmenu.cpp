@@ -1,17 +1,6 @@
-#include "types.h"
+#include "commandmenu.hpp"
 
 namespace YS {
-class COMMAND_SLOT {
-public:
-    void clear();
-    bool is_exist();
-};
-
-class COMMAND_MENU {
-public:
-    void clear();
-    void reset_cursor();
-};
 
 struct COMMAND_SLOT_Layout {
     char _pad0[2];

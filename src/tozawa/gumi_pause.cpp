@@ -1,6 +1,4 @@
-#include "types.h"
-
-struct TASK;
+#include "gumi_pause.hpp"
 
 namespace Tz {
 
@@ -35,14 +33,6 @@ extern "C" void func_002806c8();
 extern "C" void func_00236d60();
 extern "C" u32 func_0027f3d8();
 extern "C" void func_0027fba0();
-
-class GumiPause {
-public:
-    static void PauseThread(TASK*);
-    static void SetupTop();
-    static void UpdateAdvice();
-    static void ChkLoadRequest();
-};
 
 void GumiPause::PauseThread(TASK* a0) {
     u32 s0 = (u32)a0;

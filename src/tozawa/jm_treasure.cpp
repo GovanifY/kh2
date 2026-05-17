@@ -1,14 +1,6 @@
-#include "types.h"
-
-namespace YS { namespace TREASURE { struct TABLE; } }
+#include "jm_treasure.hpp"
 
 namespace Tz {
-
-class JmTreasure {
-public:
-    static void LeaveAll();
-    static u32 isEnableNavi(YS::TREASURE::TABLE const*);
-};
 
 extern "C" u32 func_001a3570(...);
 extern "C" u32 func_00287bc0(...);

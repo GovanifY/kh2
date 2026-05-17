@@ -1,14 +1,8 @@
-#include "types.h"
+#include "progress.hpp"
 
 namespace YS {
 
 extern "C" u32 func_00181500(...);
-
-class PROGRESS {
-public:
-    static u32 CanOpenCampMenu();
-    static u32 CanDrive();
-};
 
 u32 PROGRESS::CanOpenCampMenu() {
     s32 s0 = 0u;

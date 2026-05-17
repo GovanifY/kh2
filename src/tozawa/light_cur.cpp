@@ -1,15 +1,8 @@
-#include "types.h"
+#include "light_cur.hpp"
 
 namespace Tz {
 
 extern "C" u32 func_00139d78(...);
-
-class LightCur {
-public:
-    void FadeOut();
-    void Leave();
-    u32 isExist();
-};
 
 u32 LightCur::isExist() {
     u32 (*fp_call0_00139d78)() = (u32(*)())func_00139d78;

@@ -1,4 +1,4 @@
-#include "types.h"
+#include "jm_complete.hpp"
 
 namespace Tz {
 
@@ -14,12 +14,6 @@ extern "C" void func_00170c00(void*);
 extern "C" u32 func_001d9e30(u32);
 extern "C" s32 func_002764b0(u32);
 extern "C" u32 func_001d9d48(void*);
-
-class JmComplete {
-public:
-    static void Exit();
-    static u32 isPuzzleInfoComp(s32);
-};
 
 void JmComplete::Exit() {
     void* t7 = D_0035f620;

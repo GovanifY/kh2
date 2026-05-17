@@ -1,11 +1,6 @@
-#include "types.h"
+#include "layout.hpp"
 
 namespace Tz {
-class Layout {
-public:
-    s32 getNum();
-    s32 getNextNum();
-};
 
 struct LayoutLayout {
     char _pad0[140];

@@ -1,12 +1,7 @@
-#include "types.h"
+#include "../common/movie.hpp"
 
 
 struct TASK;
-
-class Movie {
-public:
- void ThreadMain(TASK* a0);
-};
 
 void init(void);
 s32 ensure(void);

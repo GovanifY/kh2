@@ -1,6 +1,4 @@
-#include "types.h"
-
-struct TASK;
+#include "smenu_mu.hpp"
 
 namespace Tz {
 
@@ -11,11 +9,6 @@ extern "C" void func_00248060();
 extern "C" void func_00236d60();
 extern "C" u32 func_00248900();
 extern "C" void func_00248d28();
-
-class MUMI {
-public:
-    static void PauseThread(TASK*);
-};
 
 void MUMI::PauseThread(TASK* a0) {
     u32 s0 = (u32)a0;

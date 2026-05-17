@@ -1,13 +1,6 @@
-#include "types.h"
+#include "sub_menu.hpp"
 
 namespace Tz {
-
-class SubMenu {
-public:
-    static u32 Exit(s32);
-    static u32 GetCallSignal();
-    static void SetLeadData(const char*);
-};
 
 extern "C" u32 func_002431c0(...);
 extern "C" u32 func_00243150(...);

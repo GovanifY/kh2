@@ -1,5 +1,10 @@
 #include "types.h"
 #include "auto80_199_queue_decls.hpp"
+#include "../harata/libdk/ft4.hpp"
+#include "../harata/libdk/sprite.hpp"
+#include "../harata/libdk/treasure_info.hpp"
+#include "../tozawa/cmenu_top.hpp"
+#include "../tozawa/help_gra.hpp"
 
 extern "C" u32 YS_STATUS_IsBattleMode(void) asm("_ZN2YS6STATUS12IsBattleModeEv");
 extern "C" u32 func_001dc9d0(u32) asm("_ZN3ryj6EFFECT8is_aliveEv");
@@ -9,40 +14,11 @@ extern "C" void RECOM_FLAG_clear_0019f578(u32) asm("_ZN2YS10RECOM_FLAG5clearEv")
 namespace Tz { class Select { public: u32 isCursorMove(); u32 isSelectTopMove(); }; }
 
 namespace dk {
-class Ft4Base {
-public:
-    void setRot(f32);
-    void setCenterXY(s32, s32);
-};
-
-class Sprite {
-public:
-    void setPos(s32, s32);
-    void setOffsetPos(s32, s32);
-};
-
-class TREASURE_INFO {
-public:
-    static u32 openEventInfo(s32);
-};
-
 class CmTop {
 public:
     static s32 GetSelectPos(s32);
 };
 }  // namespace dk
-
-namespace Tz {
-class CmTop {
-public:
-    static s32 GetSelectPos(s32);
-};
-
-class HelpGra {
-public:
-    u32 isExist();
-};
-}  // namespace Tz
 
 u32 func_001003c8(u32 a0) {
     a0 &= 0xFFu;

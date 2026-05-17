@@ -1,6 +1,4 @@
-#include "types.h"
-
-struct TASK;
+#include "smenu_heco.hpp"
 
 namespace Tz {
 
@@ -13,11 +11,6 @@ extern "C" void func_00245488();
 extern "C" void func_00236d60();
 extern "C" u32 func_00245dd0();
 extern "C" void func_00246328();
-
-class HECO {
-public:
-    static void PauseThread(TASK*);
-};
 
 void HECO::PauseThread(TASK* a0) {
     u32 s0 = (u32)a0;

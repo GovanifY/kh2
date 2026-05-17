@@ -1,4 +1,4 @@
-#include "types.h"
+#include "cmenu_data.hpp"
 
 namespace Tz {
 
@@ -8,12 +8,6 @@ extern u32 D_0035ef50 asm("D_0035ef50");
 extern u32 D_0035ef54 asm("D_0035ef54");
 extern "C" u32 func_001688b8(...);
 extern "C" void func_002fde18(...);
-
-class CMData {
-public:
-    static void Exit();
-    static u32 isBackRead();
-};
 
 void CMData::Exit() {
     func_002fde18((void*)&D_0035eee0, 0, 112);

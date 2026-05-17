@@ -1,17 +1,8 @@
-#include "types.h"
+#include "jm_data.hpp"
 
 namespace Tz {
 
 extern u32 D_0035f520 asm("D_0035f520");
-
-class JMData {
-public:
-    static u32 Clear(s32);
-    static u32 Destroy(s32);
-    static void LoadObjRequest(s32, bool);
-    static u32 CacheAlloc(s32, const char*);
-    static char* GetWorldStr(s32);
-};
 
 extern "C" u32 func_00292690(...) asm("_ZN2Tz8LoadData5ClearEi");
 u32 JMData::Clear(s32 which) {

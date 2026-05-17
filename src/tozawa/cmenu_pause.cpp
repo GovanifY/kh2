@@ -1,27 +1,16 @@
-#include "types.h"
+#include "cmenu_pause.hpp"
 
 namespace Tz {
 
 extern u32 D_0035f068 asm("D_0035f068");
-
-class Pause {
-public:
-    static bool isPause();
-    static u32 isExistFade();
-    static u32 isLoopFade();
-    static void SetNextMenu(s32);
-    static void StartFade(void (*)());
-    static void EndFade(void (*)());
-};
+extern "C" u32 func_00139d78(u32);
+extern "C" void func_00138c10(u32, u32);
 
 bool Pause::isPause() {
     s32 v = *(s8*)&D_0035f068;
     return v != 0;
 }
 
-extern "C" u32 func_00139d78(u32);
-extern "C" void func_00138c10(u32, u32);
-extern "C" void func_0028d8c0(...);
 extern u32 D_0035f088 asm("D_0035f088");
 extern u32 D_0035f078 asm("D_0035f078");
 extern u32 D_0035f08c asm("D_0035f08c");
@@ -53,7 +42,7 @@ void Pause::SetNextMenu(s32 nextMenu) {
 void Pause::StartFade(void (*cb)()) {
     u32 s1 = (u32)cb;
     func_00139d78((u32)D_0035f088);
-    func_0028d8c0((u32)D_0035f088, 30036, 0, 0, D_0035f078, 5, 1, 0);
+    CreateFadeObject((u32)D_0035f088, 30036, 0, 0, D_0035f078, 5, 1, 0);
     u32 t6 = (u32)D_0035f088 + 24;
     u32 t7 = *(u32*)(t6 + 184);
     t7 |= 8u;

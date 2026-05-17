@@ -1,12 +1,6 @@
-#include "types.h"
+#include "../tozawa/scroll_bar.hpp"
 
 namespace Tz {
-
-class ScrollBar {
-public:
-    static void FadeOut();
-    void Leave();
-};
 
 extern "C" u32 func_0028be58(...);
 

@@ -1,18 +1,8 @@
-#include "types.h"
+#include "sprite.hpp"
 
 extern u32 YI_SEQUENCE_GetActiveXY(void*, s32*, s32*) asm("_ZN2YI8SEQUENCE11GetActiveXYEPiS1_");
 
 namespace dk {
-
-class Sprite {
-public:
-    u32 getSeqActiveXY(s32&, s32&);
-    void getSeqActiveXYAddOffset(s32&, s32&);
-    void setPos(s32, s32);
-    void getPos(s32&, s32&);
-    void setOffsetPos(s32, s32);
-    void getOffsetPos(s32&, s32&);
-};
 
 struct SpriteLayout {
     char _pad0[368];

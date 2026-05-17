@@ -1,12 +1,6 @@
-#include "types.h"
+#include "campmenu.hpp"
 
 namespace Tz {
-
-class CampMenu {
-public:
-    static u32 StartJiminy(s32, s32);
-    static void SetJmStartMenu(s32);
-};
 
 void CampMenu::SetJmStartMenu(s32 menu) {
     u32 b = (0x0036u << 16);

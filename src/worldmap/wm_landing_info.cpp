@@ -1,18 +1,7 @@
-#include "types.h"
+#include "wm_landing_info.hpp"
 
 namespace dk {
 extern u32 D_00361dd8 asm("D_00361dd8");
-class WM_LANDING {
-public:
-    bool isListType();
-    bool isEpisodeType();
-};
-
-class WM_LANDING_INFO {
-public:
-    void fadeout();
-    void exit();
-};
 
 bool WM_LANDING::isListType() { return *(u32*)((u32)this + 8244) != 0; }
 

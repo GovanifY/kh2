@@ -1,3 +1,4 @@
+#include "layout.hpp"
 #include "types.h"
 
 
@@ -7,7 +8,6 @@ namespace Tz {
 
 class ALLOCATOR;
 class IMAGE;
-class Layout;
 class MenuItem;
 
 class MenuItem {

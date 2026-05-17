@@ -1,4 +1,5 @@
 #include "types.h"
+#include "../yasui/libys/progress.hpp"
 
 namespace {
 
@@ -712,12 +713,6 @@ void trap_attack_is_finish(BD_VALUE* bd) { bd->i = YS_ATTACK_is_finish(bd->i); }
 
 }  // namespace kn
 namespace YS {
-
-class PROGRESS {
-   public:
-    static int CheckFlag(int flag);
-    static int IsSecond();
-};
 
 class BATTLE_REPORT {
    public:

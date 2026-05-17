@@ -1,4 +1,4 @@
-#include "types.h"
+#include "jm_dic.hpp"
 
 namespace Tz {
 
@@ -14,12 +14,6 @@ extern "C" void func_0028dcc0(u32, u32);
 extern u32 D_0035f14c asm("D_0035f14c");
 extern u32 D_0035f148 asm("D_0035f148");
 extern u32 D_0035f210 asm("D_0035f210");
-
-class JmDic {
-public:
-    static void RequestGraLoad();
-    static void SetupCharaInfo();
-};
 
 void JmDic::RequestGraLoad() {
     s16 tmp;

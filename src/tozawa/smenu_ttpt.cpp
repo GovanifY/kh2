@@ -1,6 +1,4 @@
-#include "types.h"
-
-struct TASK;
+#include "smenu_ttpt.hpp"
 
 namespace Tz {
 
@@ -11,11 +9,6 @@ extern "C" void func_0024ce18();
 extern "C" void func_00236d60();
 extern "C" u32 func_0024d6c8();
 extern "C" void func_0024db28();
-
-class TTPT {
-public:
-    static void PauseThread(TASK*);
-};
 
 void TTPT::PauseThread(TASK* a0) {
     u32 s0 = (u32)a0;

@@ -1,14 +1,10 @@
-#include "types.h"
+#include "jiminy.hpp"
 
 namespace dk {
 class Sprite;
 }
 
-struct ALLOCATOR;
-
 namespace Tz {
-
-class Select;
 
 extern u8 D_00360000 asm("D_00360000");
 
@@ -50,32 +46,6 @@ extern "C" void func_0028d1c0(...);
 extern "C" void func_0028d660(...);
 extern "C" void func_00293eb0() asm("_ZN2Tz6JmInfo4ExitEv");
 extern "C" u32 func_00293d80(...);
-
-class Jiminy {
-public:
-    static void DrawSelector(Select*, s32, s32);
-    static void JmCommonLeave();
-    static void CreateLightCursor(::dk::Sprite*);
-    static void SetupMainFrame();
-    static u32 GetAccomplishmentRate();
-    static u32 WMRead();
-    static u32 WMExit();
-    static void WMInit(ALLOCATOR*);
-    static void InitWorldNo(s32);
-    static void SetCover(s32);
-    static void SetHideCursor(bool);
-    static void SetHideLightCursor(bool);
-    static void SaveCurPos(s32, s32, s32);
-    static void* GetParent();
-    static s32 GetParentAnimMode();
-    static void* GetMenuInfo();
-    static s32 GetCurPos(s32);
-    static s32 GetCurTopPos(s32);
-    static s32 GetSelectPos(s32);
-    static void* GetSeqTbl();
-    static void* GetScrBarSeqTbl();
-    static s32 GetFontColorSeqNum(s32);
-};
 
 extern "C" u32 func_00289310() asm("_ZN2Tz6Select12isCursorMoveEv");
 extern "C" void func_00296ed0() asm("_ZN2Tz8JmReport10DrawUpdateEPNS_6SelectEii");

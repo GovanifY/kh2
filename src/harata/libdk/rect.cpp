@@ -1,23 +1,6 @@
-#include "types.h"
+#include "rect.hpp"
 
 namespace dk {
-class RectParamBase {
-public:
-    void setXY(s16 x, s16 y);
-    void setZ(u32 v);
-};
-
-class RectBase {
-public:
-    void setGsPrim(u64 v);
-    void setGsFrame(u64 v);
-    void setGsZbuf(u64 v);
-    void setGsTest(u64 v);
-    void setGsAlpha(u64 v);
-    void setGsTex0(u64 v);
-    void setGsTex1(u64 v);
-};
-
 struct RectParamBaseLayout {
     char _pad0[8];
     s16 x;

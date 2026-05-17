@@ -1,12 +1,6 @@
-#include "types.h"
+#include "item_info.hpp"
 
 namespace Tz {
-
-class ItemInfo {
-public:
-    static u32 GetEquipMax(s32);
-    static u32 GetItemEmptyMsg(s32);
-};
 
 extern "C" u32 func_00257130(...);
 extern "C" u32 func_002827e0(...);

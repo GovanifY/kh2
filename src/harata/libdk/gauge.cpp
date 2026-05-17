@@ -1,28 +1,9 @@
-#include "types.h"
+#include "gauge.hpp"
 
 namespace dk {
 
 extern u32 D_00348638 asm("D_00348638");
 extern "C" u32 wtarget_0013dbe0(u32, u32, u32, u32) asm("_Z16wtarget_0013dbe0jjjj");
-
-class GAUGE {
-public:
-    void init();
-};
-
-class GAUGE_DRAW {
-public:
-    static void* getImage();
-    static u32 getFriend1();
-    static void checkAlertOff();
-};
-
-class GAUGE_PARTY {
-public:
-    u32 getGroup();
-    u32 isAlertStart();
-    u32 isAlertEnd();
-};
 
 u32 GAUGE_init_raw(u32 a0, u32 a1, u32 a2, u32 a3) asm("_ZN2dk5GAUGE4initEv");
 u32 GAUGE_init_raw(u32 a0, u32 a1, u32 a2, u32 a3) {

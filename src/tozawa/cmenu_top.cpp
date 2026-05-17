@@ -1,4 +1,7 @@
-#include "types.h"
+#include "cmenu_selector.hpp"
+#include "cmenu_top.hpp"
+#include "../harata/libdk/obj2d.hpp"
+#include "../harata/libdk/sprite.hpp"
 
 namespace dk {
 class Sprite;
@@ -24,56 +27,19 @@ extern u8 D_00372a00 asm("D_00372a00");
 extern u8 D_00372a08 asm("D_00372a08");
 extern u8 D_0035f055 asm("D_0035f055");
 
-class CmTop {
-public:
-    static u32 ExitParty();
-    static u32 isExistListAll();
-    static dk::Sprite* GetBaseSprite(s32);
-    static void CreateShortCutInfo(dk::Sprite*);
-    static void LeaveShortCutInfo();
-    static void FadeOutPadHelp();
-    static void LoopPadHelp();
-    static void LeavePadHelp();
-    static void SetHideCursor(bool);
-    static void DelCursor();
-    static s32 GetCurPos(s32);
-    static s32 GetCurTopPos(s32);
-    static s32 GetSelectPos(s32);
-    static void LoopWarningWin(s32);
-    static void LeaveWarningWin();
-    static u32 GetSram();
-    static u16* GetTopSelSeqTbl();
-    static void SetDelCursor(bool);
-    static void* GetScrBarSeqTbl();
-    static void* GetTopPlateSeqTbl(s32);
-    static void* GetTopPlate2SeqTbl(s32);
-    static void* GetPartyInfo();
-    static void* GetItemInfo();
-    static s32 GetFontColorSeqNum(s32);
-    static void* GetListBuffer();
-};
-
-extern "C" u32 func_00139d78(u32);
-extern "C" u32 func_00257770(void);
-extern "C" u32 func_00254020(...);
-extern "C" void func_0028d980(...);
-extern "C" void func_0028dcc0(...);
-extern "C" void func_00139510(...);
+extern "C" u32 func_0028f690(...);
+extern "C" u32 func_00139d78(...);
+extern "C" void func_001396b0(...);
+extern "C" u32 func_0028acc8(...);
+extern "C" void func_0028abe0(...);
 extern "C" void func_0028da70(...);
 extern "C" void func_0028dac8(...);
-extern "C" void func_001396b0(...);
 extern "C" void func_0031a260(...);
-extern "C" u32 func_0028f690(...);
 
-class MenuCursor {
-public:
-    static u32 GetPri(s32);
-};
-
-u32 CmTop::ExitParty() { return func_00254020(); }
+u32 CmTop::ExitParty() { return ExitPartyImpl(); }
 
 u32 CmTop::isExistListAll() {
-    u32 r16 = func_00257770();
+    u32 r16 = GetTopBase();
     u32 r2 = func_00139d78(r16);
     u32 r4 = 0u;
     if (r2 != 0u) {
@@ -91,17 +57,17 @@ dk::Sprite* CmTop::GetBaseSprite(s32 index) {
 
 void CmTop::CreateShortCutInfo(dk::Sprite* sprite) {
     u32 s1 = (u32)sprite;
-    u32 s0 = func_00257770() + 2504;
+    u32 s0 = GetTopBase() + 2504;
     if (func_00139d78(s0) == 0) {
         u32 v0 = MenuCursor::GetPri(0);
-        func_0028d980(s0, v0, D_0035ef68, D_0035ef64, D_0035f03c, 24, -1, 0x8454, 0);
+        MenuCursor::Create(s0, v0, D_0035ef68, D_0035ef64, D_0035f03c, 24, -1, 0x8454, 0);
         *(u32*)(s0 + 432) = 2;
     }
-    func_0028dcc0(s0, s1);
+    MenuCursor::AttachSprite(s0, s1);
 }
 
 void CmTop::LeaveShortCutInfo() {
-    u32 s0 = func_00257770() + 2504;
+    u32 s0 = GetTopBase() + 2504;
     if (func_00139d78(s0) != 0) {
         *(u32*)(s0 + 396) = 0;
         func_001396b0(s0);
@@ -112,16 +78,16 @@ void CmTop::LeaveShortCutInfo() {
                 func_0031a260(s0, 0);
             }
         }
-        func_00139510(s0);
+        ((dk::Obj2D*)s0)->leave();
     }
 }
 
 void CmTop::FadeOutPadHelp() {
-    func_0028dac8(func_00257770() + 2940, 239);
+    func_0028dac8(GetTopBase() + 2940, 239);
 }
 
 void CmTop::LoopPadHelp() {
-    u32 s0 = func_00257770() + 2940;
+    u32 s0 = GetTopBase() + 2940;
     u32 v0 = func_00139d78(s0);
     if (v0 != 0) {
         func_0028da70(s0, 238);
@@ -135,13 +101,11 @@ void CmTop::SetHideCursor(bool value) {
     *(u8*)&D_0035f054 = (u8)v;
 }
 
-extern "C" u32 func_0028ce38(...);
-extern "C" u32 func_0028d6e8(...);
 extern u32 D_0035f050 asm("D_0035f050");
 
 void CmTop::DelCursor() {
-    func_0028ce38();
-    if (func_0028d6e8(D_0035f050) != 0) {
+    MenuCursor::DeleteAll();
+    if (MenuCursor::isAlive(D_0035f050) != 0) {
         u32 t7 = D_0035f050;
         u32 t6 = *(u32*)t7;
         u32 t5 = *(u32*)(t6 + 20);
@@ -161,10 +125,6 @@ s32 CmTop::GetCurTopPos(s32 index) {
 s32 CmTop::GetSelectPos(s32 index) {
     return (s32)(GetCurPos(index) + GetCurTopPos(index));
 }
-
-extern "C" u32 func_0028acc8(...);
-extern "C" u32 func_0028abe0(...);
-extern "C" u32 func_002576d0(...);
 
 struct VtblCmTopWarningWin {
     u32 _pad0[5];
@@ -186,11 +146,9 @@ void CmTop::LeaveWarningWin() {
     }
 }
 
-extern "C" u32 func_0028aa40(...);
-
 void CmTop::LoopWarningWin(s32 which) {
     u32 s0 = (u32)which;
-    if (func_002576d0(s0) == 0) {
+    if (IsWarningEnabled(s0) == 0) {
         return;
     }
 
@@ -209,9 +167,9 @@ cont:
 }
 
 void CmTop::LeavePadHelp() {
-    u32 s0 = func_00257770() + 2940;
+    u32 s0 = GetTopBase() + 2940;
     if (func_00139d78(s0) != 0) {
-        func_00139510(s0);
+        ((dk::Obj2D*)s0)->leave();
     }
 }
 

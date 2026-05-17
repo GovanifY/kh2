@@ -1,15 +1,8 @@
-#include "types.h"
+#include "cmenu_stat.hpp"
 
 namespace Tz {
 
 extern u8 D_0035f0e8 asm("D_0035f0e8");
-
-class CmStat {
-public:
-    static u32 ChgSelector();
-    static u32 ChgSelChara(bool);
-    static void FadeOutAll();
-};
 
 u32 CmStat::ChgSelector() {
     (void)D_0035f0e8;

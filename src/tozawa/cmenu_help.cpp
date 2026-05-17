@@ -1,11 +1,6 @@
-#include "types.h"
+#include "cmenu_help.hpp"
 
 namespace Tz {
-
-class CMenuHelp {
-public:
-    static void Leave();
-};
 
 extern "C" u32 func_00263cc0();
 extern u32 D_0035f0dc asm("D_0035f0dc");

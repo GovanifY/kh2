@@ -1,15 +1,8 @@
-#include "types.h"
+#include "treasure_info.hpp"
 
 namespace dk {
 
 extern u32 D_00347d58 asm("D_00347d58");
-
-class TREASURE_INFO {
-public:
-    static u32 openEventInfo(s32);
-    static u32 isEventInfoAllEnd();
-    static u32 isEventInfoExist();
-};
 
 extern u32 D_00347d58 asm("D_00347d58");
 extern "C" u32 func_00253180(u32, u32);

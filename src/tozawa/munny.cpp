@@ -1,13 +1,8 @@
-#include "types.h"
+#include "munny.hpp"
 
 namespace Tz {
 
 extern "C" u32 getSaveRam() asm("_Z10getSaveRamv");
-
-class Munny {
-public:
-    static u32 Get();
-};
 
 u32 Munny::Get() {
     u32 p = getSaveRam();
