@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_WIDGET_HPP
-#define KH2_SRC_LIBYW_WIDGET_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -47,4 +46,3 @@ public:
     ~Widget();
 };
 
-#endif

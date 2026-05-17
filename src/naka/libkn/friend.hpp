@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_NAKA_LIBKN_FRIEND_HPP
-#define KH2_SRC_NAKA_LIBKN_FRIEND_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -22,4 +21,3 @@ typedef int (*FriendCallback)(Friend*, int);
 
 }  // namespace kn
 
-#endif

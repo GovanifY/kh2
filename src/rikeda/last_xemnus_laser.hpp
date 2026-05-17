@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_RIKEDA_LAST_XEMNUS_LASER_HPP
-#define KH2_SRC_RIKEDA_LAST_XEMNUS_LASER_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -29,4 +28,3 @@ namespace ryj {
 
 }  // namespace ryj
 
-#endif

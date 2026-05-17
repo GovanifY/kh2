@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_RYJ_EFFECT_DATA_HPP
-#define KH2_SRC_RYJ_EFFECT_DATA_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -12,4 +11,3 @@ namespace ryj {
 
 }  // namespace ryj
 
-#endif

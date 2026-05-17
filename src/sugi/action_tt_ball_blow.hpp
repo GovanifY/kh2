@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_SUGI_ACTION_TT_BALL_BLOW_HPP
-#define KH2_SRC_SUGI_ACTION_TT_BALL_BLOW_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -19,4 +18,3 @@ namespace Ts {
 
 }  // namespace Ts
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TAITO_MINIGAME_HPP
-#define KH2_SRC_TAITO_MINIGAME_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -15,4 +14,3 @@ namespace Ti {
 
 }  // namespace Ti
 
-#endif

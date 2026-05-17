@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TOZAWA_SELECT_HPP
-#define KH2_SRC_TOZAWA_SELECT_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -26,4 +25,3 @@ public:
 
 }  // namespace Tz
 
-#endif

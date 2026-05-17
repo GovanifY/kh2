@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYSDBG_TEST_WATCH_HPP
-#define KH2_SRC_YASUI_LIBYSDBG_TEST_WATCH_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -14,4 +13,3 @@ public:
 
 }  // namespace YS
 
-#endif

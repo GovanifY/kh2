@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_RIKEDA_DIAL_HPP
-#define KH2_SRC_RIKEDA_DIAL_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -23,4 +22,3 @@ namespace ryj {
 
 }  // namespace ryj
 
-#endif

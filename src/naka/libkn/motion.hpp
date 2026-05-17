@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_NAKA_LIBKN_MOTION_HPP
-#define KH2_SRC_NAKA_LIBKN_MOTION_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -28,4 +27,3 @@ public:
 
 }  // namespace kn
 
-#endif

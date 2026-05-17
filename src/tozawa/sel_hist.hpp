@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TOZAWA_SEL_HIST_HPP
-#define KH2_SRC_TOZAWA_SEL_HIST_HPP
+#pragma once
 
 #include "layout.hpp"
 #include "../common/types.h"
@@ -26,4 +25,3 @@ public:
 
 }  // namespace Tz
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_MEMORY_HPP
-#define KH2_SRC_LIBYW_MEMORY_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -28,4 +27,3 @@ public:
     u64 (anonymous_namespace a0);
 };
 
-#endif

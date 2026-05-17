@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_STATUS_HPP
-#define KH2_SRC_LIBYW_STATUS_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -39,4 +38,3 @@ public:
     void draw_func(RECT* a0, COLOR* a1);
 };
 
-#endif

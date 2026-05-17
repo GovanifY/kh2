@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_SCROLLBAR_HPP
-#define KH2_SRC_LIBYW_SCROLLBAR_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -32,4 +31,3 @@ public:
     void SetMax(s32 a0);
 };
 
-#endif

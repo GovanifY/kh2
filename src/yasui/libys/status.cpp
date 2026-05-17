@@ -1,4 +1,4 @@
-#include "../../common/types.h"
+#include "status.hpp"
 
 namespace YS {
 
@@ -7,14 +7,7 @@ extern f32 D_01c61964 asm("D_01c61964");
 extern u32 D_01c61968 asm("D_01c61968");
 extern u32 D_01c6196c asm("D_01c6196c");
 
-class STATUS {
-public:
-    static u32 GetMode();
-    static u32 IsBattleMode();
-    static void SetPrizeRatio(f32);
-    static f32 GetLockOnRatio();
-    static f32 GetLockOutRange();
-};
+
 
 u32 STATUS::GetMode() { return D_01c61958; }
 

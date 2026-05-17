@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_SUGI_FLARE_HPP
-#define KH2_SRC_SUGI_FLARE_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -12,4 +11,3 @@ namespace Ts {
 
 }  // namespace Ts
 
-#endif

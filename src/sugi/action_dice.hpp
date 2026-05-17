@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_SUGI_ACTION_DICE_HPP
-#define KH2_SRC_SUGI_ACTION_DICE_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -24,4 +23,3 @@ namespace Ts {
 
 }  // namespace Ts
 
-#endif

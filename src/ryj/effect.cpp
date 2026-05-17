@@ -1,12 +1,6 @@
-#include "../common/types.h"
+#include "effect.hpp"
 
 namespace ryj {
-
-class EFFECT {
-public:
-    u32 is_alive();
-    void set_no_draw();
-};
 
 u32 EFFECT::is_alive() {
     u32 r2 = (u32)(s32)(*(s16*)((u32)this + (s32)(10)));

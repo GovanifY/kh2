@@ -1,15 +1,10 @@
-#include "../../common/types.h"
+#include "event.hpp"
 
 namespace YS {
 
 extern u32 D_0035037c asm("D_0035037c");
 
-class EVENT {
-public:
-    static void ContinueControlOff();
-    static u32 IsExec();
-    static void* GetImage();
-};
+
 
 void EVENT::ContinueControlOff() {
     u32 t7 = (u32)(0x0035u << 16);

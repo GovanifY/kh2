@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TOZAWA_GUMI_PAUSE_HPP
-#define KH2_SRC_TOZAWA_GUMI_PAUSE_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -17,4 +16,3 @@ public:
 
 }  // namespace Tz
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_NAKA_LIBKN_OBJ_OBSERVER_HPP
-#define KH2_SRC_NAKA_LIBKN_OBJ_OBSERVER_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -13,4 +12,3 @@ namespace kn {
 
 }  // namespace kn
 
-#endif

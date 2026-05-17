@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_WORLDMAP_OBJ_HPP
-#define KH2_SRC_WORLDMAP_OBJ_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -19,4 +18,3 @@ namespace worldmap {
 
 }  // namespace worldmap
 
-#endif

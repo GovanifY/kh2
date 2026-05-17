@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_SASA_MUSICAL_HPP
-#define KH2_SRC_SASA_MUSICAL_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -23,4 +22,3 @@ namespace sa {
 
 }  // namespace sa
 
-#endif

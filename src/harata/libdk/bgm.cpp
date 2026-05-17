@@ -1,11 +1,6 @@
-#include "../../common/types.h"
+#include "bgm.hpp"
 
 namespace dk {
-
-class BGM {
-public:
-    static void fieldExit();
-};
 
 extern "C" u32 func_00242ea8(...);
 extern "C" void func_002ba848(u32);

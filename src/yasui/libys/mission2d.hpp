@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYS_MISSION2D_HPP
-#define KH2_SRC_YASUI_LIBYS_MISSION2D_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -19,4 +18,3 @@ public:
     void reset_warning(void);
 };
 
-#endif

@@ -1,9 +1,4 @@
-#include "../common/types.h"
-
-class SE_BANK {
-public:
-    void setGumiMode();
-};
+#include "sebank.hpp"
 
 void SE_BANK::setGumiMode() {
     *(u32*)((u32)this + (s32)(324)) = 1u;

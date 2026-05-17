@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBGUMI_GUMIBLOCKDATA_HPP
-#define KH2_SRC_LIBGUMI_GUMIBLOCKDATA_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -31,4 +30,3 @@ namespace gm {
 
 }  // namespace gm
 
-#endif

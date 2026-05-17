@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_NAKA_LIBKN_FRIEND_PERSONALITY_HPP
-#define KH2_SRC_NAKA_LIBKN_FRIEND_PERSONALITY_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -16,4 +15,3 @@ class Friend;
 
 }  // namespace kn
 
-#endif

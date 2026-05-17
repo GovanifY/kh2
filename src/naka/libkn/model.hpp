@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_NAKA_LIBKN_MODEL_HPP
-#define KH2_SRC_NAKA_LIBKN_MODEL_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -43,4 +42,3 @@ namespace kn {
 
 }  // namespace kn
 
-#endif

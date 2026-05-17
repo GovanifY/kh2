@@ -1,5 +1,4 @@
-#ifndef KH2_KN_FVECTOR_HPP
-#define KH2_KN_FVECTOR_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -32,5 +31,3 @@ struct __attribute__((aligned(16))) FVector {
 };
 
 }  // namespace kn
-
-#endif  // KH2_KN_FVECTOR_HPP

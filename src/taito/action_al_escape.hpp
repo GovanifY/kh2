@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TAITO_ACTION_AL_ESCAPE_HPP
-#define KH2_SRC_TAITO_ACTION_AL_ESCAPE_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -19,4 +18,3 @@ namespace Ti {
 
 }  // namespace Ti
 
-#endif

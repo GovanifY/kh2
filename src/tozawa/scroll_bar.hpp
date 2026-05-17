@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TOZAWA_SCROLL_BAR_HPP
-#define KH2_SRC_TOZAWA_SCROLL_BAR_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -23,4 +22,3 @@ public:
 
 }  // namespace Tz
 
-#endif

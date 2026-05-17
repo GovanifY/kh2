@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TOZAWA_PARTY_INFO_HPP
-#define KH2_SRC_TOZAWA_PARTY_INFO_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -39,4 +38,3 @@ public:
 
 }  // namespace Tz
 
-#endif

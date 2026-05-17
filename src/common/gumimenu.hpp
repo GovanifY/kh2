@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_COMMON_GUMIMENU_HPP
-#define KH2_SRC_COMMON_GUMIMENU_HPP
+#pragma once
 
 #include "./types.h"
 
@@ -31,4 +30,3 @@ namespace gm {
 
 }  // namespace gm
 
-#endif

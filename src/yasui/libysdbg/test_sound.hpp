@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYSDBG_TEST_SOUND_HPP
-#define KH2_SRC_YASUI_LIBYSDBG_TEST_SOUND_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -13,4 +12,3 @@ namespace YS {
 
 }  // namespace YS
 
-#endif

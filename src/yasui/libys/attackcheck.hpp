@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYS_ATTACKCHECK_HPP
-#define KH2_SRC_YASUI_LIBYS_ATTACKCHECK_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -29,4 +28,3 @@ namespace YS {
 
 }  // namespace YS
 
-#endif

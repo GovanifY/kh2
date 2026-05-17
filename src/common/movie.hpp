@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_COMMON_MOVIE_HPP
-#define KH2_SRC_COMMON_MOVIE_HPP
+#pragma once
 
 #include "./types.h"
 
@@ -10,4 +9,3 @@ public:
     void ThreadMain(TASK* a0);
 };
 
-#endif

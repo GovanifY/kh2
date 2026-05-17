@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYSNET_SOCKET_HPP
-#define KH2_SRC_LIBYSNET_SOCKET_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -16,4 +15,3 @@ namespace YS {
 
 }  // namespace YS
 
-#endif

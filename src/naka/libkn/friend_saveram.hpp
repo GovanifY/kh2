@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_NAKA_LIBKN_FRIEND_SAVERAM_HPP
-#define KH2_SRC_NAKA_LIBKN_FRIEND_SAVERAM_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -15,4 +14,3 @@ namespace kn {
 
 }  // namespace kn
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TI_MINIGAME_ACCESSORS_HPP
-#define KH2_SRC_TI_MINIGAME_ACCESSORS_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -14,4 +13,3 @@ public:
 
 }  // namespace Ti
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TAITO_MG_HACHIMITSU_PO_HPP
-#define KH2_SRC_TAITO_MG_HACHIMITSU_PO_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -27,4 +26,3 @@ public:
 
 }  // namespace Ti
 
-#endif

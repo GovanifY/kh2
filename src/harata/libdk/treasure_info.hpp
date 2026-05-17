@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_HARATA_LIBDK_TREASURE_INFO_HPP
-#define KH2_SRC_HARATA_LIBDK_TREASURE_INFO_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -14,4 +13,3 @@ public:
 
 }  // namespace dk
 
-#endif

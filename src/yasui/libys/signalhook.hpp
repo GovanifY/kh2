@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYS_SIGNALHOOK_HPP
-#define KH2_SRC_YASUI_LIBYS_SIGNALHOOK_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -26,4 +25,3 @@ namespace YS {
 
 }  // namespace YS
 
-#endif

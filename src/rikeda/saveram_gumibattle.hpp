@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_RIKEDA_SAVERAM_GUMIBATTLE_HPP
-#define KH2_SRC_RIKEDA_SAVERAM_GUMIBATTLE_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -18,4 +17,3 @@ namespace ryj {
 
 }  // namespace ryj
 
-#endif

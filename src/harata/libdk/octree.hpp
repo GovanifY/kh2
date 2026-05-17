@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_HARATA_LIBDK_OCTREE_HPP
-#define KH2_SRC_HARATA_LIBDK_OCTREE_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -77,4 +76,3 @@ namespace dk {
 
 }  // namespace dk
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_HARATA_LIBDK_COMMAND_DRAW_HPP
-#define KH2_SRC_HARATA_LIBDK_COMMAND_DRAW_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -57,4 +56,3 @@ public:
 
 }  // namespace dk
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_HARATA_LIBDK_AABBOX_HPP
-#define KH2_SRC_HARATA_LIBDK_AABBOX_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -22,4 +21,3 @@ class Line;
 
 }  // namespace dk
 
-#endif

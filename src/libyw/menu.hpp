@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_MENU_HPP
-#define KH2_SRC_LIBYW_MENU_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -85,4 +84,3 @@ void MapJump(void);
 void finalize(void);
 void Ensure(TASK* a0);
 
-#endif

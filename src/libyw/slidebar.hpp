@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_SLIDEBAR_HPP
-#define KH2_SRC_LIBYW_SLIDEBAR_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -22,4 +21,3 @@ public:
 
 }  // namespace YW
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TOZAWA_MG2D_TRON_HPP
-#define KH2_SRC_TOZAWA_MG2D_TRON_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -15,4 +14,3 @@ public:
 
 }  // namespace Tz
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_TOGGLEBUTTON_HPP
-#define KH2_SRC_LIBYW_TOGGLEBUTTON_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -22,4 +21,3 @@ public:
     ~TOGGLE_BUTTON();
 };
 
-#endif

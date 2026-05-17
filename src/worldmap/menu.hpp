@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_WORLDMAP_MENU_HPP
-#define KH2_SRC_WORLDMAP_MENU_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -13,4 +12,3 @@ public:
 
 }  // namespace worldmap
 
-#endif

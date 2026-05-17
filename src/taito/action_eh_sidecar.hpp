@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TAITO_ACTION_EH_SIDECAR_HPP
-#define KH2_SRC_TAITO_ACTION_EH_SIDECAR_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -18,4 +17,3 @@ namespace Ti {
 
 }  // namespace Ti
 
-#endif

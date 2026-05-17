@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_FONT_HPP
-#define KH2_SRC_LIBYW_FONT_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -31,4 +30,3 @@ public:
     u64 make_icon_packet(DRAWPACKET* a0, s32 a1, s32 a2, u32 a3, s32 a4);
 };
 
-#endif

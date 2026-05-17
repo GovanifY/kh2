@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_WORLDMAP_SYMBOL_HPP
-#define KH2_SRC_WORLDMAP_SYMBOL_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -27,4 +26,3 @@ namespace worldmap {
 
 }  // namespace worldmap
 
-#endif

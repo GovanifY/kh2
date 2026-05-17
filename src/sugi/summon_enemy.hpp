@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_SUGI_SUMMON_ENEMY_HPP
-#define KH2_SRC_SUGI_SUMMON_ENEMY_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -14,4 +13,3 @@ namespace Ts {
 
 }  // namespace Ts
 
-#endif

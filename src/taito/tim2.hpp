@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TAITO_TIM2_HPP
-#define KH2_SRC_TAITO_TIM2_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -13,4 +12,3 @@ public:
 
 }  // namespace Ti
 
-#endif

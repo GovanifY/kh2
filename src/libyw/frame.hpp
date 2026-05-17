@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_FRAME_HPP
-#define KH2_SRC_LIBYW_FRAME_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -21,4 +20,3 @@ public:
     s32 widthToTW(u32 a0);
 };
 
-#endif

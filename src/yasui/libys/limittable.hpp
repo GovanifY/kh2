@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYS_LIMITTABLE_HPP
-#define KH2_SRC_YASUI_LIBYS_LIMITTABLE_HPP
+#pragma once
 
 #include "commandmenu.hpp"
 
@@ -26,4 +25,3 @@ namespace YS {
 
 }  // namespace YS
 
-#endif

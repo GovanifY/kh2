@@ -1,12 +1,8 @@
-#include "../../common/types.h"
+#include "motion.hpp"
 
 namespace YS {
 
-class MOTION {
-public:
-    u32 is_no_motion();
-    void sync(MOTION*);
-};
+
 
 u32 MOTION::is_no_motion() {
     u32 v = *(u32*)((u32)this + 12);

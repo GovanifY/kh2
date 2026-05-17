@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYS_NPC_HPP
-#define KH2_SRC_YASUI_LIBYS_NPC_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -12,4 +11,3 @@ namespace YS {
 
 }  // namespace YS
 
-#endif

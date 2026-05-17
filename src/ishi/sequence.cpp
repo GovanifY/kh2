@@ -1,12 +1,6 @@
-#include "../common/types.h"
+#include "sequence.hpp"
 
 namespace YI {
-
-class SEQUENCE {
-public:
-    u32 GetDrawMode();
-    u32 GetPlayMode();
-};
 
 u32 SEQUENCE::GetDrawMode() { return (*(u32*)((u32)this + 252) != 0); }
 

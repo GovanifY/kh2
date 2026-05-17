@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TOZAWA_CMENU_ITEM_HPP
-#define KH2_SRC_TOZAWA_CMENU_ITEM_HPP
+#pragma once
 
 #include "scroll_bar.hpp"
 #include "../common/types.h"
@@ -26,4 +25,3 @@ public:
 
 }  // namespace Tz
 
-#endif

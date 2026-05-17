@@ -1,8 +1,4 @@
-#include "../common/types.h"
-
-namespace YS {
-class OBJ;
-}
+#include "event.hpp"
 
 namespace sa {
 
@@ -11,16 +7,6 @@ extern u8 D_00360000 asm("D_00360000");
 extern "C" u32 func_0014abb8(...);
 extern "C" u32 func_0014abc8(...);
 extern "C" void func_0014aa58(...);
-
-class EVENT {
-public:
-    static u32 isLK();
-    static u32 isLM();
-    static u32 isSceneEventExec();
-    static void wide_on();
-    static void readWaitInit();
-    void setActorParam(YS::OBJ*);
-};
 
 extern "C" u32 func_00197920(...) asm("_ZN2YS5EVENT6IsExecEv");
 extern "C" u32 func_002ba620(...);

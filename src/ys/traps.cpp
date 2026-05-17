@@ -1,4 +1,6 @@
 #include "../common/types.h"
+#include "../yasui/libys/attack.hpp"
+#include "../yasui/libys/battlereport.hpp"
 #include "../yasui/libys/progress.hpp"
 
 namespace {
@@ -713,17 +715,6 @@ void trap_attack_is_finish(BD_VALUE* bd) { bd->i = YS_ATTACK_is_finish(bd->i); }
 
 }  // namespace kn
 namespace YS {
-
-class BATTLE_REPORT {
-   public:
-    static int IsSecretMovie();
-    static int IsFMSecretMovie();
-};
-
-class ATTACK {
-   public:
-    int is_hit();
-};
 
 void trap_progress_check_flag(BD_VALUE* bd) {
     bd->i = PROGRESS::CheckFlag(bd->i);

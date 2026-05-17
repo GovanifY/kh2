@@ -1,24 +1,4 @@
-#ifndef KH2_SRC_HARATA_LIBDK_GAUGEDRAW_HPP
-#define KH2_SRC_HARATA_LIBDK_GAUGEDRAW_HPP
+#pragma once
 
-#include "../../common/types.h"
+#include "./gauge.hpp"
 
-namespace dk {
-
-    class GAUGE_DRAW {
-    public:
-     void off(void);
-     void init(void);
-     void exit(void);
-     void on(void);
-     void drawStart(void);
-     void drawEnd(void);
-     s32 getImage(void);
-     u32 getFriend1(void);
-     u32 getEnemy(void);
-     void checkAlertOff(void);
-    };
-
-}  // namespace dk
-
-#endif

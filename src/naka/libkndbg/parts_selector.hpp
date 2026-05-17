@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_NAKA_LIBKNDBG_PARTS_SELECTOR_HPP
-#define KH2_SRC_NAKA_LIBKNDBG_PARTS_SELECTOR_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -19,4 +18,3 @@ namespace kn {
 
 }  // namespace kn
 
-#endif

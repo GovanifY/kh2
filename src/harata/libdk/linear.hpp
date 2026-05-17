@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_HARATA_LIBDK_LINEAR_HPP
-#define KH2_SRC_HARATA_LIBDK_LINEAR_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -14,4 +13,3 @@ namespace dk {
 
 }  // namespace dk
 
-#endif

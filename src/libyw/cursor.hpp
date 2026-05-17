@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_LIBYW_CURSOR_HPP
-#define KH2_SRC_LIBYW_CURSOR_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -86,4 +85,3 @@ public:
     void move(FVector* a0);
 };
 
-#endif

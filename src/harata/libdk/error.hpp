@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_HARATA_LIBDK_ERROR_HPP
-#define KH2_SRC_HARATA_LIBDK_ERROR_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -17,4 +16,3 @@ public:
 
 }  // namespace dk
 
-#endif

@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TOZAWA_MULTI_SEQ_HPP
-#define KH2_SRC_TOZAWA_MULTI_SEQ_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -35,4 +34,3 @@ public:
 
 }  // namespace Tz
 
-#endif

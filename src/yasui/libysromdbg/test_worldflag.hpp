@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYSROMDBG_TEST_WORLDFLAG_HPP
-#define KH2_SRC_YASUI_LIBYSROMDBG_TEST_WORLDFLAG_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -18,4 +17,3 @@ public:
 
 }  // namespace YS
 
-#endif

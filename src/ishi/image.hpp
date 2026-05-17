@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_ISHI_IMAGE_HPP
-#define KH2_SRC_ISHI_IMAGE_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -34,4 +33,3 @@ namespace YI {
 
 }  // namespace YI
 
-#endif

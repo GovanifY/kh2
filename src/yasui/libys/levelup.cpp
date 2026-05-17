@@ -1,12 +1,7 @@
-#include "../../common/types.h"
+#include "levelup.hpp"
 
 namespace YS {
 namespace LEVELUP {
-
-class INFO {
-public:
-    INFO();
-};
 
 struct INFO_Layout {
     u32 v0;

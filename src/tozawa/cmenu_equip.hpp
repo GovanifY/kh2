@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_TOZAWA_CMENU_EQUIP_HPP
-#define KH2_SRC_TOZAWA_CMENU_EQUIP_HPP
+#pragma once
 
 #include "../common/types.h"
 
@@ -14,4 +13,3 @@ public:
 
 }  // namespace Tz
 
-#endif

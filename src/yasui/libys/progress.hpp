@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYS_PROGRESS_HPP
-#define KH2_SRC_YASUI_LIBYS_PROGRESS_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -15,4 +14,3 @@ public:
 
 }  // namespace YS
 
-#endif

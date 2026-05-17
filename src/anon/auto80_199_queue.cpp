@@ -13,13 +13,6 @@ extern "C" void RECOM_FLAG_clear_0019f578(u32) asm("_ZN2YS10RECOM_FLAG5clearEv")
 
 namespace Tz { class Select { public: u32 isCursorMove(); u32 isSelectTopMove(); }; }
 
-namespace dk {
-class CmTop {
-public:
-    static s32 GetSelectPos(s32);
-};
-}  // namespace dk
-
 u32 func_001003c8(u32 a0) {
     a0 &= 0xFFu;
     u32 v0 = 0;

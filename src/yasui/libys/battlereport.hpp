@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYS_BATTLEREPORT_HPP
-#define KH2_SRC_YASUI_LIBYS_BATTLEREPORT_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -9,15 +8,14 @@ namespace YS {
 
     class BATTLE_REPORT {
     public:
-     BATTLE_REPORT();
-     void IncrementFriendRecov(void);
-     void IncrementFormCount(s32 a0);
-     void IncrementSummonCount(s32 a0);
-     u64 IsSecretMovie(void);
-     u64 IsFMSecretMovie(void);
-     u64 GetResultPicture(void);
+      BATTLE_REPORT();
+      void IncrementFriendRecov(void);
+      void IncrementFormCount(s32 a0);
+      void IncrementSummonCount(s32 a0);
+      static s32 IsSecretMovie(void);
+      static s32 IsFMSecretMovie(void);
+      u64 GetResultPicture(void);
     };
 
 }  // namespace YS
 
-#endif

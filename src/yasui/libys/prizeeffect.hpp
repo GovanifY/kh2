@@ -1,5 +1,4 @@
-#ifndef KH2_SRC_YASUI_LIBYS_PRIZEEFFECT_HPP
-#define KH2_SRC_YASUI_LIBYS_PRIZEEFFECT_HPP
+#pragma once
 
 #include "../../common/types.h"
 
@@ -36,4 +35,3 @@ namespace YS {
 
 }  // namespace YS
 
-#endif
