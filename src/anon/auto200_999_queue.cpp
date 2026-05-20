@@ -287,3 +287,19 @@ after_ok_check:
     }
     return 1;
 }
+
+u32 func_001e3660(u32 a0, s32 a1) {
+    if (a1 <= 0) {
+        return a0;
+    }
+
+    u32 v0 = a0;
+    do {
+        u32 t7 = *(u32*)v0;
+        a1 -= 1;
+        t7 <<= 2;
+        v0 += 4;
+        v0 += t7;
+    } while (a1 != 0);
+    return v0;
+}
