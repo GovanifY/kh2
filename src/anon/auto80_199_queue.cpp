@@ -7818,6 +7818,14 @@ void func_001e2938(u32 a0) {
     }
 }
 
+void func_001e5970(u32 a0) {
+    *(u8*)(a0 + 18) = 0;
+    *(volatile s8*)(a0 + 16) = -1;
+    *(volatile u32*)(a0 + 0) = 0;
+    *(volatile u64*)(a0 + 8) = 0;
+    *(volatile u8*)(a0 + 17) = 0;
+}
+
 void func_001e5990(u32 a0) {
     s32 s0 = (s32)a0;
     s32 s1 = (s32)a0 + 816;

@@ -7,18 +7,6 @@
 
 #include "types.h"
 
-// reason: initializer requires precise li/sb ordering (li -1 before sb(18),
-// then sb(16)); pure C++ forms alternate between swapped store order or li
-// scheduled after first store
-void func_001e5970(u32 a0) {
-    u32 t7 = (u32)((s32)0u + (-1));
-    *(volatile u8*)((u32)a0 + (s32)(18)) = (u8)((s32)t7 + 1);
-    *(volatile u8*)((u32)a0 + (s32)(16)) = (u8)t7;
-    *(volatile u32*)((u32)a0 + (s32)(0)) = 0u;
-    *(volatile u64*)((u32)a0 + (s32)(8)) = (u64)0u;
-    *(volatile u8*)((u32)a0 + (s32)(17)) = (u8)0u;
-}
-
 // reason: final volatile store forced by ee-gcc3.2 into jr delay slot (jr; sw)
 // while target requires sw; jr; nop; pure C++ variants kept this scheduling
 void func_001e5fd8(void) {
