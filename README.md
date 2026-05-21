@@ -1,5 +1,7 @@
 # Kingdom Hearts 2: Final Mix Decomp
 
+![SLPM_666.75's progress](https://img.shields.io/endpoint?url=https://govanify.github.io/kh2/badges/main-elf.json)
+
 This repo contains a (WIP) decompilation of Kingdom Hearts 2 Final Mix's main
 ELF, nicknamed "dasein".
 
@@ -63,15 +65,3 @@ matching.
 
 * `nonmatchings`: This folder is not rigged up at all in the build system and is
   mostly used as a dump of functions that aren't yet matching.
-
-## Progress
-
-As of the initial publication of this repository:
-
-```
-Functions total: 11286
-Decompiled:      4550
-Matching:        4550
-Nonmatching:     0
-Progress:        40.32%
-```

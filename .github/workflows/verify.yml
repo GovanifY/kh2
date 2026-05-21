@@ -14,6 +14,9 @@ jobs:
   verify-push:
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
 
     steps:
       - name: Cloning
@@ -29,6 +32,29 @@ jobs:
 
       - name: Compiles and verify whether the build is matching
         run: make verify
+
+      - name: Generate badge
+        run: |
+          progress="$(make progress | awk '/^Progress:/ { print $2; exit }')"
+
+          mkdir -p badges
+          cat > badges/main-elf.json <<EOF
+          {
+            "schemaVersion": 1,
+            "label": "SLPM_666.75",
+            "message": "$progress",
+            "color": "blue"
+          }
+          EOF
+
+      - name: Publish badge
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: badges
+          publish_branch: gh-pages
+          destination_dir: badges
+
 
   verify-pr:
     if: ${{ github.event_name == 'pull_request_target' }}
