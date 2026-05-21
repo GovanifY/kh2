@@ -89,31 +89,6 @@ u32 func_001e6c00(u32 a0) {
     return r2;
 }
 
-// reason: single-word mismatch remains: ee-gcc3.2 canonicalizes first add to
-// addu a2,a2,a1 (00c53021) while target requires addu a2,a1,a2 (00a63021); pure
-// C++ variants kept canonical operand order
-void func_001e7650(u32 a0, u32 a1, u32 a2) {
-    u32 t0 = a1;
-    a2 = (u32)(t0 + a2);
-    *(u32*)((u32)a0 + (s32)(4)) = a1;
-    a2 = (u32)((s32)a2 + (-16));
-    *(u32*)((u32)a0 + (s32)(0)) = 0u;
-    *(u32*)((u32)a0 + (s32)(8)) = a2;
-
-    *(u32*)((u32)a1 + (s32)(4)) = 0u;
-    u32 t7 = *(u32*)((u32)a0 + (s32)(8));
-    *(u32*)((u32)a1 + (s32)(8)) = 0u;
-    *(u32*)((u32)a1 + (s32)(0)) = t7;
-
-    u32 t6 = *(u32*)((u32)a0 + (s32)(8));
-    u32 t7b = 1u;
-    u32 t5 = *(u32*)((u32)a0 + (s32)(4));
-    *(u32*)((u32)t6 + (s32)(8)) = t7b;
-    *(u32*)((u32)t6 + (s32)(4)) = t5;
-    *(u32*)((u32)t6 + (s32)(0)) = 0u;
-    *(u32*)((u32)a0 + (s32)(12)) = 0u;
-}
-
 // reason: persistent 2-word reg-allocation mismatch at entry load/add (compiler
 // uses t7 for both loads; target uses t7 then t6) after multiple pure C++
 // control-equivalent rewrites
@@ -1654,28 +1629,6 @@ void func_002713a0(u32 a0, u32* a1, u32* a2) {
     *a2 = 3u;
 }
 
-// reason: could not force exact lui 0x36 base-address pattern and beqzl
-// delay-slot/restore ordering; pure C++ forms collapse to 0x35f01c address or
-// different instruction schedule
-void func_00271e80() {
-    func_002579e0();
-    if (func_0028acc8(D_00360000[-1017]) == 0u) {
-        return;
-    }
-    func_0028abe0(D_00360000[-1017]);
-}
-
-// reason: same scheduling/base-address issue as 0x00271e80 (required lui 0x36 +
-// beqzl restore delay sequence not reproduced by pure C++ forms)
-void func_002723e0() {
-    func_00271e80();
-    u32 s0 = 0x360000u;
-    if (func_0028be58(*(u32*)(s0 - 4020u)) == 0u) {
-        return;
-    }
-    func_0028be18(*(u32*)(s0 - 4020u));
-}
-
 // reason: closest pure C++ is 1 instruction off in prologue order (sd ra and
 // lui s0 swapped); unable to force target save scheduling without register/asm
 // control
@@ -1700,17 +1653,6 @@ u32 func_00276f38() {
     u32 a0 = *(u32*)(u32)&D_0035f21c;
     u32 (*volatile fp)(void*) = (u32 (*)(void*))func_00139d78;
     return fp((void*)(a0 + 408u));
-}
-
-// reason: same as 0x00271e80: pure C++ collapses base to 0x35f01c and fails
-// required lui 0x36 + beqzl delay-slot restore schedule
-void func_0027a180() {
-    func_002579e0();
-    u32 s0 = 0x360000u;
-    if (func_0028acc8(*(u32*)(s0 - 4068u)) == 0u) {
-        return;
-    }
-    func_0028abe0(*(u32*)(s0 - 4068u));
 }
 
 // reason: movn-based clamp/compare compiles with different register
@@ -3391,29 +3333,6 @@ check:
     }
 
     return -1;
-}
-
-// reason: unable to force ee-gcc3.2 to emit required lui/addiu split and exact
-// temp register schedule for constant table copy loop in pure C++ without
-// forbidden register/asm controls
-void func_002bcf58(u32* a0) {
-    u32* src;
-    u32 v = 30;
-    u32 neg1 = 0xFFFFFFFF;
-    a0[82] = v;
-    s32 i = 13;
-    a0 = (u32*)((u8*)a0 + 132);
-    src = (u32*)0x003616f8;
-    src = (u32*)((u8*)src + 44);
-    do {
-        v = src[0];
-        i -= 1;
-        a0[0] = v;
-        src = (u32*)((u8*)src + 4);
-        a0[1] = neg1;
-        a0[2] = 0;
-        a0 = (u32*)((u8*)a0 + 12);
-    } while (i >= 0);
 }
 
 // reason: unable to force required late second lui+store epilogue for global
@@ -8101,28 +8020,6 @@ u32 func_00155fc0(u8* a0) {
     }
 }
 
-// reason: compiler lowers second equality check into xori/sltiu boolean pattern
-// instead of required beq+delay-slot sequence; could not force original branch
-// form in pure C++
-u32 func_001570a0(u8* a0) {
-    u32 v0 = 0;
-    s32 t4 = 4;
-    u32 p15 = 0;
-    u32 p14 = 0;
-    if (*(u32*)(a0 + 15600) == t4) {
-        goto ret;
-    }
-    p15 = *(u32*)(a0 + 52);
-    p14 = *(u32*)(p15 + 1164);
-    if (*(u8*)(p14 + 431) == t4) {
-        v0 = 1;
-        goto ret;
-    }
-    v0 = 0;
-ret:
-    return v0;
-}
-
 // reason: compiler consistently hoists addiu(a0+10000) before call and lowers
 // result selection to movn instead of required beqz/li sequence; could not
 // reproduce original schedule in pure C++
@@ -9422,18 +9319,6 @@ u32 func_001b5af0() {
     return v0;
 }
 
-// reason: requires duplicate lui 0x35 materialization and specific epilogue
-// scheduling (ld ra before second global load) in tail-call path; GCC 3.2
-// collapses/reorders in pure C++
-void func_001b6038() {
-    u32* b = (u32*)0x00350000;
-    u32 v = b[1120];
-    if (v != 0) {
-        u32* c = (u32*)0x00350000;
-        func_00102670(c[1157], v);
-    }
-}
-
 // reason: requires beqzl with callee-save restore in delay slot and specific
 // temp register allocation for globals; GCC 3.2 emits non-likely branch and
 // different temp regs in pure C++
@@ -9653,19 +9538,6 @@ u32 func_001b8800(u32 a0) {
     u32 a2 = a1p[1];
     u32 a1 = (u32)a1p + 8;
     return func_002fd248(a0, a1, a2, 16, t0);
-}
-
-// reason: only mismatch is required lui/addiu (-1176) base form; GCC always
-// folds to lui/ori 0x32fb68 in pure C++ -O2
-u32 func_001b8958(u32 a0) {
-    u32 idx = a0 >> 5;
-    s32 b = 0x00330000;
-    b += -1176;
-    u32* base = (u32*)(u32)b;
-    u32 word = base[idx];
-    a0 &= 31;
-    u32 mask = 1u << a0;
-    return (word & mask) != 0;
 }
 
 // reason: requires prologue-before-global-store ordering and split lui/addiu
@@ -10321,22 +10193,6 @@ u8* func_001c0648(u32 a0) {
         }
         return 0;
     }
-}
-
-// reason: same bitset pattern blocked by literal/reg form: needs lui/addiu
-// 0x330000-3532 and specific base-reg allocation; GCC folds to 0x32f234 in pure
-// C++
-u32 func_001c09c0(u32 a0) {
-    u32 idx = a0 >> 5;
-    u32* base = (u32*)(0x00330000 - 3532);
-    idx <<= 2;
-    u8* p = (u8*)base + idx;
-    a0 &= 31;
-    u32 v0 = *(u32*)p;
-    u32 t7 = 1u;
-    t7 <<= a0;
-    v0 &= t7;
-    return (u32)(0 < v0);
 }
 
 // reason: requires specific bnezl + delay-slot pointer recompute with fixed
@@ -72245,59 +72101,6 @@ void func_00314640(u32 a0, u32 a1) {
     o[3] = t15;
 }
 
-// reason: branch-likely control flow (beqzl) and return-path scheduling for
-// small classifier diverge under pure C++ despite multiple goto-based rewrites
-u32 func_002fd160();
-
-u32 func_003149e8(u32 a0) {
-    u32 v0;
-    u32 t15;
-    s32 t14;
-
-    a0 = a0 & 0xffu;
-    v0 = 0u;
-    t15 = 255u;
-    if (a0 == t15) {
-        goto L_ret;
-    }
-
-    t14 = (s32)(a0 & 7u);
-    t15 = 2u;
-    if (t14 == (s32)t15) {
-        v0 = 2u;
-        goto L_ret;
-    }
-
-    t15 = (t14 < 3) ? 1u : 0u;
-    if (t15 == 0u) {
-        t15 = 3u;
-        goto L_30;
-    }
-
-    v0 = 4u;
-    if (t14 != 0) {
-        goto L_call;
-    }
-    goto L_ret;
-
-L_30:
-    if (t14 == (s32)t15) {
-        v0 = 4u;
-        goto L_ret;
-    }
-    t15 = 4u;
-    if (t14 == (s32)t15) {
-        v0 = 8u;
-        goto L_ret;
-    }
-
-L_call:
-    v0 = func_002fd160();
-
-L_ret:
-    return v0;
-}
-
 // reason: LEB128/sign-extend decoder semantics recovered, but compiler keeps
 // stream pointer in argument register instead of v0 and reorders early setup
 // (4-byte over)
@@ -72768,24 +72571,6 @@ void func_00319d68(u32 a0) {
     func_00319fb0(s0);
 }
 
-// reason: wrapper remains nonmatching with persistent addiu-vs-ori vtable
-// materialization and shifted dispatch setup
-void func_00239870(u32);
-
-void func_0031a2f0(u32 a0) {
-    u32 s0 = a0;
-
-    *(u32*)s0 = 0x00347e60u;
-    func_00239870(s0 + 24u);
-
-    *(u32*)s0 = 0x00347f98u;
-    u32 t14 = *(u32*)0x00347f80u;
-    u32 a0v = *(u32*)(t14 + 20u);
-    u32 t13 = *(u32*)a0v;
-    u32 fn = *(u32*)(t13 + 4u);
-    ((void (*)(u32, u32))fn)(a0v, s0);
-}
-
 // reason: resource-table loader loop remains nonmatching: branch layout around
 // optional 24-command lookup and loop increment differs consistently in pure
 // C++
@@ -73068,50 +72853,6 @@ void func_0031e208(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4) {
     }
 }
 
-// reason: Near-match only: list-unlink logic matches semantically but compiler
-// emits different branch-likely/delay-slot layout and temp-register propagation
-// (including extra tail nop), preventing byte match in pure C++.
-void func_0031e2c8(u32 a0, u32 a1) {
-    if (*(u32*)a0 == a1) {
-        *(u32*)a0 = *(u32*)(a1 + 40);
-    } else {
-        u32 cur = *(u32*)(*(u32*)a0 + 40);
-        u32 prev = *(u32*)a0;
-        while (cur != a1) {
-            prev = cur;
-            cur = *(u32*)(cur + 40);
-        }
-        *(u32*)(prev + 40) = *(u32*)(a1 + 40);
-    }
-
-    if (*(u32*)(a0 + 4) == a1) {
-        *(u32*)(a0 + 4) = 0;
-    }
-    *(u32*)(a1 + 40) = 0;
-}
-
-// reason: Near-match only: same unlink pattern as 0x0031e2c8 at +0x3C link
-// offset; branch-likely/delay-slot scheduling and temp register assignment
-// differ in pure C++, producing a 4-byte tail-size drift.
-void func_0031e328(u32 a0, u32 a1) {
-    if (*(u32*)a0 == a1) {
-        *(u32*)a0 = *(u32*)(a1 + 60);
-    } else {
-        u32 cur = *(u32*)(*(u32*)a0 + 60);
-        u32 prev = *(u32*)a0;
-        while (cur != a1) {
-            prev = cur;
-            cur = *(u32*)(cur + 60);
-        }
-        *(u32*)(prev + 60) = *(u32*)(a1 + 60);
-    }
-
-    if (*(u32*)(a0 + 4) == a1) {
-        *(u32*)(a0 + 4) = 0;
-    }
-    *(u32*)(a1 + 60) = 0;
-}
-
 // reason: Near-match only: constructor/destructor sequence matches semantically
 // but optimizer persistently reorders vtable/RTTI constant materialization and
 // store order at +0x24/+0x50, with stable 4-byte size drift in pure C++.
@@ -73186,78 +72927,6 @@ u32 func_0031e520(u32 self) {
     }
 
     return 1;
-}
-
-// reason: Near-match only: body now matches except final call sequence;
-// compiler always performs sibling-call optimization for func_0016a358 (tail
-// jump after epilogue) while target emits jal then epilogue/jr.
-void func_001b0188(u32);
-void func_0019f9a8(u32);
-void func_001c0248(u32);
-void func_001d5718(u32);
-void func_0031e7f8(u32);
-u32 func_0016a358(u32);
-
-extern u32 D_00350e60;
-extern u32 D_0034e8b8;
-extern u32 D_0034ee08;
-extern u32 D_003503e0;
-
-static inline u32 addr_D_00350e60() { return (u32)&D_00350e60; }
-static inline u32 addr_D_0034e8b8() { return (u32)&D_0034e8b8; }
-static inline u32 addr_D_0034ee08() { return (u32)&D_0034ee08; }
-static inline u32 addr_D_003503e0() { return (u32)&D_003503e0; }
-
-void func_0031e690(u32 self) {
-    u32 c0 = addr_D_0034e8b8();
-    u32 c2824 = addr_D_00350e60();
-    *(u32*)(self + 2824) = c2824;
-    *(u32*)(self + 0) = c0;
-
-    u32 s18 = self;
-    func_001b0188(s18 + 2824);
-
-    *(u32*)(s18 + 0) = addr_D_0034ee08();
-    func_0019f9a8(s18 + 2568);
-    func_001c0248(s18 + 2640);
-
-    *(u32*)(s18 + 0) = addr_D_003503e0();
-    if (s18 != (u32)-2524) {
-        u32 s16 = s18 + 2548;
-        u32 s17 = s18 + 2524;
-        do {
-            if (s17 == s16) {
-                break;
-            }
-            s16 -= 12;
-            func_001d5718(s16);
-        } while (1);
-    }
-
-    func_0031e7f8(s18 + 2492);
-    func_0016a358(s18);
-}
-
-// reason: Near-match only: same unlink pattern as 0x0031e2c8 at +0x0C link
-// offset; branch-likely/delay-slot and temp-register assignment stay different
-// in pure C++, with stable 4-byte drift.
-void func_0031f298(u32 a0, u32 a1) {
-    if (*(u32*)a0 == a1) {
-        *(u32*)a0 = *(u32*)(a1 + 12);
-    } else {
-        u32 cur = *(u32*)(*(u32*)a0 + 12);
-        u32 prev = *(u32*)a0;
-        while (cur != a1) {
-            prev = cur;
-            cur = *(u32*)(cur + 12);
-        }
-        *(u32*)(prev + 12) = *(u32*)(a1 + 12);
-    }
-
-    if (*(u32*)(a0 + 4) == a1) {
-        *(u32*)(a0 + 4) = 0;
-    }
-    *(u32*)(a1 + 12) = 0;
 }
 
 // reason: Near-match only: same pattern as 0x0031e590 with persistent s1/s2
@@ -73434,138 +73103,6 @@ void func_0031fa18(u32 self) {
     u32 t = s18;
     (void)t;
     func_00105110(s18);
-}
-
-// reason: Near-match only: same unlink pattern as 0x0031e2c8 at +0x7C link
-// offset; branch-likely/delay-slot and temp-register assignment differ in pure
-// C++, with stable 4-byte drift.
-void func_0031fe00(u32 a0, u32 a1) {
-    if (*(u32*)a0 == a1) {
-        *(u32*)a0 = *(u32*)(a1 + 124);
-    } else {
-        u32 cur = *(u32*)(*(u32*)a0 + 124);
-        u32 prev = *(u32*)a0;
-        while (cur != a1) {
-            prev = cur;
-            cur = *(u32*)(cur + 124);
-        }
-        *(u32*)(prev + 124) = *(u32*)(a1 + 124);
-    }
-
-    if (*(u32*)(a0 + 4) == a1) {
-        *(u32*)(a0 + 4) = 0;
-    }
-    *(u32*)(a1 + 124) = 0;
-}
-
-// reason: Near-match only: same unlink pattern as 0x0031e2c8 at +0x8b8 link
-// offset; branch-likely/delay-slot and temp-register assignment differ in pure
-// C++, with stable 4-byte drift.
-void func_00320468(u32 a0, u32 a1) {
-    if (*(u32*)a0 == a1) {
-        *(u32*)a0 = *(u32*)(a1 + 2232);
-    } else {
-        u32 cur = *(u32*)(*(u32*)a0 + 2232);
-        u32 prev = *(u32*)a0;
-        while (cur != a1) {
-            prev = cur;
-            cur = *(u32*)(cur + 2232);
-        }
-        *(u32*)(prev + 2232) = *(u32*)(a1 + 2232);
-    }
-
-    if (*(u32*)(a0 + 4) == a1) {
-        *(u32*)(a0 + 4) = 0;
-    }
-    *(u32*)(a1 + 2232) = 0;
-}
-
-// reason: Near-match only: same unlink pattern as 0x0031e2c8 at +0x14 link
-// offset; branch-likely/delay-slot and temp-register assignment differ in pure
-// C++, with stable 4-byte drift.
-void func_003204c8(u32 a0, u32 a1) {
-    if (*(u32*)a0 == a1) {
-        *(u32*)a0 = *(u32*)(a1 + 20);
-    } else {
-        u32 cur = *(u32*)(*(u32*)a0 + 20);
-        u32 prev = *(u32*)a0;
-        while (cur != a1) {
-            prev = cur;
-            cur = *(u32*)(cur + 20);
-        }
-        *(u32*)(prev + 20) = *(u32*)(a1 + 20);
-    }
-
-    if (*(u32*)(a0 + 4) == a1) {
-        *(u32*)(a0 + 4) = 0;
-    }
-    *(u32*)(a1 + 20) = 0;
-}
-
-// reason: Near-match only: same unlink pattern as 0x0031e2c8 at +0x50 link
-// offset; branch-likely/delay-slot and temp-register assignment differ in pure
-// C++, with stable 4-byte drift.
-void func_00320828(u32 a0, u32 a1) {
-    if (*(u32*)a0 == a1) {
-        *(u32*)a0 = *(u32*)(a1 + 80);
-    } else {
-        u32 cur = *(u32*)(*(u32*)a0 + 80);
-        u32 prev = *(u32*)a0;
-        while (cur != a1) {
-            prev = cur;
-            cur = *(u32*)(cur + 80);
-        }
-        *(u32*)(prev + 80) = *(u32*)(a1 + 80);
-    }
-
-    if (*(u32*)(a0 + 4) == a1) {
-        *(u32*)(a0 + 4) = 0;
-    }
-    *(u32*)(a1 + 80) = 0;
-}
-
-// reason: Near-match only: same unlink pattern as 0x0031e2c8 at +0x24 link
-// offset; pure C++ keeps branch-likely/delay-slot and temp-register assignment
-// variants, causing stable 4-byte drift.
-void func_003208a8(u32 a0, u32 a1) {
-    if (*(u32*)a0 == a1) {
-        *(u32*)a0 = *(u32*)(a1 + 36);
-    } else {
-        u32 cur = *(u32*)(*(u32*)a0 + 36);
-        u32 prev = *(u32*)a0;
-        while (cur != a1) {
-            prev = cur;
-            cur = *(u32*)(cur + 36);
-        }
-        *(u32*)(prev + 36) = *(u32*)(a1 + 36);
-    }
-
-    if (*(u32*)(a0 + 4) == a1) {
-        *(u32*)(a0 + 4) = 0;
-    }
-    *(u32*)(a1 + 36) = 0;
-}
-
-// reason: Near-match only: same unlink pattern as 0x0031e2c8 at +0x30 link
-// offset; pure C++ keeps branch-likely/delay-slot and temp-register assignment
-// variants, causing stable 4-byte drift.
-void func_003216c8(u32 a0, u32 a1) {
-    if (*(u32*)a0 == a1) {
-        *(u32*)a0 = *(u32*)(a1 + 48);
-    } else {
-        u32 cur = *(u32*)(*(u32*)a0 + 48);
-        u32 prev = *(u32*)a0;
-        while (cur != a1) {
-            prev = cur;
-            cur = *(u32*)(cur + 48);
-        }
-        *(u32*)(prev + 48) = *(u32*)(a1 + 48);
-    }
-
-    if (*(u32*)(a0 + 4) == a1) {
-        *(u32*)(a0 + 4) = 0;
-    }
-    *(u32*)(a1 + 48) = 0;
 }
 
 // reason: Could not force required li/addiu/register-allocation and
@@ -77125,4 +76662,3 @@ Lmode1:
 }
 
 }  // namespace kn
-
