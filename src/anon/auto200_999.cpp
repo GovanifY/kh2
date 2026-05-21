@@ -36,6 +36,7 @@ extern u8 D_0014c7f0;
 extern u8 D_0032f234;
 extern u8 D_01c61af4;
 extern u8 D_01c61af5;
+extern u32 D_01c6cba0;
 extern u8 D_0032da20;
 extern u32 D_0032b91c;
 extern u8 D_0032df30;
@@ -63,6 +64,7 @@ extern u8 D_003616f8;
 extern u8 D_00361fc8;
 extern u8 D_00362060;
 extern u8 D_004f36a8;
+extern u8 D_004f3700;
 
 static inline u32 addr_D_00347e60() { return (u32)&D_00347e60; }
 static inline u32 addr_D_00347f98() { return (u32)&D_00347f98; }
@@ -99,6 +101,17 @@ void func_0015cb18(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5, u32 a6, u32 a
     *(u8*)a1 = p[1];
     *(u8*)a2 = p[2];
     *(u8*)a3 = p[3];
+}
+
+void dk_MapColor_getOnColorTable(u32, u32) asm("_ZN2dk8MapColor15getOnColorTableEPhi");
+void dk_MapColor_getOnColorTable(u32 a0, u32 a1) {
+    u8* p = (u8*)((u32)&D_004f3700 + (a1 << 2));
+    *(u8*)a0 = p[4];
+    a0 += 1;
+    *(u8*)a0 = p[5];
+    a0 += 1;
+    *(u8*)a0 = p[6];
+    *(u8*)(a0 + 1) = p[7];
 }
 
 u32 func_001570a0(u8* a0) {
@@ -140,11 +153,44 @@ u32 func_0014c908() {
     return func_00102788(a0, 0, 1, (u32)&D_0014c7f0);
 }
 
+void dk_RectParamBase_setColor(u32, u32, u32, u32, u32) asm("_ZN2dk13RectParamBase8setColorEhhhh");
+void dk_RectParamBase_setColor(u32 a0, u32 a1, u32 a2, u32 a3, u32 t0) {
+    a1 &= 0xff;
+    a2 &= 0xff;
+    a3 &= 0xff;
+    *(u8*)(a0 + 16) = a1;
+    t0 &= 0xff;
+    *(u8*)(a0 + 17) = a2;
+    *(u8*)(a0 + 19) = t0;
+    *(u8*)(a0 + 18) = a3;
+}
+
+void func_0014bb00(u32 a0, u32 a1, u32 a2, u32 a3, u32 t0) {
+    a1 = (s16)a1;
+    a2 = (s16)a2;
+    a3 &= 0xffff;
+    asm volatile("" : "+r"(a3));
+    *(volatile u16*)(a0 + 320) = a1;
+    t0 &= 0xffff;
+    *(volatile u16*)(a0 + 322) = a2;
+    *(volatile u16*)(a0 + 326) = t0;
+    *(volatile u16*)(a0 + 324) = a3;
+}
+
 u32 func_0018cae0(u32 a0) {
     u32 p = *(u32*)(a0 + 32);
     u32 v = *(u8*)(p + 18);
     v >>= 5;
     v &= 1;
+    u8 ret = (u8)v;
+    return ret;
+}
+
+u32 func_0018f010(u32 a0) {
+    u32 p = *(u32*)(a0 + 40);
+    u32 v = *(u8*)(p + 4);
+    v -= 2;
+    v = v < 2;
     u8 ret = (u8)v;
     return ret;
 }
@@ -196,6 +242,38 @@ void func_001963c8(u32 a0) {
     *p = val | mask;
 }
 
+void func_00198e70(u32 a0, u32 a1) {
+    s32 idx = *(s16*)(a0 + 46);
+    a1 &= 0x1fff;
+    a1 <<= 2;
+    s32 off = idx;
+    idx += 1;
+    off <<= 1;
+    *(u16*)(a0 + 46) = idx;
+    a0 += off;
+    u32 v = *(u16*)(a0 + 32);
+    v &= 0x8000;
+    v |= a1;
+    *(u16*)(a0 + 32) = v;
+}
+
+void func_00198ea8(u32 a0, u32 a1) {
+    s32 idx = *(s16*)(a0 + 46);
+    a1 &= 0x1fff;
+    a1 <<= 2;
+    s32 off = idx;
+    idx += 1;
+    off <<= 1;
+    *(u16*)(a0 + 46) = idx;
+    a0 += off;
+    u32 v = *(u16*)(a0 + 32);
+    v &= 0xfffc;
+    v |= 1;
+    v &= 0x8001;
+    v |= a1;
+    *(u16*)(a0 + 32) = v;
+}
+
 void func_0019f490(u32 a0, u32 a1) {
     u32 idx = a1 >> 5;
     u32 mask = 1;
@@ -205,6 +283,51 @@ void func_0019f490(u32 a0, u32 a1) {
     mask <<= a1;
     u32 val = *(u32*)a0;
     *(u32*)a0 = val | mask;
+}
+
+void func_001a1c70(u32 a0) {
+    u8 v = *(u8*)(a0 + 434);
+    *(u8*)(a0 + 432) = 100;
+    *(u8*)(a0 + 433) = v;
+    *(u32*)(a0 + 436) = 0;
+    *(u32*)(a0 + 440) = 0;
+}
+
+void func_001a1d40(u32 a0, f32 f12) {
+    *(u32*)(a0 + 384) = 0;
+    *(f32*)(a0 + 448) = f12;
+    *(f32*)(a0 + 444) = f12;
+}
+
+u32 func_001a3888(s32 a0) {
+    if (a0 < 5) {
+        goto L_zero;
+    }
+    if (a0 < 8) {
+        goto L_one;
+    }
+    if (a0 != 131) {
+        goto L_zero;
+    }
+L_one:
+    return 1;
+L_zero:
+    return 0;
+}
+
+u32 func_001a84f0() {
+    u32* p = &D_01c6cba0;
+    u32 v = p[1] ^ p[0];
+    return v < 1;
+}
+
+void func_001a8ff8(u32 a0, u32 a1, u32 a2) {
+    u8* p1 = (u8*)(a0 + a1);
+    u8* p2 = (u8*)(a0 + a2);
+    u8 v1 = *p1;
+    u8 v2 = *p2;
+    *p1 = v2;
+    *p2 = v1;
 }
 
 namespace dk {
