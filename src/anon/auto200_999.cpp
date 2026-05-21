@@ -12,6 +12,7 @@ void func_001a9970(void*, u32);
 u32 func_001aae68(u32);
 void func_001b0188(u32);
 void func_00102670(u32, u32);
+u32 func_00102788(u32, u32, u32, u32);
 void func_001c0248(u32);
 void func_001d5718(u32);
 void func_002361a0(...);
@@ -29,13 +30,20 @@ void func_0019f9a8(u32);
 void func_002fd160(void) __attribute__((noreturn));
 u32 func_00290738(...);
 void func_0031e7f8(u32);
+void func_0014c8e0();
 typedef void (*Fn_00322908)(u32, u32);
+extern u8 D_0014c7f0;
 extern u8 D_0032f234;
+extern u8 D_01c61af4;
+extern u8 D_01c61af5;
+extern u8 D_0032da20;
+extern u32 D_0032b91c;
 extern u8 D_0032df30;
 extern u8 D_0032fae4;
 extern u8 D_0032fb68;
 extern u32 D_00347f80;
 extern u8 D_00347d18;
+extern u32 D_00347e08;
 extern u8 D_003486f0;
 extern u8 D_00347e60;
 extern u8 D_00347f98;
@@ -105,6 +113,142 @@ u32 func_001570a0(u8* a0) {
         v0 = 0;
     }
     return v0;
+}
+
+void func_0011c210(u32 a0) {
+    u64 v = *(u64*)(a0 + 16);
+    u64 mask = 1ull << 53;
+    *(u64*)(a0 + 16) = v | mask;
+}
+
+void func_0010dee8(u32 a0, u32* a1, u32* a2) {
+    a2[0] = a1[0];
+    a2[1] = a1[1];
+    a2[2] = a1[2];
+    a2[3] = a1[3];
+    a2[4] = a1[4];
+}
+
+u64 func_0011c230(u32 a0) {
+    u64 v = *(u64*)(a0 + 16);
+    return (v >> 53) & 1;
+}
+
+u32 func_0014c908() {
+    func_0014c8e0();
+    u32 a0 = D_0032b91c;
+    return func_00102788(a0, 0, 1, (u32)&D_0014c7f0);
+}
+
+u32 func_0018cae0(u32 a0) {
+    u32 p = *(u32*)(a0 + 32);
+    u32 v = *(u8*)(p + 18);
+    v >>= 5;
+    v &= 1;
+    u8 ret = (u8)v;
+    return ret;
+}
+
+void func_00190128(u32 a0) {
+    u32 neg = 0xffffffffu;
+    *(u32*)(a0 + 4) = 0;
+    *(u32*)(a0 + 12) = neg;
+    *(u32*)(a0 + 8) = 0;
+    *(u32*)a0 = 0;
+}
+
+void func_00194668(u32 a0) {
+    u32 v0 = *(u32*)(a0 + 268);
+    u32 v1 = *(u32*)(a0 + 1896);
+    v0 &= 0xffffffbf;
+    *(u32*)(a0 + 1936) = 0;
+    v1 &= 0xffffefff;
+    *(u32*)(a0 + 268) = v0;
+    *(u32*)(a0 + 1896) = v1;
+}
+
+u32 YS_OBJ_get_draw_color(u32) asm("_ZN2YS3OBJ14get_draw_colorEv");
+u32 YS_OBJ_get_draw_color(u32 a0) {
+    u32 flag = *(u32*)(a0 + 1416);
+    u32 alt = a0 + 1880;
+    flag &= 0x20000000;
+    a0 += 2236;
+    if (flag == 0) {
+        a0 = alt;
+    }
+    return a0;
+}
+
+u32 func_001949d0() {
+    u32 ret = 0;
+    if (D_01c61af4 != 0) {
+        ret = D_01c61af5 < 1;
+    }
+    return ret;
+}
+
+void func_001963c8(u32 a0) {
+    u32 idx = a0 >> 5;
+    u32* p = (u32*)((u8*)&D_0032da20 + (idx << 2));
+    a0 &= 31;
+    u32 val = *p;
+    u32 mask = 1u << a0;
+    *p = val | mask;
+}
+
+void func_0019f490(u32 a0, u32 a1) {
+    u32 idx = a1 >> 5;
+    u32 mask = 1;
+    idx <<= 2;
+    a1 &= 31;
+    a0 += idx;
+    mask <<= a1;
+    u32 val = *(u32*)a0;
+    *(u32*)a0 = val | mask;
+}
+
+namespace dk {
+class Pause {
+public:
+    static void disable(s32);
+};
+class Ft4Base {
+public:
+    void setGsUV(u64, u64, u64, u64);
+};
+class ObjCamera {
+public:
+    void returnMode();
+};
+class RectBase {
+public:
+    void setGsUV(u64, u64);
+};
+
+void Pause::disable(s32 a0) {
+    u32 mask = 1u << a0;
+    D_00347e08 |= mask;
+}
+
+void Ft4Base::setGsUV(u64 a0, u64 a1, u64 a2, u64 a3) {
+    *(volatile u64*)((u8*)this + 208) = a0;
+    *(volatile u64*)((u8*)this + 256) = a3;
+    *(volatile u64*)((u8*)this + 224) = a1;
+    *(volatile u64*)((u8*)this + 240) = a2;
+}
+
+void ObjCamera::returnMode() {
+    if (*(u8*)((u8*)this + 59) != 0) {
+        *(u32*)((u8*)this + 64) = 2;
+        return;
+    }
+    *(u32*)((u8*)this + 64) = 0;
+}
+
+void RectBase::setGsUV(u64 a0, u64 a1) {
+    *(volatile u64*)((u8*)this + 208) = a0;
+    *(volatile u64*)((u8*)this + 224) = a1;
+}
 }
 
 void func_0019f4b8(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5, u32 a6, u32 a7) {
