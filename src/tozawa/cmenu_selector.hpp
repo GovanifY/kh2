@@ -41,7 +41,7 @@ public:
     static void Control(TASK*);
     static void PauseThread(TASK*);
     static u32 SelExitImpl(...);
-    static void GetHelpGraPos(...);
+    static void GetHelpGraPos(...) asm("func_0027dc20");
     static void SetHelpGraMsg(u32, s32);
     static void CreateHelpGra(...);
     static void SetState(s32);
