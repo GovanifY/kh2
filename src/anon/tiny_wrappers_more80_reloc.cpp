@@ -212,10 +212,6 @@ u32 func_00134490(u32 a0, u32 a1, u32 a2, u32 a3) {
     return func_00133bb8((u32)&D_00347c88, 0x00000000u, 0x11000000u, 0x13000000u);
 }
 
-u32 func_0013dd28(u32 a0, u32 a1, u32 a2, u32 a3) {
-    return func_0013dbe0((u32)&D_00348638, a1, a2, a3);
-}
-
 u32 func_0013dd78(u32 a0, u32 a1, u32 a2, u32 a3) {
     return func_0013dcb0((u32)&D_00348638, a0, a1, a3);
 }

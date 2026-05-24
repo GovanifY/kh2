@@ -356,6 +356,34 @@ def _build_func_name_source_map(
     return hits
 
 
+def _build_asm_alias_source_map(
+    src_files: List[Path], texts: Dict[Path, str]
+) -> Dict[str, List[Path]]:
+    alias_re = re.compile(
+        r"^\s*(?:[A-Za-z_][A-Za-z0-9_:<>,~*&\s]*?[\s*&]+)?"
+        r"([A-Za-z_][A-Za-z0-9_]*)\s*\([^;{}]*\)\s*"
+        r"asm\s*\(\s*\"([^\"]+)\"\s*\)\s*;",
+        re.M,
+    )
+    hits: Dict[str, List[Path]] = {}
+    for p in src_files:
+        if p.suffix in {".s", ".S"}:
+            continue
+        text = texts[p]
+        for m in alias_re.finditer(text):
+            name = m.group(1)
+            symbol = m.group(2)
+            body_re = re.compile(
+                rf"^\s*(?:[A-Za-z_][A-Za-z0-9_:<>,~*&\s]*?[\s*&]+)?"
+                rf"{re.escape(name)}\s*\([^;{{}}]*\)\s*"
+                rf"(?:const\s*)?(?:__attribute__\s*\(\([^{{}}]*\)\)\s*)?\{{",
+                re.M,
+            )
+            if body_re.search(text, m.end()):
+                hits.setdefault(symbol, []).append(p)
+    return hits
+
+
 _TYPE_ALIASES = {
     "u8": "unsigned char",
     "s8": "signed char",
@@ -520,8 +548,18 @@ def load_registry(path: Path = REGISTRY_TSV) -> Dict[int, RegistryEntry]:
     texts = {p: p.read_text(errors="ignore") for p in src_files}
     addr_fallback = _build_addr_source_fallback_map(src_files, texts)
     defs_by_name = _build_func_name_source_map(src_files, texts)
+    asm_alias_sources = _build_asm_alias_source_map(src_files, texts)
 
     for addr, symbol in sorted(symbols_by_addr.items()):
+        alias_candidates = sorted(set(asm_alias_sources.get(symbol, [])))
+        if len(alias_candidates) == 1:
+            entries[addr] = RegistryEntry(
+                addr=addr,
+                mode="cxx",
+                source=alias_candidates[0].relative_to(ROOT).as_posix(),
+                symbol=symbol,
+            )
+            continue
         source, _reason = _resolve_source_for_symbol(
             symbol, addr, src_files, texts, defs_by_name
         )

@@ -1,4 +1,5 @@
 #include "../common/types.h"
+#include "../tozawa/menu_sound.hpp"
 
 u32 func_0013e940(u32, u32, u32, u32, u32, u32, u32, u32);
 u32 func_00149350(u32, u32, u32, u32);
@@ -12,9 +13,14 @@ void func_00192f78(void *);
 void func_001a9970(void *, u32);
 u32 func_001aae68(u32);
 void func_001b0188(u32);
+void func_001b0210(u32, u32, u32, u32);
+void func_001bacd0(u32);
+void func_001d79b8(u32);
 void func_00102670(u32, u32);
 u32 func_00102788(u32, u32, u32, u32);
 void func_001c0248(u32);
+void func_001c0458(u32, u32);
+void func_001c1708(u32);
 void func_001d5718(u32);
 void func_002361a0(...);
 u32 func_00239700(...);
@@ -38,46 +44,65 @@ extern u8 D_0032f234;
 extern u8 D_01c61af4;
 extern u8 D_01c61af5;
 extern u32 D_01c6cba0;
+extern u8 D_01c60bf0;
+extern u8 D_01c60d50;
+extern u32 D_01d49320;
 extern u8 D_0032da20;
 extern u32 D_0032b91c;
 extern u8 D_0032df30;
 extern u8 D_0032fae4;
 extern u8 D_0032fb68;
+extern u8 D_00340ed0;
 extern u32 D_00347f80;
 extern u8 D_00347d18;
 extern u32 D_00347e08;
+extern u8 D_00347940;
 extern u8 D_003486f0;
 extern u8 D_00347e60;
 extern u8 D_00347f98;
+extern u32 D_0034dca0;
 extern u32 D_00352bd0;
 extern u32 D_0034e8b8;
 extern u32 D_0034ee08;
+extern u32 D_0035037c;
 extern u32 D_003503e0;
 extern u8 D_00350000;
 extern u32 D_00350e48;
 extern u32 D_00350e60;
 extern u8 D_00351100;
+extern u32 D_00351d98;
+extern u32 D_003528f8;
 extern u32 D_0035f490;
 extern u32 D_0035f01c;
 extern u32 D_0035f04c;
 extern u32 D_0035de5c;
 extern u8 D_0035de54;
+extern s32 D_0035de2c;
 extern u16 D_0035ef70;
 extern u32 D_0035f23c;
 extern u32 D_0035f240;
 extern u32 D_0035f30c;
 extern u32 D_0035f310;
 extern u32 D_0035ec94;
+extern s16 D_0035ecc8;
+extern u32 D_0035f578;
 extern u8 D_0035ef78;
 extern u8 D_00360000;
 extern u8 D_003616f8;
 extern u8 D_00361fc8;
 extern u8 D_00362060;
+extern u8 D_003637e0;
+extern f32 D_0036c1a0;
+extern f32 D_0036c554;
+extern f32 D_0036ce98;
+extern f32 D_0036ce9c;
+extern u8 D_0035eee0;
 extern f32 D_003760a0;
 extern f32 D_003760a4;
+extern s16 D_003717c8;
 extern u8 D_004f36a8;
 extern u8 D_004f3700;
-extern u32 D_004f41c0;
+extern u32 D_004f6290;
 
 static inline u32 addr_D_00347e60() { return (u32)&D_00347e60; }
 static inline u32 addr_D_00347f98() { return (u32)&D_00347f98; }
@@ -145,6 +170,76 @@ u32 func_001570a0(u8 *a0) {
     return v0;
 }
 
+u32 func_001665d8(u32 a0, u32 *a1, u32 *a2, u32 *a3, u32 *a4, u32 *a5,
+                  u32 *a6) {
+    register u32 p asm("$13") = a0 + 16;
+    asm volatile("" : "+r"(p));
+    register u32 v15 asm("$15") = *(u16 *)(p + 20);
+    *a1 = v15;
+    asm volatile("" : "+r"(p));
+    v15 = *(u16 *)(p + 22);
+    *a2 = v15;
+    asm volatile("" : "+r"(p));
+    register u32 v14 asm("$14") = *(u32 *)(p + 24);
+    *a3 = v14;
+    asm volatile("" : "+r"(p));
+    v15 = *(u32 *)(p + 32);
+    *a4 = v15;
+    asm volatile("" : "+r"(p));
+    v14 = *(u32 *)(a0 + 16);
+    *a5 = v14;
+    asm volatile("" : "+r"(p));
+    v15 = *(u32 *)(p + 4);
+    *a6 = v15;
+    return *(u32 *)(p + 40);
+}
+
+u32 func_00170e18() {
+    register u32 p asm("$14") = D_0034dca0;
+    u32 ret = 1;
+    if (p != 0) {
+        while (1) {
+            register s32 v asm("$15") = *(s32 *)(p + 40);
+            ret = 0;
+            v = v < 10000;
+            v ^= 1;
+            u32 next = *(u32 *)(p + 60);
+            if (v == 0) {
+                break;
+            }
+            p = next;
+            if (p != 0) {
+                continue;
+            }
+            ret = 1;
+            break;
+        }
+    }
+    return ret;
+}
+
+void func_002edf68(u32 a0) {
+    register u32 vtbl asm("$15") = (u32)&D_003637e0;
+    *(volatile u32 *)(a0 + 4) = 0;
+    asm volatile("" : "+r"(vtbl));
+    *(volatile u32 *)(a0 + 12) = 0;
+    *(volatile u32 *)(a0 + 0) = vtbl;
+    asm volatile("" ::: "memory");
+    register u32 val asm("$14") = 128;
+    asm volatile("" : "+r"(val));
+    *(volatile u32 *)(a0 + 8) = 0;
+    *(volatile u32 *)(a0 + 16) = 0;
+    asm volatile("" ::: "memory");
+    register u32 p asm("$15") = a0 + 24;
+    asm volatile("" : "+r"(p));
+    *(volatile u32 *)(a0 + 20) = 0;
+    *(volatile u8 *)(a0 + 24) = val;
+    *(volatile u8 *)(p + 3) = val;
+    *(volatile u8 *)(p + 1) = val;
+    *(volatile u8 *)(p + 2) = val;
+    *(volatile u32 *)(a0 + 28) = 0;
+}
+
 void func_0011c210(u32 a0) {
     u64 v = *(u64 *)(a0 + 16);
     u64 mask = 1ull << 53;
@@ -159,7 +254,7 @@ void func_0010dee8(u32 a0, u32 *a1, u32 *a2) {
     a2[4] = a1[4];
 }
 
-u8 *func_00100430(u8 *a0, u64 *a1) {
+u8* func_00100430(u8* a0, u64* a1) {
     u8 *p = a0;
     u32 shift = 0;
     s64 out = 0;
@@ -176,6 +271,30 @@ u8 *func_00100430(u8 *a0, u64 *a1) {
     return p;
 }
 
+u8* func_00316f38(u8 *a0, u64 *a1) {
+    u8 *p = a0;
+    u32 shift = 0;
+    s64 out = 0;
+    s32 cont;
+
+    do {
+        u32 b = *p++;
+        out |= (s32)((b & 0x7f) << shift);
+        cont = b & -128;
+        shift += 7;
+    } while (cont != 0);
+
+    *a1 = out;
+    return p;
+}
+
+void func_0010a800(u8 *a0, u8 *a1, u8 *a2) {
+    u8 *p = &D_00340ed0;
+    *a0 = p[0];
+    *a1 = p[1];
+    *a2 = p[2];
+}
+
 void func_0010ef28(u32 a0, u32 a1) {
     u32 p = a0 + 8;
     *(u32 *)(p + 3156) = *(u32 *)(p + 3152);
@@ -187,6 +306,15 @@ void func_0010ef28(u32 a0, u32 a1) {
 u64 func_0011c230(u32 a0) {
     u64 v = *(u64 *)(a0 + 16);
     return (v >> 53) & 1;
+}
+
+void func_0011ee18(u32 a0, u32 a1) {
+    u32 p = (u32)&D_00347940;
+    *(u32 *)(a0 + 4) = a1;
+    p += 0;
+    *(u32 *)(a0 + 8) = 0;
+    *(u32 *)a0 = p;
+    *(u32 *)(a0 + 12) = 0;
 }
 
 u32 func_0014c908() {
@@ -201,11 +329,12 @@ void dk_RectParamBase_setColor(u32 a0, u32 a1, u32 a2, u32 a3, u32 t0) {
     a1 &= 0xff;
     a2 &= 0xff;
     a3 &= 0xff;
-    *(u8 *)(a0 + 16) = a1;
+    asm volatile("" : "+r"(a1), "+r"(a2), "+r"(a3));
+    *(volatile u8 *)(a0 + 16) = a1;
     t0 &= 0xff;
-    *(u8 *)(a0 + 17) = a2;
-    *(u8 *)(a0 + 19) = t0;
-    *(u8 *)(a0 + 18) = a3;
+    *(volatile u8 *)(a0 + 17) = a2;
+    *(volatile u8 *)(a0 + 19) = t0;
+    *(volatile u8 *)(a0 + 18) = a3;
 }
 
 void func_0014bb00(u32 a0, u32 a1, u32 a2, u32 a3, u32 t0) {
@@ -220,29 +349,19 @@ void func_0014bb00(u32 a0, u32 a1, u32 a2, u32 a3, u32 t0) {
     *(volatile u16 *)(a0 + 324) = a3;
 }
 
+void func_0014dd60(u32 a0, u32 a1, u32 a2, u32 a3) {
+    a1 &= 0xff;
+    a2 &= 0xff;
+    a3 &= 0xff;
+    asm volatile("" : "+r"(a1), "+r"(a2), "+r"(a3));
+    *(volatile u8 *)(a0 + 470) = a1;
+    *(volatile u8 *)(a0 + 472) = a3;
+    *(volatile u8 *)(a0 + 471) = a2;
+}
+
 u32 func_001493b8(u32 a0, u32 a1, u32 a2, u32 a3) {
     if (*(s8 *)a0 == 0) {
         return func_00149350(a0, a0, a2, a3);
-    }
-}
-
-u32 func_00165ef0(u32 a0) {
-    u32 head = D_004f41c0;
-    u32 v;
-
-    for (;;) {
-        if (a0 != 0) {
-            v = *(u32 *)(a0 + 12);
-        } else {
-            v = head;
-        }
-        if (v == 0) {
-            return 0;
-        }
-        a0 = v;
-        if ((*(u32 *)(v + 8) & 2) == 0) {
-            return v;
-        }
     }
 }
 
@@ -262,6 +381,381 @@ u32 func_0018f010(u32 a0) {
     v = v < 2;
     u8 ret = (u8)v;
     return ret;
+}
+
+void func_00192f78(u32 a0) {
+    u32 p = (u32)&D_0036ce98;
+    *(u32 *)(a0 + 12) = 0;
+    asm volatile("" : "+r"(p));
+    f32 f0 = *(f32 *)p;
+    *(volatile f32 *)(a0 + 20) = f0;
+    *(volatile f32 *)(a0 + 4) = f0;
+    *(volatile f32 *)(a0 + 8) = f0;
+}
+
+void func_00192f98(u32 a0) {
+    u32 p = (u32)&D_0036ce9c;
+    f32 f1 = *(f32 *)(a0 + 20);
+    asm volatile("" : "+r"(p));
+    f32 f0 = *(f32 *)p;
+    *(f32 *)(a0 + 4) = f1;
+    *(f32 *)(a0 + 8) = f0;
+}
+
+u32 func_00192498(u32 a0, u32 a1) {
+    register u32 p1 asm("$14") = a1 + a0;
+    asm volatile("" : "+r"(a0), "+r"(p1));
+    register u32 p0 asm("$4") = a0 + a1;
+    asm volatile("" : "+r"(p1), "+r"(p0));
+    u32 hi = *(u8 *)(p1 + 1);
+    u32 lo = *(u8 *)p0;
+    u32 v = lo | (hi << 8);
+    return (s16)v;
+}
+
+u32 ctarget_00189200(u32 a0, u32 a1, u32, u32) {
+    if (a1 - 1 < 10) {
+        return a0 + a1 * 56 + 3532;
+    }
+    return 0;
+}
+
+u32 func_001977d8() {
+    u32 p = D_0035037c;
+    u32 ret = 0;
+    if (p != 0) {
+        u32 v = *(u32 *)p;
+        v &= 1;
+        ret = v != 0;
+    }
+    return ret;
+}
+
+u32 func_00197800() {
+    u32 p = D_0035037c;
+    u32 ret = 0;
+    if (p != 0) {
+        u32 v = *(u32 *)p;
+        v &= 2;
+        ret = v != 0;
+    }
+    return ret;
+}
+
+u32 func_001bf140(u32 a0, u32 a1) {
+    u32 ret = 0;
+    if (a1 != 0) {
+        u32 v = *(u32 *)(a0 + 2736);
+        u32 mask = 1u << a1;
+        v &= mask;
+        ret = v != 0;
+    }
+    return ret;
+}
+
+f32 func_0016a0a0(u32 a0) {
+    u32 p = (u32)&D_0036c1a0;
+    asm volatile("" : "+r"(p));
+    f32 ret = *(volatile f32 *)p;
+    asm volatile("" : "+f"(ret));
+    if ((*(u32 *)(a0 + 356) & 2) == 0) {
+        u32 obj = *(u32 *)(a0 + 8);
+        ret = *(f32 *)(obj + 80);
+    }
+    return ret;
+}
+
+void func_0016ced0(u32 a0) {
+    u32 list = (u32)&D_004f6290;
+    u32 tail = *(u32 *)(list + 4);
+    if (tail != 0) {
+        goto nonempty;
+    }
+    *(u32 *)(list + 4) = a0;
+    *(u32 *)list = a0;
+    *(u32 *)(a0 + 40) = 0;
+    return;
+
+nonempty:
+    *(u32 *)(tail + 40) = a0;
+    *(u32 *)(a0 + 40) = 0;
+    *(u32 *)(list + 4) = a0;
+}
+
+void func_0016c568(u32 a0) {
+    register u32 p asm("$14") = a0 + 1304;
+    asm volatile("" : "+r"(p));
+    u32 flags = *(u32 *)(a0 + 2040);
+    if ((flags & 4) == 0) {
+        func_001d79b8(p);
+    }
+}
+
+void func_0017c400(u32 a0, u32 a1) {
+    register u32 v asm("$13") = *(u32 *)(a0 + 268);
+    register u32 m asm("$15") = (u32)-2;
+    register u32 neg asm("$14") = (u32)-1;
+    asm volatile("" : "+r"(v), "+r"(m), "+r"(neg));
+    *(volatile u8 *)(a0 + 1300) = a1;
+    v &= m;
+    asm volatile("" ::: "memory");
+    *(volatile u32 *)(a0 + 256) = neg;
+    m = 5;
+    *(volatile u32 *)(a0 + 268) = v;
+    *(volatile u32 *)(a0 + 260) = m;
+    *(volatile u32 *)(a0 + 204) = 0;
+}
+
+void wtarget_001878e8(u32 a0, u32, u32, u32) {
+    register u32 p asm("$14") = a0 + 2640;
+    asm volatile("" : "+r"(p));
+    u32 v = *(u32 *)(a0 + 2732);
+    if (v != 0) {
+        func_001c0458(p, v);
+    }
+}
+
+u32 func_00187e20(u32 a0) {
+    register u32 v asm("$15") = *(u32 *)(a0 + 156);
+    v &= 1;
+    v &= 0xff;
+    asm volatile("" : "+r"(v));
+    u32 ret = 0;
+    if (v == 0) {
+        register u32 p asm("$14") = *(u32 *)(a0 + 136);
+        register u32 q asm("$13") = *(u32 *)(p + 4);
+        v = *(u32 *)(q + 352);
+        register u32 mask asm("$14") = 0x40000;
+        v &= mask;
+        ret = v != 0;
+    }
+    return ret;
+}
+
+u32 func_0018c8b8(u32) {
+    register u32 base asm("$13") = (u32)&D_01c60bf0;
+    asm volatile("" : "+r"(base));
+    register u32 n asm("$15") = *(u32 *)(base + 208);
+    n -= 1;
+    register u32 off asm("$14") = n << 2;
+    *(u32 *)(base + 208) = n;
+    asm volatile("" : "+r"(off), "+r"(base));
+    off += base;
+    u32 ret = *(u32 *)(off + 192);
+    asm volatile("" : "+r"(ret));
+    register u32 scale asm("$15") = 48;
+    asm volatile("" : "+r"(ret), "+r"(scale));
+    ret *= scale;
+    ret += base;
+    *(u32 *)(ret + 24) = 0;
+    return ret;
+}
+
+void func_0018ca10(u32 a0) {
+    register u32 base asm("$12") = (u32)&D_01c60bf0;
+    register u32 magic asm("$13") = 0xaaaaaaab;
+    a0 -= base;
+    asm volatile("" : "+r"(a0), "+r"(base));
+    register u32 count asm("$15") = *(u32 *)(base + 208);
+    asm volatile("" : "+r"(count), "+r"(a0));
+    a0 = (s32)a0 >> 4;
+    a0 *= magic;
+    asm volatile("" : "+r"(a0), "+r"(count));
+    register u32 off asm("$14") = count << 2;
+    count += 1;
+    off += base;
+    *(u32 *)(base + 208) = count;
+    *(u32 *)(off + 192) = a0;
+}
+
+void YS_TARGET_free(u32 a0) asm("_ZN2YS6TARGET4freeEv");
+void YS_TARGET_free(u32 a0) {
+    register u32 base asm("$12") = (u32)&D_01c60d50;
+    register u32 magic asm("$13") = 0xcccccccd;
+    a0 -= base;
+    asm volatile("" : "+r"(a0), "+r"(base));
+    register u32 count asm("$15") = *(u32 *)(base + 3072);
+    asm volatile("" : "+r"(count), "+r"(a0));
+    a0 = (s32)a0 >> 2;
+    a0 *= magic;
+    asm volatile("" : "+r"(a0), "+r"(count));
+    register u32 off asm("$14") = count << 2;
+    count += 1;
+    off += base;
+    *(u32 *)(base + 3072) = count;
+    *(u32 *)(off + 2560) = a0;
+}
+
+namespace Tz {
+u32 MenuSound::GetSeId(s32 se) {
+    if (se < 6) {
+        se = *(s16 *)((u32)&D_0035ecc8 + (se << 1));
+    }
+    register u32 base asm("$14") = (u32)&D_003717c8;
+    register u32 off asm("$15") = (u32)se << 1;
+    asm volatile("" : "+r"(base), "+r"(off));
+    return *(s16 *)(off + base - 12);
+}
+}  // namespace Tz
+
+f32 func_0017d130(f32 a0) {
+    f32 v = a0 + a0;
+    asm volatile("" : "+f"(v));
+    u32 p = (u32)&D_0036c554;
+    asm volatile("" : "+r"(p));
+    f32 d = *(f32 *)p;
+    v = v / d;
+    return __builtin_sqrtf(v);
+}
+
+u32 func_0019f528(u32 a0, u32 a1) {
+    register u32 word asm("$14") = a1 >> 5;
+    register u32 mask asm("$15") = 1;
+    word <<= 2;
+    a1 &= 0x1f;
+    word += a0;
+    mask <<= a1;
+    u32 v = *(u32 *)word;
+    v &= mask;
+    return v != 0;
+}
+
+u32 func_0019f5a8(u32 a0) {
+    u32 end = a0 + 96;
+    u32 ret = a0;
+    do {
+        if (*(u32 *)a0 == 0) {
+            return ret;
+        }
+        a0 += 12;
+        if ((s32)a0 >= (s32)end) {
+            return 0;
+        }
+        ret = a0;
+    } while (1);
+}
+
+u32 func_0019c498(u32 a0) {
+    register u32 p asm("$14") = *(u32 *)(a0 + 12);
+    register u32 v asm("$15") = *(u32 *)(p + 8);
+    v &= 0x80;
+    u32 ret = 0;
+    if (v != 0) {
+        v = *(u32 *)(a0 + 352);
+        v &= 0x4000;
+        if (v == 0) {
+            v = *(u32 *)(a0 + 360);
+            v &= 2;
+            ret = v < 1;
+        }
+    }
+    return ret;
+}
+
+u32 func_001aa6f0(u32 a0, u32 a1) {
+    register u32 scale asm("$13") = *(u8 *)(a0 + 63);
+    register u32 alpha asm("$15") = a1 >> 24;
+    register u32 mask asm("$14") = 0x00ffffff;
+    alpha *= scale;
+    a1 &= mask;
+    mask = 255;
+    alpha >>= 7;
+    scale = alpha < 256;
+    if (scale == 0) {
+        alpha = mask;
+    }
+    alpha <<= 24;
+    a1 |= alpha;
+    return a1;
+}
+
+u32 func_002943b0(u32 a0) {
+    register u32 bit asm("$13") = *(u16 *)(a0 + 4);
+    asm volatile("" : "+r"(bit));
+    register u32 base asm("$12") = D_0035f578;
+    asm volatile("" : "+r"(base), "+r"(bit));
+    register u32 off asm("$14") = bit >> 5;
+    off <<= 2;
+    bit &= 0x1f;
+    off += base;
+    asm volatile("" : "+r"(off), "+r"(bit));
+    register u32 mask asm("$15") = 1;
+    asm volatile("" : "+r"(mask), "+r"(off));
+    u32 v = *(u32 *)off;
+    mask <<= bit;
+    v &= mask;
+    v = v != 0;
+    return v;
+}
+
+u32 ctarget_0019c440(u32 a0, u32, u32, u32) {
+    register u32 p asm("$14") = *(u32 *)(a0 + 8);
+    register u32 v asm("$15") = *(u16 *)(p + 72);
+    v >>= 5;
+    v &= 1;
+    v &= 0xff;
+    asm volatile("" : "+r"(v));
+    u32 ret = 0;
+    if (v != 0) {
+        v = *(u8 *)(a0 + 2268);
+        v ^= 1;
+        ret = v < 1;
+    }
+    return ret;
+}
+
+u32 func_001d7f10(u32 a0) {
+    u32 base_addr = 0x00350000u;
+    register u32 off asm("$14") = a0 << 2;
+    register u32 base asm("$13") = *(u32 *)(base_addr + 10488);
+    u32 ret = 0;
+    u32 count = *(u32 *)(base + 4);
+    u32 ok = (s32)a0 < (s32)count;
+    off += base;
+    if (ok != 0) {
+        u32 v = *(u32 *)(off + 8);
+        ret = v != 0;
+    }
+    return ret;
+}
+
+void func_001c7ee0() {
+    u32 p = D_00351d98;
+    if (p != 0) {
+        func_001c1708(*(u32 *)(p + 2548));
+    }
+}
+
+void YS_MISSION_Prepare() asm("_ZN2YS7MISSION7PrepareEv");
+void YS_MISSION_Prepare() {
+    u32 p = D_01d49320;
+    if (p != 0) {
+        func_001bacd0(p);
+    }
+}
+
+void func_001f0868(u32 a0, u32 a1) {
+    register f32 f1 asm("$f1") = *(volatile f32 *)(a0 + 8);
+    register f32 z asm("$f0") = 0.0f;
+    *(volatile f32 *)(a1 + 4) = f1;
+    register f32 f2 asm("$f2") = *(volatile f32 *)(a0 + 20);
+    asm volatile("" : "+f"(f2));
+    *(volatile u32 *)a1 = a0;
+    *(volatile f32 *)(a1 + 16) = f2;
+    *(volatile f32 *)(a1 + 8) = z;
+    *(volatile f32 *)(a1 + 24) = z;
+    *(volatile f32 *)(a1 + 20) = z;
+    *(volatile f32 *)(a1 + 12) = z;
+}
+
+void func_00198630(void *a0) {
+    register u32 r5 asm("$5");
+    register u32 r6 asm("$6");
+    u32 self = (u32)a0;
+    u32 p = *(u32 *)(self + 2488);
+    if (p != 0) {
+        func_001b0210(p, r5, r6, self);
+    }
 }
 
 void func_00190128(u32 a0) {
@@ -415,6 +909,30 @@ u32 func_00258068(u32 a0) {
 void func_0027dc20(u32 *a0, u32 *a1) {
     *a0 = D_0035f240;
     *a1 = D_0035f23c;
+}
+
+void func_00232718() {
+    s32 v = D_0035de2c;
+    v -= 1;
+    if (v < 0) {
+        v = 0;
+    }
+    D_0035de2c = v;
+}
+
+u32 func_002538f8(u32 a0) {
+    u32 base = (u32)&D_0035eee0;
+    a0 <<= 4;
+    a0 += base;
+    u32 v = *(u32 *)(a0 + 4);
+    v &= 1;
+    asm volatile("" : "+r"(v));
+    return v & 0xff;
+}
+
+void func_002f5c48(u32, ...) {
+    volatile u8 pad[64];
+    (void)pad;
 }
 
 u32 func_00282228(u32 a0, u32 a1, u32 a2) {
@@ -636,6 +1154,16 @@ u32 func_001d5668(u32 a0) {
     u32 val = *p;
     u32 mask = 1u << bit;
     return (val & mask) != 0;
+}
+
+void func_001d5698(u32 a0) {
+    u32 idx = a0 >> 5;
+    u32 *p = (u32 *)((u8 *)&D_0032fae4 + (idx << 2));
+    u32 bit = a0 & 31;
+    u32 val = *p;
+    u32 mask = 1u << bit;
+    val |= mask;
+    *p = val;
 }
 
 void func_001b6038() {

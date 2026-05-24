@@ -393,27 +393,6 @@ s32 func_00225b00(s32 a0) {
     return 0;
 }
 
-// reason: persistent register-allocation mismatch in final arithmetic/store
-// block (t7/t6 roles swapped) despite source-order tweaks; pure C++ cannot
-// force target words
-void func_00225e70(u32 a0, u32 a1, u32 a2) {
-    s32 m = -64;
-    *(u32*)(a0 + 4) = a1;
-    u32 p = (a1 + 63) & m;
-    *(u32*)(a0 + 0) = a2;
-    *(u32*)(a0 + 8) = p;
-    *(u32*)(p + 0) = 0;
-    u32 q = *(u32*)(a0 + 8);
-    *(u32*)(q + 4) = 0;
-    u32 r = *(u32*)(a0 + 8);
-    *(u8*)(r + 8) = 0;
-    u32 s = *(u32*)(a0 + 8);
-    u32 t = *(u32*)(a0 + 4);
-    t = (t + a2) & m;
-    t = t - s;
-    *(u32*)(s + 12) = t;
-}
-
 // reason: complex sentinel loop codegen diverges (materialization + loop
 // control + indexed store slot timing) and could not be forced to target
 // sequence in pure C++
@@ -776,30 +755,6 @@ void func_002349e8() {
     if (cb != 0) {
         ((void (*)(u32))cb)(*(u32*)(D_00360000 - 7316));
     }
-}
-
-// reason: requires exact store ordering and 0x00360000-5416 as lui/addiu;
-// ee-g++ reorders stores and folds constant to lui/ori in pure C++
-void func_002361a0(u32* a0) {
-    *(u32*)((u8*)a0 + 408) = 0;
-    u32 t7 = 0x00360000 - 5416;
-    *(u32*)((u8*)a0 + 56) = 0;
-    a0[0] = t7;
-    *(u32*)((u8*)a0 + 60) = 0;
-    *(u32*)((u8*)a0 + 404) = 0;
-}
-
-// reason: requires exact store order plus single lui/addiu absolute
-// 0x00360000-5432 materialization; pure C++ emits reordered stores and
-// extra/alternate constant setup
-void func_002369a0(u32* a0) {
-    *(u32*)((u8*)a0 + 20) = 0;
-    u32 t7 = (u32)(D_00360000 - 5432);
-    *(u32*)((u8*)a0 + 4) = 0;
-    a0[0] = t7;
-    *(u32*)((u8*)a0 + 8) = 0;
-    *(u32*)((u8*)a0 + 12) = 0;
-    *(u32*)((u8*)a0 + 16) = 0;
 }
 
 // reason: requires precise 0x00360000-7104 base materialization and register
@@ -4715,14 +4670,6 @@ void func_002ef708() {
     *(u8*)(b2 + 14536) = 0;
 }
 
-// reason: requires addiu-based literal setup for both constants (0x376210 and
-// 0x2f0000-2184); ee-g++ O2 emits ori forms in pure C++
-void func_002ef750() {
-    u8* a0 = (u8*)0x00370000;
-    u8* a1 = (u8*)0x002f0000;
-    func_00168548((u32)(a0 + 25104), (u32)(a1 - 2184), 0);
-}
-
 // reason: requires specific float-register scheduling plus addiu literal load
 // form; ee-g++ O2 emits alternate FPR/literal codegen in pure C++
 u32 func_002eff58(u8* a0) {
@@ -4783,25 +4730,6 @@ void func_002f10c0(u32* a0) {
     f32 f13 = *(f32*)((u8*)s0 + 12);
     f32 f12 = *(f32*)((u8*)s0 + 8);
     func_0011a938(v0, a1, f13, f12);
-}
-
-// reason: requires argument-load order lw a2 (offset+8) before lw a1 (offset+4)
-// with late ra restore; ee-g++ O2 keeps opposite load ordering in pure C++
-void func_002f1208(u32* a0) {
-    u32 t7 = a0[0];
-    u32 a2 = ((volatile u32*)a0)[2];
-    u32 t6 = *(u32*)(t7 + 4);
-    u32 a1 = a0[1];
-    func_00113450(t6, a1, a2);
-}
-
-// reason: requires lw global before move a2,0 and 36-byte tail form; ee-g++ O2
-// emits opposite order/40-byte form in pure C++
-void func_002f17e0() {
-    u32* b = (u32*)0x00360000;
-    u32 a0 = *(u32*)((u8*)b + 15392);
-    u32 a2 = 0;
-    func_00170518(a0, 950, a2);
 }
 
 // reason: near-match but ee-g++ O2 either introduces callee-saved base register
@@ -7058,19 +6986,6 @@ void func_0011eef8(u32 a0, u8* a1) {
     *(u32*)(t7 + 20) = a0;
     *(volatile u32*)(a1 + 12) = 0;
     func_0011ee98();
-}
-
-// reason: Semantics and call order match, but final virtual dispatch still
-// compiles with stable register allocation mismatch (s0 load into t7 and jalr
-// via v0) instead of required t6/t7 jalr encoding.
-u32 func_0011ef20(u32 a0, EF20_Obj* a1, void* a2) {
-    (void)a0;
-    EF20_Obj* s0 = a1;
-    void* s1 = a2;
-    func_0011c3b0((u32)a2);
-    u32 t6 = *(u32*)s0;
-    u32 t7 = *(u32*)(t6 + 4);
-    return ((u32 (*)(void*, void*))t7)(s0, s1);
 }
 
 // reason: Wrapper logic matches, but jalr target is consistently allocated
@@ -12706,6 +12621,78 @@ void func_00106fe8(S00106fe8* self, f32 f12) {
 // sb/sd/sw sequence and constant construction.
 void func_0010a800(u32, u32, u32);
 
+// reason: Pure C++ forms found so far schedule the saved-ra store before the
+// flag load; target schedules lw 1416(a1) before sd ra in the prologue.
+void func_00195c58(u32, u32 a1) {
+    if ((*(u32 *)(a1 + 1416) & 0x80) != 0) {
+        func_00158f90();
+    }
+}
+
+// reason: Pure C++ attempts either reorder the D_004f4240 store cluster or
+// materialize the address with ori instead of target lui/addiu scheduling.
+void func_001671e8(u32 a0, u32 a1) {
+    if ((s32)a0 < 15000) {
+        a0 = 15000;
+    }
+    u8 *p = (u8 *)0x004f4240;
+    a1 &= 0xff;
+    p[1] = a1;
+    p[0] = 1;
+    *(u32 *)(p + 4) = a0;
+}
+
+// reason: Pure C++ attempts reorder the flag-clearing load/constant/store
+// cluster and fail to keep the final +36 store in the jr delay slot.
+void func_001805e8(u32 a0) {
+    u32 a = *(u32 *)(a0 + 36);
+    u32 b = *(u32 *)(a0 + 32);
+    a &= (u32)-2;
+    *(u32 *)(a0 + 40) = 0;
+    a &= (u32)-3;
+    b &= 0x7183;
+    *(u32 *)(a0 + 32) = b;
+    *(u32 *)(a0 + 36) = a;
+}
+
+// reason: Range-check pure C++ forms compile to movn-zero or add extra moves;
+// target uses slti/slti/xori 0/movz after materializing a0+320 in branch delay.
+u32 ctarget_00186ce8(u32 a0, u32, u32, u32) {
+    u32 ret = 0;
+    if (*(u32 *)(a0 + 320) != 0) {
+        a0 += 320;
+        u32 v = *(u32 *)(a0 + 20);
+        if ((s32)v >= 10) {
+            ret = (s32)v < 40;
+        }
+    }
+    return ret;
+}
+
+// reason: Same range-check idiom as 00186ce8; pure C++ emits movn-zero or
+// extra moves instead of target slti/slti/xori 0/movz sequence.
+u32 func_00186d18(u32 a0) {
+    u32 ret = 0;
+    if (*(u32 *)(a0 + 320) != 0) {
+        a0 += 320;
+        u32 v = *(u32 *)(a0 + 20);
+        if ((s32)v >= 140) {
+            ret = (s32)v < 151;
+        }
+    }
+    return ret;
+}
+
+// reason: Prior source-backed attempts for this small leaf failed clean verify;
+// fixed-register variants changed codegen further rather than matching target.
+u32 func_00165ef0(u32 a0) {
+    u32 ret = 0;
+    if (a0 != 0) {
+        ret = *(u32 *)a0;
+    }
+    return ret;
+}
+
 void func_00108600(u8* a0) {
     u8* s0 = a0;
     s32 s1 = -128;
@@ -16855,31 +16842,6 @@ L00139418:
 // register/frame structure
 extern u32 D_00347f80;
 
-void func_00139768(void) {
-    u32 s0 = 0;
-
-L00139780:
-    u32 a0;
-    if (s0 != 0) {
-        a0 = *(u32*)(s0 + 4);
-    } else {
-        a0 = *(u32*)(*(u32*)D_00347f80 + 4);
-    }
-
-L0013978c:
-    if (a0 == 0) {
-        return;
-    }
-
-    s0 = a0;
-    if ((*(u32*)(a0 + 12) & 1) != 0) {
-        goto L00139780;
-    }
-
-    ((void (*)(u32))(*(u32*)(*(u32*)a0 + 20)))(a0);
-    goto L00139780;
-}
-
 // reason: Same iterator pattern as 0x00139768 with additional key-compare; pure
 // C++ still emits different frame/register strategy and branch layout
 extern u32 D_00347f80;
@@ -18333,46 +18295,6 @@ void func_00144570(u8* a0, u8* a1) {
     out[0] = n1;
     out[1] = n2;
     out[2] = n3;
-}
-
-// reason: Min/max float helper is near-match but initial load order per
-// component is fixed-swapped by compiler (a2 before a1), causing persistent
-// word mismatch despite equivalent pure C++ control flow
-void func_001447e0(f32* a0, f32* a1, f32* a2) {
-    f32* p1 = a1;
-    f32* p2 = a2;
-    f32 f1 = p1[0];
-    f32 f0 = p2[0];
-    if (f1 < f0) {
-        a0[0] = f1;
-        f0 = a2[0];
-    } else {
-        a0[0] = f0;
-        f0 = a1[0];
-    }
-    a0[3] = f0;
-
-    f1 = p1[1];
-    f0 = p2[1];
-    if (f1 < f0) {
-        a0[1] = f1;
-        f0 = a2[1];
-    } else {
-        a0[1] = f0;
-        f0 = a1[1];
-    }
-    a0[4] = f0;
-
-    f1 = p1[2];
-    f0 = p2[2];
-    if (f1 < f0) {
-        a0[2] = f1;
-        f0 = a2[2];
-    } else {
-        a0[2] = f0;
-        f0 = a1[2];
-    }
-    a0[5] = f0;
 }
 
 // reason: Float min/max-6 helper requires very specific FPU move-register
@@ -76662,3 +76584,63 @@ Lmode1:
 }
 
 }  // namespace kn
+
+void func_001d32e8(u32, u32, u32);
+extern u32 D_0035037c;
+
+// reason: near-match only; ee-g++ keeps moving the D_0035037c load after the
+// a1->a2 move, while barriers that force the load first perturb the prologue
+// and a0/a1 shuffle before the tail call.
+void func_00197e08(u32 a0, u32 a1) {
+    u32 p = D_0035037c;
+    u32 a2 = a1;
+    a1 = a0;
+    if (p != 0) {
+        func_001d32e8(p + 64, a1, a2);
+    }
+}
+
+// reason: control flow is close after modeling the -1 branch-delay default,
+// but ee-g++ selects mult1 for the second independent multiply; target uses
+// normal mult for both products with no separating instruction.
+void func_00198aa8(u32 a0, u32 a1, u32 a2, s32 a3) {
+    u32 scale = 1000;
+    if (a3 == 0) {
+        u32 p = *(u32 *)(a0 + 2484);
+        a3 = -1;
+        if (p != 0) {
+            a3 = *(s16 *)(p + 2);
+            scale = 1000;
+        }
+    }
+    u32 stride = 12;
+    scale = a3 * scale;
+    stride = a1 * stride;
+    scale += a2;
+    stride += a0;
+    *(u32 *)(stride + 2532) = scale;
+}
+
+// reason: modulo form is close, but ee-g++ moves the generated divide-by-zero
+// beqzl/break check after independent halfword loads; target emits the
+// beqzl/break immediately after the zero-period branch-likely delay slot.
+u32 func_0028b040(u32 data) {
+    s32 period = *(s16 *)(data + 22);
+    if (period == 0) {
+        return (u32)(s32)(*(s16 *)(data + 0) + *(s16 *)(data + 18));
+    }
+    return (u32)((s32)(*(s16 *)(data + 0) + *(s16 *)(data + 18)) % period);
+}
+
+// reason: nested byte-fill loop is a one-opcode near-match; pure C++ emits
+// normal bnez for the outer loop because the row update is dead on fallthrough,
+// while target uses bnezl with the row update in the likely delay slot.
+void func_001e0958(u32 a0) {
+    for (s32 row = 0; row < 9; row++) {
+        for (s32 col = 1; col < 4; col++) {
+            *(u8 *)(a0 + 24) = row;
+            *(u8 *)(a0 + 25) = col;
+            a0 += 64;
+        }
+    }
+}
