@@ -106,6 +106,11 @@ out/build/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	@/opt/ps2/gcc/bin/ee-g++ $(CXXFLAGS) -c -o $@ $<
 
+# FUN_00230878 has no 8-byte padding before its loop-tail label (the label
+# follows a return), which -O2 would add. Build its object without jump
+# alignment.
+out/build/src/anon/batch_20261019_g.o: CXXFLAGS += -falign-jumps=1
+
 out/build/%.o: %.s
 	@mkdir -p $(dir $@)
 	@/opt/ps2/gcc/bin/ee-as $(ASFLAGS) -o $@ $<
