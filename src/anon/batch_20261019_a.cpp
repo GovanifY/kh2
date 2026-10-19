@@ -6,10 +6,11 @@
 
 extern u8 D_00360000;
 
-void func_00292630(u32);
+// Callees that already have registry names use the existing symbol.
+extern "C" void func_00292630(u32) asm("_ZN2Tz18LoadDataIsFlushingEv");
 void func_0029e430(void);
-void func_00293c40(u32, u32);
-void func_002925c0(void);
+extern "C" void func_00293c40(u32, u32) asm("_ZN2Tz6JMData14LoadObjRequestEib");
+extern "C" void func_002925c0(void) asm("_ZN2Tz13LoadDataFlushEv");
 void func_0018a008(u32, u32);
 u32 func_002b6708(u32, u32, u32);
 
@@ -22,37 +23,6 @@ u32 func_001b7ff8(u32 a0, u32 a1) {
     u32 old = *(u32*)(a0 + 8u);
     *(u32*)(a0 + 8u) = old + (a1 << 4);
     return old;
-}
-
-// FUN_00147c78 (36 bytes)
-// Code: copies the 4 bytes at offsets 232..235 of the second argument to
-// offsets 12..15.
-// Guess: moves a 4-byte field inside a larger struct. The struct layout is
-// not known yet.
-void func_00147c78(u32 a0, u8* a1) {
-    a1[12] = a1[232];
-    a1[15] = a1[235];
-    a1[13] = a1[233];
-    a1[14] = a1[234];
-}
-
-// FUN_002ef180 (56 bytes)
-// Code: if the word at +12 of the first argument is non-zero, tail-calls
-// FUN_0018a008 with that word and the constant 0x002ef1b8. Otherwise returns.
-// Guess: a "release if set" helper. 0x002ef1b8 is probably a string or data
-// pointer, and that's worth checking.
-void func_002ef180(u32* a0) {
-    if (a0[3] != 0) {
-        return func_0018a008(a0[3], 0x002ef1b8u);
-    }
-}
-
-// FUN_002b7efc (64 bytes)
-// Code: calls FUN_002b6708(2, 47, first argument) and returns its result.
-// Guess: a wrapper that fixes the first two arguments (2 and 47) of
-// FUN_002b6708. Those look like a type and an ID.
-u32 func_002b7efc(u32 a0) {
-    return func_002b6708(2, 47, a0);
 }
 
 // FUN_0029e3e0 (80 bytes)

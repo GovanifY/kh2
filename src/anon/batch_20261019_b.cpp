@@ -9,16 +9,16 @@ extern u8 D_00350000;
 extern u8 D_00360000;
 extern u8 D_01c60000;
 
-u32 func_0023a918(u32);
-u32 func_001b1400(u32);
+// Callees that already have registry names use the existing symbol.
+extern "C" u32 func_0023a918(u32) asm("_ZN2YI8SEQUENCE13GetActiveRGBAEv");
+extern "C" u32 func_001b1400(u32) asm("_ZN2YS8DATABUFF5AllocEPKci");
 void func_001682b8(u32, u32);
 void func_00228bd8(void*);
 void func_0014ace8(void);
 void func_0014a988(u32);
-void func_001b0330(u32);
-u32 func_001050d8(u32);
-u32 func_001b6298(u32, u32, u32, u32);
-void func_0028da70(u32, u32);
+extern "C" void func_001b0330(u32) asm("_Z16u_call4_001b0330jjjj");
+extern "C" u32 func_001050d8(u32) asm("_ZN4AREA5AllocEj");
+extern "C" u32 func_001b6298(u32, u32, u32, u32) asm("_Z16u_tail4_001b6298jjjj");
 
 // FUN_002ef660 (80 bytes)
 // Code: calls FUN_0023a918(first argument + 468), then stores the 32-bit result
@@ -94,19 +94,6 @@ u32 func_001b6c60(u32 a0) {
     *(u8*)((u32)&D_00330000 - 4012u) = 0;
     u32 v = func_001050d8(32u);
     return func_001b6298(v, a0, 0u, 0u);
-}
-
-// FUN_002803e0 (60 bytes)
-// Code: reads the pointer at 0x0035f264. Calls FUN_0028da70(pointer + 24, 8).
-// Then calls FUN_0028da70(pointer + 460, 11) as a tail call, reading the
-// pointer again.
-// Guess: two sub-object updates on one global object, at offsets 24 and 460,
-// with different type codes (8 and 11).
-void func_002803e0(void) {
-    u32 g = *(u32*)((u32)&D_00360000 - 3484u);
-    func_0028da70(g + 24u, 8u);
-    g = *(u32*)((u32)&D_00360000 - 3484u);
-    return func_0028da70(g + 460u, 11u);
 }
 
 // FUN_00196300 (40 bytes)
