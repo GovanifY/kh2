@@ -328,6 +328,14 @@ u32 func_001ce350(u32 a0, u32 a1, u32 a2, u32 a3) {
     return func_001ce2a0(((u32)(*(u32*)((u32)((u32)&D_01d60000) - 17956u))), a0, 0x00000000u, a3);
 }
 
+void func_001dba98(u32);
+u32 func_0016b5b8(u32);
+
+u32 func_001ce458(u32 a0) {
+    func_001dba98(((u32)(*(u32*)((u32)(a0) + 2548u))));
+    return func_0016b5b8(a0);
+}
+
 u32 func_001d96c0(u32 a0, u32 a1, u32 a2, u32 a3) {
     return func_001d9688(((u32)(*(u32*)((u32)((u32)&D_00370000) - 6592u))), a0, a1, a3);
 }
