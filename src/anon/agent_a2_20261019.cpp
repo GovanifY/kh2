@@ -2,41 +2,6 @@
 
 // Agent A2 leaf functions (kh2 decomp, 2026-10-19). Each is checked against SLPM_666.75.
 
-// FUN_00124748 (64 bytes)
-// Code: base = *(a0+4). Walks the zero-terminated word list at base+16: each step adds the
-//       current word to base as v0 (v0 = base + w[k]), and the walk stops after a1+1 words or
-//       at a zero word. Returns the last v0 (0 if the first word is zero).
-// Guess: returns the entry at index a1 of an offset table stored at the object's base.
-// Note: the whole walk is one .set noreorder asm block in the original order, delay slots
-//       included. base is pinned to $12 and v0 to $2. The -1 constant (t3=$11) is set
-//       before the loop, as in the original.
-u32 func_00124748(u8* a0, s32 a1) {
-    register u8* t4 asm("$12") = *(u8**)(a0 + 4);
-    register u32 v0 asm("$2");
-    __asm__ volatile(
-        ".set push\n\t.set noreorder\n\t"
-        "move $2,$0\n\t"
-        "lw $15,16($12)\n\t"
-        "beqz $15,1f\n\t"
-        "addiu $14,$12,16\n\t"
-        "move $13,$15\n\t"
-        "li $11,-1\n\t"
-        "2:\n\t"
-        "addiu %1,%1,-1\n\t"
-        "beq %1,$11,1f\n\t"
-        "addu $2,$12,$13\n\t"
-        "addiu $14,$14,4\n\t"
-        "lw $15,0($14)\n\t"
-        "bnez $15,2b\n\t"
-        "move $13,$15\n\t"
-        "1:\n\t"
-        ".set pop\n\t"
-        : "=r"(v0), "+r"(a1)
-        : "r"(t4)
-        : "$11", "$13", "$14", "$15", "memory");
-    return v0;
-}
-
 // FUN_0013a178 (96 bytes)
 // Code: loads a 4x4 matrix (4 rows at a1) and a point at a0, computes M*p with VU0 (vmulax,
 //       vmadday, vmaddaz, vmaddw), divides by w (vdiv/vwaitq/vmulq), converts to integers
