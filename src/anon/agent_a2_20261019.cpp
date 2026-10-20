@@ -34,38 +34,3 @@ u32* func_0013a178(u8* a0, u8* a1) {
     p[1] = p[1] - 1840;
     return p;
 }
-
-// FUN_00148a68 (84 bytes)
-// Code: idx = byte at a1+287. Scans the zero-terminated u32 table at 0x003a99f0 from idx
-//       onward to the first zero slot, stores a1 there, then increments the word at a0+21372.
-// Guess: appends a1 to a slot table indexed by a byte of a1 (a small "first free slot" registry).
-// Note: the scan and slot address are one .set noreorder asm block (table base built as
-//       lui $15 / addiu $11 with %hi/%lo, index scaled into $14). Store and counter are C.
-void func_00148a68(u8* a0, u8* a1) {
-    register u32* slot asm("$14");
-    __asm__ volatile(
-        ".set push\n\t.set noreorder\n\t"
-        "lbu $12,287(%1)\n\t"
-        "lui $15,%%hi(D_003a99f0)\n\t"
-        "addiu $11,$15,%%lo(D_003a99f0)\n\t"
-        "sll $14,$12,2\n\t"
-        "addu $13,$14,$11\n\t"
-        "lw $15,0($13)\n\t"
-        "beqzl $15,1f\n\t"
-        "addu $14,$14,$11\n\t"
-        "2:\n\t"
-        "addiu $13,$13,4\n\t"
-        "addiu $12,$12,1\n\t"
-        "lw $15,0($13)\n\t"
-        "nop\n\tnop\n\t"
-        "bnez $15,2b\n\t"
-        "sll $14,$12,2\n\t"
-        "addu $14,$14,$11\n\t"
-        "1:\n\t"
-        ".set pop\n\t"
-        : "=r"(slot)
-        : "r"(a1)
-        : "$11", "$12", "$13", "$15", "memory");
-    *slot = (u32)a1;
-    *(u32*)(a0 + 21372) = *(u32*)(a0 + 21372) + 1;
-}
