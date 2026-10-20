@@ -112,6 +112,8 @@ out/build/%.o: %.cpp
 out/build/src/anon/batch_20261019_g.o: CXXFLAGS += -falign-jumps=1
 # FUN_00111278 likewise ends without the loop-tail alignment padding.
 out/build/src/anon/agent_f1_20261019.o: CXXFLAGS += -falign-jumps=1
+# FUN_00183768 is not a multiple of 8 bytes and ends in jr ra; skip the trailing function padding.
+out/build/src/anon/agent_f5_20261019.o: CXXFLAGS += -falign-functions=1
 
 # FUN_002b7efc only matches without optimisation (its frame is built the -O0 way).
 out/build/src/anon/agent_m_o0_20261019.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
