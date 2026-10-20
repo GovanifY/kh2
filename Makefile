@@ -114,6 +114,9 @@ out/build/src/anon/batch_20261019_g.o: CXXFLAGS += -falign-jumps=1
 # FUN_002b7efc only matches without optimisation (its frame is built the -O0 way).
 out/build/src/anon/agent_m_o0_20261019.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
 
+# FUN_00196328: the table-pointer load must stay after the halfword stores (no TBAA hoisting).
+out/build/src/anon/agent_u_nsa_20261019.o: CXXFLAGS += -fno-strict-aliasing
+
 out/build/%.o: %.s
 	@mkdir -p $(dir $@)
 	@/opt/ps2/gcc/bin/ee-as $(ASFLAGS) -o $@ $<
