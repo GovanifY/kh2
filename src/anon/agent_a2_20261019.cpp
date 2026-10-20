@@ -1,0 +1,106 @@
+#include "../common/types.h"
+
+// Agent A2 leaf functions (kh2 decomp, 2026-10-19). Each is checked against SLPM_666.75.
+
+// FUN_00124748 (64 bytes)
+// Code: base = *(a0+4). Walks the zero-terminated word list at base+16: each step adds the
+//       current word to base as v0 (v0 = base + w[k]), and the walk stops after a1+1 words or
+//       at a zero word. Returns the last v0 (0 if the first word is zero).
+// Guess: returns the entry at index a1 of an offset table stored at the object's base.
+// Note: the whole walk is one .set noreorder asm block in the original order, delay slots
+//       included. base is pinned to $12 and v0 to $2. The -1 constant (t3=$11) is set
+//       before the loop, as in the original.
+u32 func_00124748(u8* a0, s32 a1) {
+    register u8* t4 asm("$12") = *(u8**)(a0 + 4);
+    register u32 v0 asm("$2");
+    __asm__ volatile(
+        ".set push\n\t.set noreorder\n\t"
+        "move $2,$0\n\t"
+        "lw $15,16($12)\n\t"
+        "beqz $15,1f\n\t"
+        "addiu $14,$12,16\n\t"
+        "move $13,$15\n\t"
+        "li $11,-1\n\t"
+        "2:\n\t"
+        "addiu %1,%1,-1\n\t"
+        "beq %1,$11,1f\n\t"
+        "addu $2,$12,$13\n\t"
+        "addiu $14,$14,4\n\t"
+        "lw $15,0($14)\n\t"
+        "bnez $15,2b\n\t"
+        "move $13,$15\n\t"
+        "1:\n\t"
+        ".set pop\n\t"
+        : "=r"(v0), "+r"(a1)
+        : "r"(t4)
+        : "$11", "$13", "$14", "$15", "memory");
+    return v0;
+}
+
+// FUN_0013a178 (96 bytes)
+// Code: loads a 4x4 matrix (4 rows at a1) and a point at a0, computes M*p with VU0 (vmulax,
+//       vmadday, vmaddaz, vmaddw), divides by w (vdiv/vwaitq/vmulq), converts to integers
+//       (vftoi0) and stores the 4 ints at the fixed scratch vector 0x003b8b40. Then x -= 1792
+//       and y -= 1840 on that vector, and returns its address.
+// Guess: projects a point to biased integer screen coordinates in a fixed scratch vector.
+// Note: the VU0 sequence is one asm block in the original order. C does the scalar tail.
+u32* func_0013a178(u8* a0, u8* a1) {
+    extern u32 D_003b8b40[];
+    u32* p = D_003b8b40;
+    __asm__ volatile(
+        "lqc2 $vf4,0(%1)\n\t"
+        "lqc2 $vf5,16(%1)\n\t"
+        "lqc2 $vf6,32(%1)\n\t"
+        "lqc2 $vf7,48(%1)\n\t"
+        "lqc2 $vf8,0(%0)\n\t"
+        "vmulax.wxyz ACC,$vf4,$vf8x\n\t"
+        "vmadday.wxyz ACC,$vf5,$vf8y\n\t"
+        "vmaddaz.wxyz ACC,$vf6,$vf8z\n\t"
+        "vmaddw.wxyz $vf12,$vf7,$vf8w\n\t"
+        "vdiv Q,$vf0w,$vf12w\n\t"
+        "vwaitq\n\t"
+        "vmulq.wxyz $vf12,$vf12,Q\n\t"
+        "vftoi0.wxyz $vf13,$vf12\n\t"
+        "sqc2 $vf13,0(%2)\n\t"
+        :
+        : "r"(a0), "r"(a1), "r"(p)
+        : "memory");
+    p[0] = p[0] - 1792;
+    p[1] = p[1] - 1840;
+    return p;
+}
+
+// FUN_00148a68 (84 bytes)
+// Code: idx = byte at a1+287. Scans the zero-terminated u32 table at 0x003a99f0 from idx
+//       onward to the first zero slot, stores a1 there, then increments the word at a0+21372.
+// Guess: appends a1 to a slot table indexed by a byte of a1 (a small "first free slot" registry).
+// Note: the scan and slot address are one .set noreorder asm block (table base built as
+//       lui $15 / addiu $11 with %hi/%lo, index scaled into $14). Store and counter are C.
+void func_00148a68(u8* a0, u8* a1) {
+    register u32* slot asm("$14");
+    __asm__ volatile(
+        ".set push\n\t.set noreorder\n\t"
+        "lbu $12,287(%1)\n\t"
+        "lui $15,%%hi(D_003a99f0)\n\t"
+        "addiu $11,$15,%%lo(D_003a99f0)\n\t"
+        "sll $14,$12,2\n\t"
+        "addu $13,$14,$11\n\t"
+        "lw $15,0($13)\n\t"
+        "beqzl $15,1f\n\t"
+        "addu $14,$14,$11\n\t"
+        "2:\n\t"
+        "addiu $13,$13,4\n\t"
+        "addiu $12,$12,1\n\t"
+        "lw $15,0($13)\n\t"
+        "nop\n\tnop\n\t"
+        "bnez $15,2b\n\t"
+        "sll $14,$12,2\n\t"
+        "addu $14,$14,$11\n\t"
+        "1:\n\t"
+        ".set pop\n\t"
+        : "=r"(slot)
+        : "r"(a1)
+        : "$11", "$12", "$13", "$15", "memory");
+    *slot = (u32)a1;
+    *(u32*)(a0 + 21372) = *(u32*)(a0 + 21372) + 1;
+}
