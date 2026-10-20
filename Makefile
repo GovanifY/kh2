@@ -124,6 +124,9 @@ out/build/src/anon/agent_u_nsa_20261019.o: CXXFLAGS += -fno-strict-aliasing
 # agent_k1: sizes not a multiple of 8 end in jr ra (no padding), and FUN_0018c528's case blocks must stay in source order.
 out/build/src/anon/agent_k1_20261019.o: CXXFLAGS += -falign-functions=1 -fno-reorder-blocks
 
+# agent_p3: functions not a multiple of 8 bytes that end in jr ra.
+out/build/src/anon/agent_p3_20261019.o: CXXFLAGS += -falign-functions=1
+
 out/build/%.o: %.s
 	@mkdir -p $(dir $@)
 	@/opt/ps2/gcc/bin/ee-as $(ASFLAGS) -o $@ $<
