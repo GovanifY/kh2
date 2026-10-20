@@ -111,6 +111,9 @@ out/build/%.o: %.cpp
 # alignment.
 out/build/src/anon/batch_20261019_g.o: CXXFLAGS += -falign-jumps=1
 
+# FUN_002b7efc only matches without optimisation (its frame is built the -O0 way).
+out/build/src/anon/agent_m_o0_20261019.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+
 out/build/%.o: %.s
 	@mkdir -p $(dir $@)
 	@/opt/ps2/gcc/bin/ee-as $(ASFLAGS) -o $@ $<
