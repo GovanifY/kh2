@@ -240,3 +240,4 @@ out/build/src/anon/agent_q10_20261021.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_s29_20261021.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_s24_20261021.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_s27_20261021.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_s23_20261021.o: CXXFLAGS += -falign-labels=8
