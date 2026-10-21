@@ -116,6 +116,9 @@ out/build/src/anon/agent_f1_20261019.o: CXXFLAGS += -falign-jumps=1
 out/build/src/anon/agent_f5_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_v3_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_x1_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_a13_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_a15_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_a12_20261019.o: CXXFLAGS += -falign-functions=1
 
 # FUN_002b7efc only matches without optimisation (its frame is built the -O0 way).
 out/build/src/anon/agent_m_o0_20261019.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
