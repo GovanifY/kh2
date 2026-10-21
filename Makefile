@@ -140,6 +140,7 @@ out/build/src/anon/agent_v6_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_y1_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_y2_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_v4_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_z5_20261019.o: CXXFLAGS += -falign-functions=1
 
 out/build/%.o: %.s
 	@mkdir -p $(dir $@)
