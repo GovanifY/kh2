@@ -4,43 +4,6 @@ extern u8 D_00350000[];
 extern u8 D_01d50000[];
 extern u8 D_01d60000[];
 
-// FUN_001c9db0 (72 bytes).
-// Code: n = word at D_00350000 + 7984. If n <= 0, returns 0. Otherwise scans n words
-//       starting at D_01d50000 - 26240 and returns 1 when one equals arg0, else 0.
-// Guess: an "is this id in the active list" check over a fixed table.
-// Note: the whole body is one noreorder asm block. Plain C reproduced the loop but not
-//       the early blez exit sharing the loop's "move v0,zero", nor the branch-likely
-//       reload in the delay slot together with the li v0,1 before the first compare.
-u32 func_001c9db0(u32 a0) {
-    register u32 r asm("$2");
-    __asm__ volatile(
-        ".set noreorder\n\t"
-        "lui $15, %%hi(D_00350000)\n\t"
-        "lw $15, %%lo(D_00350000+7984)($15)\n\t"
-        "blez $15, 1f\n\t"
-        "move $13, $0\n\t"
-        "move $12, $15\n\t"
-        "lui $15, %%hi(D_01d50000-26240)\n\t"
-        "addiu $14, $15, %%lo(D_01d50000-26240)\n\t"
-        "lw $15, 0($14)\n\t"
-        "li $2, 1\n\t"
-        "3:\n\t"
-        "beq $15, %[a0], 4f\n\t"
-        "addiu $14, $14, 4\n\t"
-        "addiu $13, $13, 1\n\t"
-        "slt $15, $13, $12\n\t"
-        "bnezl $15, 3b\n\t"
-        "lw $15, 0($14)\n\t"
-        "1:\n\t"
-        "move $2, $0\n\t"
-        "4:\n\t"
-        ".set reorder\n\t"
-        : "=r"(r)
-        : [a0] "r"(a0)
-        : "$12", "$13", "$14", "$15", "memory");
-    return r;
-}
-
 // FUN_001ca448 (76 bytes; this object is built with -falign-functions=1 because the size is
 //       not a multiple of 8, see the Makefile).
 // Code: v = word at arg0 + 340. Returns 0 when v == 44 or v == 16, returns 1 for other
