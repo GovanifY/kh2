@@ -137,6 +137,7 @@ out/build/src/anon/agent_v2_20261019.o: CXXFLAGS += -falign-functions=1
 # agent_p4: FUN_001aaf98 needs no cross-block scheduling (gcc hoists a constant above the first branch).
 out/build/src/anon/agent_p4_20261019.o: CXXFLAGS += -fno-sched-interblock -falign-functions=1
 out/build/src/anon/agent_v6_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_y1_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_y2_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_v4_20261019.o: CXXFLAGS += -falign-functions=1
 
