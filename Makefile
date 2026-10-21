@@ -227,3 +227,4 @@ out/build/src/anon/agent_k14_20261019.o: CXXFLAGS += -falign-functions=1 -falign
 out/build/src/anon/agent_l14_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_l10_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_l12_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_m15_20261021.o: CXXFLAGS += -falign-functions=1
