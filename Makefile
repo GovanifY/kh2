@@ -161,6 +161,7 @@ out/build/src/anon/agent_z3_20261019.o: CXXFLAGS += -fno-sched-interblock
 out/build/src/anon/agent_z4_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_g14_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_g16_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_g12_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_a11_20261019.o: CXXFLAGS += -falign-functions=1
 
 out/build/%.o: %.s
