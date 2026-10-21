@@ -231,3 +231,5 @@ out/build/src/anon/agent_m15_20261021.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_m11_20261021.o: CXXFLAGS += -fno-strict-aliasing -falign-functions=1
 out/build/src/anon/agent_p12_20261021.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_p10_20261021.o: CXXFLAGS += -falign-functions=1
+
+out/build/src/anon/agent_r21_20261021.o: CXXFLAGS += -falign-functions=1
