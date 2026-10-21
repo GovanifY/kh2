@@ -224,3 +224,6 @@ distclean: clean
 	rm -rf $(OUT)
 out/build/src/anon/agent_r10_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_k14_20261019.o: CXXFLAGS += -falign-functions=1 -falign-jumps=1
+out/build/src/anon/agent_l14_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_l10_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_l12_20261019.o: CXXFLAGS += -falign-functions=1
