@@ -1,38 +1,5 @@
 #include "../common/types.h"
 
-// FUN_001afe30 (60 bytes)
-// Code: reads the word at 0x1c94094 and the next two records (12 bytes apart). Returns the
-//       index (0..2) of the first record whose word equals a0, or -1 if none matches.
-// Guess: a three-slot lookup over a fixed table at 0x1c94090.
-// Build: the loop tail is a branch-likely (bnezl) with a load in its delay slot. Plain C
-//        always gave bnez or beqz+b, so the whole body is one noreorder asm block in the
-//        original order. The noreturn body may get a trailing epilogue from gcc; it lies
-//        past the registered 60 bytes and is ignored by the layout.
-s32 func_001afe30(u32 a0) __attribute__((noreturn));
-s32 func_001afe30(u32 a0) {
-    register u32 arg asm("$4") = a0;
-    __asm__ volatile(
-        ".set noreorder\n\t"
-        "lui $15,0x1c9\n\t"
-        "daddu $13,$0,$0\n\t"
-        "addiu $15,$15,16528\n\t"
-        "addiu $12,$15,4\n\t"
-        "lw $15,0($12)\n\t"
-        "1:\n\t"
-        "daddu $2,$13,$0\n\t"
-        "addiu $13,$13,1\n\t"
-        "addiu $12,$12,12\n\t"
-        "beq $15,$4,2f\n\t"
-        "slti $14,$13,3\n\t"
-        "bnezl $14,1b\n\t"
-        "lw $15,0($12)\n\t"
-        "li $2,-1\n\t"
-        "2:\n\t"
-        "jr $31\n\t"
-        "nop\n\t"
-        ".set reorder" : : "r"(arg) : "$2", "$12", "$13", "$14", "$15", "memory");
-}
-
 // FUN_001aff90 (80 bytes)
 // Code: root = the pointer at 0x1c940b4; count = word at +4 of root. Scans count
 //       14-byte records starting at root+8 for a pair of bytes (a0, a1). Returns the
