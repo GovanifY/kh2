@@ -115,7 +115,6 @@ out/build/src/anon/agent_f1_20261019.o: CXXFLAGS += -falign-jumps=1
 # FUN_00183768 is not a multiple of 8 bytes and ends in jr ra; skip the trailing function padding.
 out/build/src/anon/agent_f5_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_v3_20261019.o: CXXFLAGS += -falign-functions=1
-out/build/src/anon/agent_x1_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_a13_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_b13_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_b12_20261019.o: CXXFLAGS += -falign-functions=1
@@ -152,6 +151,8 @@ out/build/src/anon/agent_v4_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_z5_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_d12_20261019.o: CXXFLAGS += -falign-functions=1 -falign-jumps=1
 out/build/src/anon/agent_e12_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_e10_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_e10b_20261019.o: CXXFLAGS += -fno-schedule-insns2
 out/build/src/anon/agent_d11_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_z3_20261019.o: CXXFLAGS += -fno-sched-interblock
 out/build/src/anon/agent_z4_20261019.o: CXXFLAGS += -falign-functions=1
