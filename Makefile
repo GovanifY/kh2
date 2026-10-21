@@ -127,6 +127,8 @@ out/build/src/anon/agent_c11_20261019.o: CXXFLAGS += -falign-functions=1 -falign
 
 # FUN_002b7efc only matches without optimisation (its frame is built the -O0 way).
 out/build/src/anon/agent_m_o0_20261019.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_i15_20261019.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_i14_20261019.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
 
 # FUN_00196328: the table-pointer load must stay after the halfword stores (no TBAA hoisting).
 out/build/src/anon/agent_u_nsa_20261019.o: CXXFLAGS += -fno-strict-aliasing
