@@ -148,6 +148,8 @@ out/build/src/anon/agent_v2_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_p4_20261019.o: CXXFLAGS += -fno-sched-interblock -falign-functions=1
 out/build/src/anon/agent_v6_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_i11_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_i10_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_i12_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_y1_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_y2_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_v4_20261019.o: CXXFLAGS += -falign-functions=1
