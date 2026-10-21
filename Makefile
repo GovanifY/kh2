@@ -151,6 +151,9 @@ out/build/src/anon/agent_v4_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_z5_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_d12_20261019.o: CXXFLAGS += -falign-functions=1 -falign-jumps=1
 out/build/src/anon/agent_e12_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_f11_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_f13_20261019.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_f14_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_e10_20261019.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_e10b_20261019.o: CXXFLAGS += -fno-schedule-insns2
 out/build/src/anon/agent_d11_20261019.o: CXXFLAGS += -falign-functions=1
