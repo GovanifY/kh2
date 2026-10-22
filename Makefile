@@ -248,3 +248,4 @@ out/build/src/anon/agent_s34_20261021.o: CXXFLAGS += -falign-functions=1 -fno-gu
 out/build/src/anon/agent_u04_20261022.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_u03_20261022.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_u02_20261022.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_u01_20261022.o: CXXFLAGS += -falign-functions=1
