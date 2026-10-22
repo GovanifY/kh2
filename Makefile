@@ -250,3 +250,4 @@ out/build/src/anon/agent_u03_20261022.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_u02_20261022.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_u01_20261022.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_v04_20261022.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_v03_20261022.o: CXXFLAGS += -fno-sched-interblock -falign-functions=1
