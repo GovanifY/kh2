@@ -415,3 +415,4 @@ out/build/src/anon/agent_R46p_68_001e0230_20261029.o: CXXFLAGS += -falign-functi
 out/build/src/anon/agent_R46p_70_001e2788_20261029.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_R46p_70_001e27c0_20261029.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_R46p_71_001e6c00_20261029.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_R46p_72_001ddd30_20261029.o: CXXFLAGS += -falign-functions=1
