@@ -380,3 +380,6 @@ out/build/src/anon/agent_R46p_46_001b8680_20261029.o: CXXFLAGS += -falign-functi
 out/build/src/anon/agent_R46p_46_001c13a8_20261029.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_R46p_46_001c13e8_20261029.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_R46p_50_001c16a0_20261029.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_R46p_51_001cf998_20261029.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_R46p_51_001d0068_20261029.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_R46p_51_001d18c0_20261029.o: CXXFLAGS += -falign-functions=1
