@@ -514,3 +514,9 @@ out/build/src/anon/agent_R46p_124_002b9a00_20261029.o: CXXFLAGS := $(filter-out 
 out/build/src/anon/agent_R46p_125_002b9a38_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
 out/build/src/anon/agent_R46p_125_002b9a78_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
 out/build/src/anon/agent_R46p_125_002b9ed0_20261029.o: CXXFLAGS += -falign-functions=1
+
+# agent R46p 126: four functions, sizes 108, 68, 68, 44 (none multiple of 8).
+out/build/src/anon/agent_R46p_126_002ba040_20261029.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_R46p_126_002ba0b0_20261029.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_R46p_126_002ba0f8_20261029.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_R46p_126_002ba3b8_20261029.o: CXXFLAGS += -falign-functions=1
