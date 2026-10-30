@@ -509,3 +509,8 @@ out/build/src/anon/agent_R46p_124_002b8374_20261029.o: CXXFLAGS := $(filter-out 
 out/build/src/anon/agent_R46p_124_002b83ec_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
 out/build/src/anon/agent_R46p_124_002b8a70_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
 out/build/src/anon/agent_R46p_124_002b9a00_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+
+# agent R46p 125: FUN_002b9a38 and FUN_002b9a78 are -O0 wrappers; FUN_002b9ed0 is 84 bytes.
+out/build/src/anon/agent_R46p_125_002b9a38_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_125_002b9a78_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_125_002b9ed0_20261029.o: CXXFLAGS += -falign-functions=1
