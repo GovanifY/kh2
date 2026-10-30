@@ -487,3 +487,9 @@ out/build/src/anon/agent_R46p_117_002ab258_20261029.o: CXXFLAGS += -falign-funct
 out/build/src/anon/agent_R46p_117_002a7678_20261029.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_R46p_118_002944f8_20261029.o: CXXFLAGS += -falign-functions=1
 out/build/src/anon/agent_R46p_118_002b2d48_20261029.o: CXXFLAGS += -falign-functions=1
+out/build/src/anon/agent_R46p_120_002b6c04_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_120_002b6f28_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_120_002b7010_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_121_002b792c_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_121_002b797c_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_121_002b7ca4_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
