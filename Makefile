@@ -495,3 +495,9 @@ out/build/src/anon/agent_R46p_121_002b797c_20261029.o: CXXFLAGS := $(filter-out 
 out/build/src/anon/agent_R46p_121_002b7ca4_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
 out/build/src/anon/agent_R46p_119_002b6adc_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
 out/build/src/anon/agent_R46p_119_002b6b24_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+
+# R46p_122: -O0 wrappers around func_002b6708 (match the frame pointer layout)
+out/build/src/anon/agent_R46p_122_002b7e34_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_122_002b7e74_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_122_002b7ebc_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
+out/build/src/anon/agent_R46p_122_002b7f3c_20261029.o: CXXFLAGS := $(filter-out -O2,$(CXXFLAGS)) -O0
